@@ -14,3 +14,7 @@ oapicode/
 www/
 temp/
 database/tests/*_dump.json
+
+# Added by cargo
+
+/target
