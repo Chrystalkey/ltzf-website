@@ -1,0 +1,213 @@
+---
+/**
+ * LtzfLayout - Layout for state-specific pages
+ * Extends BaseLayout with state-specific navigation and breadcrumbs
+ */
+import BaseLayout from './BaseLayout.astro';
+import { getBundesland } from '@lib/constants.js';
+
+interface Props {
+    title?: string;
+    description?: string;
+    bundeslandCode: string;
+    currentPage?: string;
+    breadcrumbs?: Array<{ label: string; href?: string }>;
+}
+
+const {
+    title,
+    description,
+    bundeslandCode,
+    currentPage = '',
+    breadcrumbs = [],
+} = Astro.props;
+
+const bundesland = getBundesland(bundeslandCode);
+if (!bundesland) {
+    throw new Error(`Unknown Bundesland code: ${bundeslandCode}`);
+}
+
+const pageTitle = title || `${bundesland.fullName} - Parlamentszusammenfasser`;
+const pageDescription = description || `Gesetzgebung und parlamentarische Vorgänge in ${bundesland.name}`;
+
+const baseUrl = `/ltzf-${bundeslandCode}`;
+
+// Navigation items for state pages
+const navItems = [
+    { label: 'Übersicht', href: baseUrl, key: 'overview' },
+    { label: 'Aktuelle Entwürfe', href: `${baseUrl}/aktuelle-entwuerfe`, key: 'entwuerfe' },
+    { label: 'Frisch', href: `${baseUrl}/frisch`, key: 'frisch' },
+    { label: 'In Beratung', href: `${baseUrl}/in-beratung`, key: 'beratung' },
+    { label: 'Fertig', href: `${baseUrl}/fertig`, key: 'fertig' },
+    { label: 'Gesamtübersicht', href: `${baseUrl}/gesamtuebersicht`, key: 'gesamt' },
+    { label: 'Sitzungen', href: `${baseUrl}/sitzungen`, key: 'sitzungen' },
+    { label: 'Archiv', href: `${baseUrl}/legislaturperioden-archiv`, key: 'archiv' },
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} className="ltzf-page">
+    <div class="container">
+        <!-- Breadcrumbs -->
+        {breadcrumbs.length > 0 && (
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="/">Start</a></li>
+                    {breadcrumbs.map((crumb, index) => (
+                        <li>
+                            {crumb.href ? (
+                                <a href={crumb.href}>{crumb.label}</a>
+                            ) : (
+                                <span aria-current="page">{crumb.label}</span>
+                            )}
+                        </li>
+                    ))}
+                </ol>
+            </nav>
+        )}
+
+        <!-- State Header -->
+        <div class="state-header">
+            <h1>{bundesland.fullName}</h1>
+            <p class="state-type">{bundesland.type === 'federal' ? 'Bundesebene' : 'Landesebene'}</p>
+        </div>
+
+        <!-- State Navigation -->
+        <nav class="state-nav" aria-label="Seitennavigation">
+            <ul>
+                {navItems.map(item => (
+                    <li>
+                        <a
+                            href={item.href}
+                            class={currentPage === item.key ? 'active' : ''}
+                            aria-current={currentPage === item.key ? 'page' : undefined}
+                        >
+                            {item.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div class="page-content">
+            <slot />
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .breadcrumbs {
+        margin-bottom: var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .breadcrumbs ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: var(--spacing-xs);
+        flex-wrap: wrap;
+    }
+
+    .breadcrumbs li {
+        display: flex;
+        align-items: center;
+    }
+
+    .breadcrumbs li:not(:last-child)::after {
+        content: '›';
+        margin-left: var(--spacing-xs);
+        color: var(--color-text-light);
+    }
+
+    .breadcrumbs a {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    .breadcrumbs span {
+        color: var(--color-text-light);
+    }
+
+    .state-header {
+        margin-bottom: var(--spacing-lg);
+        padding-bottom: var(--spacing-md);
+        border-bottom: 2px solid var(--color-primary);
+    }
+
+    .state-header h1 {
+        margin: 0;
+        font-size: 2rem;
+        color: var(--color-primary);
+    }
+
+    .state-type {
+        margin: var(--spacing-xs) 0 0;
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .state-nav {
+        margin-bottom: var(--spacing-lg);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-sm);
+        overflow-x: auto;
+    }
+
+    .state-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: var(--spacing-xs);
+        flex-wrap: wrap;
+    }
+
+    .state-nav a {
+        display: block;
+        padding: var(--spacing-xs) var(--spacing-md);
+        text-decoration: none;
+        color: var(--color-text);
+        border-radius: var(--border-radius);
+        white-space: nowrap;
+        transition: all 0.2s;
+    }
+
+    .state-nav a:hover {
+        background: white;
+        color: var(--color-primary);
+    }
+
+    .state-nav a.active {
+        background: var(--color-primary);
+        color: white;
+        font-weight: 600;
+    }
+
+    .page-content {
+        min-height: 400px;
+    }
+
+    @media (max-width: 768px) {
+        .state-header h1 {
+            font-size: 1.5rem;
+        }
+
+        .state-nav {
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .state-nav ul {
+            flex-wrap: nowrap;
+        }
+    }
+</style>

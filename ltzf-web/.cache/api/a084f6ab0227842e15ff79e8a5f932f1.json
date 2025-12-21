@@ -1,0 +1,185 @@
+{
+  "api_id": "008d02db-ee2c-42ba-a370-37bcee054240",
+  "titel": "Gesetzentwurf zur Änderung des Bayerischen Naturschutzgesetzes",
+  "kurztitel": "Gesetzentwurf zur Änderung des Bayerischen Naturschutzgesetzes",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6208",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159923",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005500/0000005535.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katrin Ebner-Steiner",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Christoph Maier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "(MSc) Martin Böhm",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Richard Graupner",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Johannes Meier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Markus Walbrunn",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ulrich Singer",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ferdinand Mang",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Benjamin Nolte",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Harald Meußgeier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Gerd Mannes",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Dieter Arnold",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Oskar Atzinger",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Jörg Baumann",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Franz Bergmüller",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Rene Dierkes",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Daniel Halemba",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Martin Huber",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Andreas Jurca",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Florian Köhler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Oskar Lipp",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Stefan Löw",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Roland Magerl",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Johann Müller",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Elena Roon",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Franz Schmid",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ralf Stadler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ramona Storm",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Markus Striedl",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Matthias Vogler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Andreas Winhart",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "organisation": "Alternative für Deutschland (AfD)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aec7-b184-73f0-9a80-6cf6cb452901",
+      "zp_start": "2025-04-03T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:39.451955Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159923",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 4,
+      "dokumente": [
+        "0198aec7-b184-73f0-9a80-6d0561e213b6"
+      ]
+    },
+    {
+      "api_id": "0198aec7-b18b-7460-a54f-2177f4d2bbbf",
+      "zp_start": "2025-05-05T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:39.451955Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159923",
+      "typ": "parl-ablehnung",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aec7-b18f-7ad2-a77b-9b28025891da",
+        "0198aec7-b18c-70d1-acb2-2fe5394a3809"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_620/meta_vod_49772.json&startId=1"
+      ]
+    }
+  ]
+}

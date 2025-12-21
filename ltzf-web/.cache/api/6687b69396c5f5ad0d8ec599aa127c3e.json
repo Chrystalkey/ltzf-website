@@ -1,0 +1,151 @@
+{
+  "api_id": "6ad0e449-f550-472e-af52-0c61d283025a",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Gesundheitsdienstgesetzes und weiterer Rechtsvorschriften",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Gesundheitsdienstgesetzes und weiterer Rechtsvorschriften",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/3249",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157006",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000002500/0000002586.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-1bd6-79c2-9b5e-11c8da605578",
+      "zp_start": "2024-09-15T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:34.356631Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157006",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-1bd6-79c2-9b5e-11d5bd1eb260"
+      ],
+      "stellungnahmen": [
+        "0198aecd-1bdf-7191-bb14-350e20dc2475",
+        "0198aecd-1bef-7cf0-9e3d-caceaefb8a05",
+        "0198aecd-1bf6-7d70-844b-94163832fe14",
+        "0198aecd-1c05-7541-81da-43dd3edee225",
+        "0198aecd-1c11-7423-b41d-a7198a1d1ba9",
+        "0198aecd-1c1a-71d0-ae83-9ee23ff8b498",
+        "0198aecd-1c22-7671-9159-fa1117303272"
+      ]
+    },
+    {
+      "api_id": "0198aecd-1c33-7260-8981-43387cab3b4b",
+      "zp_start": "2024-09-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:34.356631Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157006",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-1c34-7d80-ac8c-79e93e15850d"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_599/meta_vod_47896.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-1c3d-72b1-bf5c-dd3fd679e7f9",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:34.356631Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Gesundheit, Pflege und Prävention"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157006",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-1c3d-72b1-bf5c-dd40e6f774a6"
+      ]
+    },
+    {
+      "api_id": "0198aecd-1c3f-7720-a823-21179f42638a",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:34.356631Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Wissenschaft und Kunst"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157006",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-1c3d-72b1-bf5c-dd40e6f774a6"
+      ]
+    },
+    {
+      "api_id": "0198aecd-1c40-70a2-9055-5a0682b2b3aa",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:34.356631Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157006",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-1c3d-72b1-bf5c-dd40e6f774a6"
+      ]
+    },
+    {
+      "api_id": "0198aecd-1c41-7f10-8785-dafeecb2f854",
+      "zp_start": "2024-12-09T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:34.356631Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157006",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-1c47-7b23-87eb-3c11905dbcfd",
+        "0198aecd-1c42-7ad1-8fed-2351b4bbd804"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_607/meta_vod_48587.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-1c4a-7352-b3f8-ed984f59cc19",
+      "zp_start": "2024-12-29T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:34.356631Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157006",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecc-ac90-7aa2-933b-59ff4fb9c476"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+---
+/**
+ * SitzungLayout - Layout for session detail pages
+ * Displays a Sitzung (parliamentary session) with all its details
+ */
+import BaseLayout from './BaseLayout.astro';
+import { getBundesland, formatDate } from '@lib/constants.js';
+
+interface Props {
+    sitzung: any; // Type from API model
+}
+
+const { sitzung } = Astro.props;
+
+if (!sitzung) {
+    throw new Error('Sitzung data is required');
+}
+
+const bundesland = getBundesland(sitzung.parlament);
+const gremiumName = sitzung.gremium?.name || 'Plenum';
+const sessionDate = formatDate(sitzung.datum);
+const title = `Sitzung ${gremiumName} - ${sessionDate} - ${bundesland?.name || sitzung.parlament}`;
+const description = `Parlamentarische Sitzung: ${gremiumName} am ${sessionDate}`;
+
+// Build breadcrumbs
+const breadcrumbs = [
+    { label: bundesland?.name || sitzung.parlament, href: `/ltzf-${sitzung.parlament}` },
+    { label: 'Sitzungen', href: `/ltzf-${sitzung.parlament}/sitzungen` },
+    { label: `${gremiumName} - ${sessionDate}` }
+];
+---
+
+<BaseLayout title={title} description={description} className="sitzung-page">
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="/">Start</a></li>
+                {breadcrumbs.map((crumb, index) => (
+                    <li>
+                        {crumb.href ? (
+                            <a href={crumb.href}>{crumb.label}</a>
+                        ) : (
+                            <span aria-current="page">{crumb.label}</span>
+                        )}
+                    </li>
+                ))}
+            </ol>
+        </nav>
+
+        <!-- Sitzung Header -->
+        <article class="sitzung-article">
+            <header class="sitzung-header">
+                <div class="sitzung-meta">
+                    <span class="sitzung-parlament">{bundesland?.fullName || sitzung.parlament}</span>
+                    {sitzung.wahlperiode && (
+                        <>
+                            <span class="separator">•</span>
+                            <span class="sitzung-wahlperiode">{sitzung.wahlperiode}. Wahlperiode</span>
+                        </>
+                    )}
+                    {sitzung.oeffentlich !== undefined && (
+                        <>
+                            <span class="separator">•</span>
+                            <span class={`sitzung-visibility ${sitzung.oeffentlich ? 'public' : 'private'}`}>
+                                {sitzung.oeffentlich ? 'Öffentlich' : 'Nicht-öffentlich'}
+                            </span>
+                        </>
+                    )}
+                </div>
+                <h1>{gremiumName}</h1>
+                <div class="sitzung-date-info">
+                    <time datetime={sitzung.datum}>
+                        {sessionDate}
+                    </time>
+                    {sitzung.uhrzeit && (
+                        <span class="sitzung-time">{sitzung.uhrzeit} Uhr</span>
+                    )}
+                </div>
+            </header>
+
+            <!-- Main Content Slot -->
+            <div class="sitzung-content">
+                <slot />
+            </div>
+
+            <!-- Metadata Footer -->
+            <footer class="sitzung-footer">
+                {sitzung.api_id && (
+                    <p class="sitzung-id">
+                        <small>Sitzungs-ID: {sitzung.api_id}</small>
+                    </p>
+                )}
+            </footer>
+        </article>
+    </div>
+</BaseLayout>
+
+<style>
+    .breadcrumbs {
+        margin-bottom: var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .breadcrumbs ol {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: var(--spacing-xs);
+        flex-wrap: wrap;
+    }
+
+    .breadcrumbs li {
+        display: flex;
+        align-items: center;
+    }
+
+    .breadcrumbs li:not(:last-child)::after {
+        content: '›';
+        margin-left: var(--spacing-xs);
+        color: var(--color-text-light);
+    }
+
+    .breadcrumbs a {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    .breadcrumbs span {
+        color: var(--color-text-light);
+    }
+
+    .sitzung-article {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+    }
+
+    .sitzung-header {
+        padding: var(--spacing-lg);
+        border-bottom: 1px solid var(--color-border);
+        background: var(--color-bg-alt);
+    }
+
+    .sitzung-meta {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-sm);
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        flex-wrap: wrap;
+    }
+
+    .sitzung-visibility {
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+
+    .sitzung-visibility.public {
+        background: #e8f5e9;
+        color: #2e7d32;
+    }
+
+    .sitzung-visibility.private {
+        background: #fff3e0;
+        color: #e65100;
+    }
+
+    .separator {
+        color: var(--color-border);
+    }
+
+    .sitzung-header h1 {
+        margin: 0;
+        font-size: 1.75rem;
+        line-height: 1.3;
+        color: var(--color-text);
+    }
+
+    .sitzung-date-info {
+        margin-top: var(--spacing-sm);
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        font-size: 1.1rem;
+        color: var(--color-text);
+    }
+
+    .sitzung-time {
+        color: var(--color-text-light);
+    }
+
+    .sitzung-content {
+        padding: var(--spacing-lg);
+    }
+
+    .sitzung-footer {
+        padding: var(--spacing-md) var(--spacing-lg);
+        background: var(--color-bg-alt);
+        border-top: 1px solid var(--color-border);
+    }
+
+    .sitzung-id {
+        margin: 0;
+        color: var(--color-text-light);
+    }
+
+    @media (max-width: 768px) {
+        .sitzung-header h1 {
+            font-size: 1.5rem;
+        }
+
+        .sitzung-header,
+        .sitzung-content,
+        .sitzung-footer {
+            padding: var(--spacing-md);
+        }
+
+        .sitzung-date-info {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--spacing-xs);
+        }
+    }
+</style>

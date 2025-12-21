@@ -1,0 +1,239 @@
+{
+  "api_id": "c16dd00d-8415-46d9-87a3-0583d3c9f845",
+  "titel": "Gesetzentwurf zur Änderung des Bayerischen Naturschutzgesetzes",
+  "kurztitel": "Gesetzentwurf zur Änderung des Bayerischen Naturschutzgesetzes",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/3438",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157075",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000002500/0000002687.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katrin Ebner-Steiner",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Christoph Maier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "(MSc) Martin Böhm",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Richard Graupner",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Johannes Meier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Markus Walbrunn",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ulrich Singer",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ferdinand Mang",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Benjamin Nolte",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Harald Meußgeier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Gerd Mannes",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Dieter Arnold",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Oskar Atzinger",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Jörg Baumann",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Franz Bergmüller",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Rene Dierkes",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Daniel Halemba",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Martin Huber",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Andreas Jurca",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Florian Köhler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Oskar Lipp",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Stefan Löw",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Roland Magerl",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Johann Müller",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Elena Roon",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Franz Schmid",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ralf Stadler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ramona Storm",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Markus Striedl",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Matthias Vogler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Andreas Winhart",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Prof. Dr. Ingo Hahn",
+      "organisation": "Alternative für Deutschland (AfD)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-2a2f-7733-962a-7f3b1cdcc041",
+      "zp_start": "2024-09-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:38.018425Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157075",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-2a30-7591-aa40-765f6868b5a7"
+      ]
+    },
+    {
+      "api_id": "0198aecd-2a3f-7062-9226-c613b602b154",
+      "zp_start": "2024-10-07T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:38.018425Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157075",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-2a40-7b83-b0a6-3f8fd71612e1"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_600/meta_vod_48003.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-2a48-7ed3-bbed-0eb8cab325ed",
+      "zp_start": "2025-01-22T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:38.018425Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Umwelt und Verbraucherschutz"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157075",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-2a49-72c3-8769-ddb77c01b4cf"
+      ]
+    },
+    {
+      "api_id": "0198aecd-2a4b-74f2-86c9-4fd49c5f0d91",
+      "zp_start": "2025-01-22T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:38.018425Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157075",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-2a49-72c3-8769-ddb77c01b4cf"
+      ]
+    },
+    {
+      "api_id": "0198aecd-2a4d-7173-b92b-6515c42e234a",
+      "zp_start": "2025-02-03T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:38.018425Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157075",
+      "typ": "parl-ablehnung",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-2a53-7bb3-9a5b-16708e696700",
+        "0198aecd-2a4e-7f13-97f5-2586bfd68bd6"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_612/meta_vod_48944.json&startId=1"
+      ]
+    }
+  ]
+}

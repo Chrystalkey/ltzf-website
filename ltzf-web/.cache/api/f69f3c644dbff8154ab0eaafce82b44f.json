@@ -1,0 +1,107 @@
+{
+  "api_id": "92dfa75e-bfc3-41af-9611-af13bae896e4",
+  "titel": "Antrag der Staatsregierung auf Zustimmung zum Vertrag über die Errichtung, den Betrieb und die Weiterentwicklung des Nationalen Once-Only-Technical-Systems (NOOTS) - Vertrag zur Ausführung von Artikel 91c Absatz 1, Absatz 2 GG - NOOTS-Staatsvertrag",
+  "kurztitel": "Antrag der Staatsregierung auf Zustimmung zum Vertrag über die Errichtung, den Betrieb und die Weiterentwicklung des Nationalen Once-Only-Technical-Systems (NOOTS) - Vertrag zur Ausführung von Artikel 91c Absatz 1, Absatz 2 GG - NOOTS-Staatsvertrag",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6196",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159992",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005000/0000005484.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aec9-6886-7ad2-8390-b7e972a1513c",
+      "zp_start": "2025-04-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:31:31.842822Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159992",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aec9-6887-7c82-aa6d-c5df7de3835d"
+      ]
+    },
+    {
+      "api_id": "0198aec9-6897-7a80-b5bb-ca86d01e11f3",
+      "zp_start": "2025-06-23T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:31:31.842822Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159992",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aec9-6899-7ae1-96fd-72972600723b"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_624/meta_vod_50146.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aec9-68a2-7bf2-bce5-3af9f0314322",
+      "zp_start": "2025-07-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:31:31.842822Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Wirtschaft, Landesentwicklung, Energie, Medien und Digitalisierung"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159992",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aec9-68a4-7133-bfeb-7deff5b43177"
+      ]
+    },
+    {
+      "api_id": "0198aec9-68a7-7773-9a9b-4f0cec3e8e4d",
+      "zp_start": "2025-07-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:31:31.842822Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159992",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aec9-68a4-7133-bfeb-7deff5b43177"
+      ]
+    },
+    {
+      "api_id": "0198aec9-68a9-7ff3-91e1-ff41bc50be51",
+      "zp_start": "2025-07-22T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:31:31.842822Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159992",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aec9-68a9-7ff3-91e1-ff539905107b"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "api_id": "148b2085-37e2-43ac-8f12-1456834e8eef",
+  "titel": "Gesetzentwurf Bayerisches Gesetz über die Finanzierung der Bildungsarbeit der parteinahen politischen Stiftungen (Bayerisches Parteienstiftungsgesetz - BayPartStiftG)",
+  "kurztitel": "Gesetzentwurf Bayerisches Gesetz über die Finanzierung der Bildungsarbeit der parteinahen politischen Stiftungen (Bayerisches Parteienstiftungsgesetz - BayPartStiftG)",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/7584",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161485",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000006000/0000006423.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katharina Schulze",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Johannes Becher",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dipl.-Betriebswirtin (FH) Claudia Köhler",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Ludwig Hartmann",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Jürgen Mistol",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Verena Osgyan",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Tim Pargent",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Stephanie Schuhknecht",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Benjamin Adjei",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Andreas Birzele",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Cemal Bozoğlu",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Max Deisenhofer",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Gülseren Demirel",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Toni Schuberl",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Florian Siekmann",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198ae47-45f3-7e41-9fec-46830ff56a3e",
+      "zp_start": "2025-07-15T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T15:09:23.275880Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161485",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198ae47-45f6-76d3-84f2-6a6d6b83683f"
+      ]
+    }
+  ]
+}

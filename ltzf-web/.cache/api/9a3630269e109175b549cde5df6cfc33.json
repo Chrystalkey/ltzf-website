@@ -1,0 +1,135 @@
+{
+  "api_id": "d1c04997-2fb7-4c8a-a8c2-d1eae9af4153",
+  "titel": "Gesetzentwurf zur Änderung der Bayerischen Bauordnung - Bayerisches Kulturschutzgesetz",
+  "kurztitel": "Gesetzentwurf zur Änderung der Bayerischen Bauordnung - Bayerisches Kulturschutzgesetz",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/449",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153885",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000000001/0000000419.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katrin Ebner-Steiner",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Christoph Maier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "(MSc) Martin Böhm",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Richard Graupner",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Markus Walbrunn",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Prof. Dr. Ingo Hahn",
+      "organisation": "Alternative für Deutschland (AfD)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecb-afec-7a12-b465-af7e2e82cee9",
+      "zp_start": "2024-02-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:01.191111Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153885",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 7,
+      "dokumente": [
+        "0198aecb-afec-7a12-b465-af869d337806"
+      ]
+    },
+    {
+      "api_id": "0198aecb-aff4-72f3-88ae-dd1aa92e6452",
+      "zp_start": "2024-02-21T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:01.191111Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153885",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecb-aff5-7c71-b72c-f984a488b029"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_581/meta_vod_46698.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecb-affa-73d2-ae92-02161a3e7623",
+      "zp_start": "2024-04-10T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:01.191111Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Wohnen, Bau und Verkehr"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153885",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecb-affb-74b1-a1ff-443f19dd0e9c"
+      ]
+    },
+    {
+      "api_id": "0198aecb-affe-7d00-9959-13172f17834c",
+      "zp_start": "2024-04-10T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:01.191111Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153885",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecb-affb-74b1-a1ff-443f19dd0e9c"
+      ]
+    },
+    {
+      "api_id": "0198aecb-b000-7200-8754-8184692c1327",
+      "zp_start": "2024-04-24T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:01.191111Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153885",
+      "typ": "parl-ablehnung",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecb-b007-72b1-a079-9fec965d0725",
+        "0198aecb-b001-7921-ae4d-b2f314b6a1a2"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_587/meta_vod_47163.json&startId=1"
+      ]
+    }
+  ]
+}

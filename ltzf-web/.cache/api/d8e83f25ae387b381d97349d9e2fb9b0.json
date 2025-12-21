@@ -1,0 +1,127 @@
+{
+  "api_id": "b7897eac-5842-4534-9239-5d2418fcf894",
+  "titel": "Gesetzentwurf zur Änderung der Bayerischen Bauordnung  hier: Hochwasserschutz",
+  "kurztitel": "Gesetzentwurf zur Änderung der Bayerischen Bauordnung  hier: Hochwasserschutz",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/7391",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161245",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000006000/0000006315.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katharina Schulze",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Johannes Becher",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dipl.-Betriebswirtin (FH) Claudia Köhler",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Ludwig Hartmann",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Jürgen Mistol",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Verena Osgyan",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Tim Pargent",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Stephanie Schuhknecht",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Laura Weber",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Mia Goller",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dr. Markus Büchler",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Patrick Friedl",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Barbara Fuchs",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Christian Hierneis",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Paul Knoblach",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dipl.-Ing. Ursula Sowa",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Martin Stümpfig",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aec7-72e8-7e13-9332-e5e894e561a0",
+      "zp_start": "2025-07-03T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:23.429260Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161245",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aec7-72e9-76d2-bedc-4dd4505ea62e"
+      ]
+    },
+    {
+      "api_id": "0198aec7-72ef-7223-8184-121871cdfdb4",
+      "zp_start": "2025-07-21T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:23.429260Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161245",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aec7-72f0-75c3-8719-a76850a26d4c"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_627/meta_vod_50478.json&startId=1"
+      ]
+    }
+  ]
+}

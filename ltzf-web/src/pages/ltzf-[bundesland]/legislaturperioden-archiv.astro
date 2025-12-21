@@ -1,0 +1,161 @@
+---
+/**
+ * Legislaturperioden-Archiv Page
+ * Shows archive of previous legislative periods
+ */
+import LtzfLayout from '@layouts/LtzfLayout.astro';
+import { getAllVorgaenge } from '@lib/data-fetcher.js';
+import { BUNDESLAENDER, getStateCodes, getFederalCodes } from '@lib/constants.js';
+
+export async function getStaticPaths() {
+    const allCodes = [...getStateCodes(), ...getFederalCodes().filter(c => c !== 'BT')];
+
+    return allCodes.map(code => ({
+        params: { bundesland: code }
+    }));
+}
+
+const { bundesland } = Astro.params;
+
+if (!BUNDESLAENDER[bundesland]) {
+    return Astro.redirect('/404');
+}
+
+const land = BUNDESLAENDER[bundesland];
+
+// Fetch vorgänge and group by wahlperiode
+const vorgaengeRaw = await getAllVorgaenge({ parlament: bundesland });
+const vorgaenge = Array.isArray(vorgaengeRaw) ? vorgaengeRaw : [];
+
+// Group by wahlperiode
+const byWahlperiode = {};
+for (const vg of vorgaenge) {
+    const wp = vg.wahlperiode || 'Unbekannt';
+    if (!byWahlperiode[wp]) {
+        byWahlperiode[wp] = [];
+    }
+    byWahlperiode[wp].push(vg);
+}
+
+// Sort wahlperioden descending
+const sortedWahlperioden = Object.keys(byWahlperiode)
+    .filter(wp => wp !== 'Unbekannt')
+    .map(Number)
+    .sort((a, b) => b - a);
+
+console.log(`[${bundesland} Archiv] Found ${sortedWahlperioden.length} wahlperioden`);
+---
+
+<LtzfLayout
+    title={`Legislaturperioden-Archiv - ${land.name}`}
+    description={`Archiv aller Wahlperioden des ${land.fullName}`}
+    bundeslandCode={bundesland}
+    currentPage="archiv"
+>
+    <div class="page-content">
+        <header class="page-header">
+            <h1>Legislaturperioden-Archiv</h1>
+            <p class="page-description">
+                Übersicht aller Wahlperioden des {land.fullName}
+            </p>
+        </header>
+
+        <section class="section">
+            {sortedWahlperioden.length > 0 ? (
+                <div class="wahlperioden-list">
+                    {sortedWahlperioden.map((wp) => {
+                        const count = byWahlperiode[wp].length;
+                        return (
+                            <a href={`/ltzf-${bundesland}/gesamtuebersicht?wp=${wp}`} class="wahlperiode-card">
+                                <div class="wp-number">{wp}. Wahlperiode</div>
+                                <div class="wp-count">{count} Vorgänge</div>
+                            </a>
+                        );
+                    })}
+                </div>
+            ) : (
+                <div class="empty-state">
+                    <p>Keine Wahlperioden gefunden.</p>
+                </div>
+            )}
+        </section>
+    </div>
+</LtzfLayout>
+
+<style>
+    .page-header {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin: 0 0 var(--spacing-sm);
+        color: var(--color-primary);
+    }
+
+    .page-description {
+        font-size: 1.1rem;
+        color: var(--color-text-light);
+        margin: 0;
+    }
+
+    .section {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .wahlperioden-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .wahlperiode-card {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-lg);
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        align-items: center;
+        text-align: center;
+    }
+
+    .wahlperiode-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+        border-color: var(--color-primary);
+    }
+
+    .wp-number {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    .wp-count {
+        font-size: 1rem;
+        color: var(--color-text-light);
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: var(--spacing-xl);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        color: var(--color-text-light);
+    }
+
+    @media (max-width: 768px) {
+        .page-header h1 {
+            font-size: 2rem;
+        }
+
+        .wahlperioden-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

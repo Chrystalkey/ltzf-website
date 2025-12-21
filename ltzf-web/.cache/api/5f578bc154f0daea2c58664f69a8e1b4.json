@@ -1,0 +1,159 @@
+{
+  "api_id": "34136a2c-29f1-465e-ad91-b42d84073b1e",
+  "titel": "Gesetzentwurf der Staatsregierung Drittes Modernisierungsgesetz Bayern",
+  "kurztitel": "Gesetzentwurf der Staatsregierung Drittes Modernisierungsgesetz Bayern",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6494",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160264",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005500/0000005743.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aeca-cda2-7193-95b8-18939a27e636",
+      "zp_start": "2025-04-28T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:03.264011Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160264",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aeca-cda2-7193-95b8-18a5102f46db"
+      ],
+      "stellungnahmen": [
+        "0198aeca-cda6-74c0-ba7e-4d0f20e60324",
+        "0198aeca-cdab-7c21-8c81-de2a88e4a4ea",
+        "0198aeca-cdb1-7631-8ea1-f64fc388567f",
+        "0198aeca-cdb6-72d0-ab9d-0e09c91f01aa",
+        "0198aeca-cdbc-7663-b362-3126c322ff09",
+        "0198aeca-cdc2-7fc2-b28c-ea9b3135f01f",
+        "0198aeca-cdc8-7582-8323-2e79f3b95083",
+        "0198aeca-cdce-7830-825e-636451a6e1e5",
+        "0198aeca-cdd4-70b1-adf2-a89f43a65ede",
+        "0198aeca-cddb-76a0-8f33-98440375b803",
+        "0198aeca-cde1-7ab1-a425-56a353799e2e",
+        "0198aeca-cde9-7730-be0c-6a5a073122bb",
+        "0198aeca-cdf5-70d1-b69a-2ec22e35c20e",
+        "0198aeca-cdfb-7b41-bf1c-7f71d2ead7f1",
+        "0198aeca-ce03-7f30-a003-e74bc4864922",
+        "0198aeca-ce10-7f32-bdab-638c5490e812",
+        "0198aeca-ce16-7a43-b7e0-86e43a73e082",
+        "0198aeca-ce1c-7b52-bd2c-d436ec26bca5",
+        "0198aeca-ce24-7d50-8bdc-bf78ba005b90"
+      ]
+    },
+    {
+      "api_id": "0198aeca-ce2b-7560-93c6-f95c419626f7",
+      "zp_start": "2025-05-12T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:03.264011Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160264",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aeca-ce2c-7162-9eca-b678c1c0f89c"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_621/meta_vod_49852.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aeca-ce32-7e43-a3d6-8563565a8fcc",
+      "zp_start": "2025-07-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:03.264011Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Umwelt und Verbraucherschutz"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160264",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aeca-ce33-7fd1-b922-50a5dc4d56b3"
+      ]
+    },
+    {
+      "api_id": "0198aeca-ce34-7e01-9bc0-07a5756657a2",
+      "zp_start": "2025-07-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:03.264011Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Staatshaushalt und Finanzfragen"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160264",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aeca-ce33-7fd1-b922-50a5dc4d56b3"
+      ]
+    },
+    {
+      "api_id": "0198aeca-ce36-7923-bca6-cd81f99e4f94",
+      "zp_start": "2025-07-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:03.264011Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160264",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aeca-ce33-7fd1-b922-50a5dc4d56b3"
+      ]
+    },
+    {
+      "api_id": "0198aeca-ce37-7003-bb1b-09fa1dce89b4",
+      "zp_start": "2025-07-22T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:03.264011Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160264",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aeca-ce38-7e30-ba0a-73a40dfd3e89"
+      ]
+    },
+    {
+      "api_id": "0198aeca-ce3b-7501-8993-07a4754a9978",
+      "zp_start": "2025-07-29T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:03.264011Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160264",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aeca-ce3c-7180-b155-285b7d971758"
+      ]
+    }
+  ]
+}

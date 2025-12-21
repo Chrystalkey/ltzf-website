@@ -1,0 +1,64 @@
+{
+  "api_id": "13c8b4a2-8bc5-4c2b-b96c-8cfdfe00b56b",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Waldgesetzes",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Waldgesetzes",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/7193",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161084",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000006000/0000006195.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aec7-0564-7043-89b4-c17340d8265d",
+      "zp_start": "2025-06-24T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:28:55.392464Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161084",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aec7-0566-72b2-99bc-797c120697e5"
+      ],
+      "stellungnahmen": [
+        "0198aec7-056b-7962-845b-aa1f7179f80a",
+        "0198aec7-0579-7dd1-a878-ae4ad293dbaa",
+        "0198aec7-057f-7973-9733-abd08ea6b01b"
+      ]
+    },
+    {
+      "api_id": "0198aec7-0586-7a43-881e-4076e1b83a29",
+      "zp_start": "2025-07-01T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:28:55.392464Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161084",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aec7-0587-7b23-ae07-859527788eb9"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_625/meta_vod_50238.json&startId=1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+---
+/**
+ * Fertig Page - Completed legislative processes
+ * Shows passed, rejected, or withdrawn proposals
+ */
+import LtzfLayout from '@layouts/LtzfLayout.astro';
+import VorgangCard from '@components/VorgangCard.astro';
+import SearchFilter from '@components/SearchFilter.astro';
+import { getAllVorgaenge, categorizeVorgang, getLastStation } from '@lib/data-fetcher.js';
+import { BUNDESLAENDER, getStateCodes, getFederalCodes } from '@lib/constants.js';
+
+export async function getStaticPaths() {
+    const allCodes = [...getStateCodes(), ...getFederalCodes().filter(c => c !== 'BT')];
+    return allCodes.map(code => ({ params: { bundesland: code } }));
+}
+
+const { bundesland } = Astro.params;
+if (!BUNDESLAENDER[bundesland]) return Astro.redirect('/404');
+const land = BUNDESLAENDER[bundesland];
+
+// Fetch and filter completed vorgänge based on last station type
+const allVorgaenge = await getAllVorgaenge({ parlament: bundesland });
+const fertigeVorgaenge = allVorgaenge
+    .filter(vg => categorizeVorgang(vg) === 'fertig')
+    .sort((a, b) => {
+        // Sort by the last station's zp_start date
+        const lastStationA = getLastStation(a);
+        const lastStationB = getLastStation(b);
+        const dateA = new Date(lastStationA?.zp_start || 0);
+        const dateB = new Date(lastStationB?.zp_start || 0);
+        return dateB - dateA;
+    });
+
+const breadcrumbs = [
+    { label: land.name, href: `/ltzf-${bundesland}` },
+    { label: 'Fertig' }
+];
+---
+
+<LtzfLayout bundeslandCode={bundesland} currentPage="fertig" breadcrumbs={breadcrumbs}>
+    <div class="page-intro">
+        <h2>Abgeschlossene Vorgänge</h2>
+        <p>{fertigeVorgaenge.length} verabschiedete, abgelehnte oder zurückgezogene Gesetzesvorhaben</p>
+    </div>
+
+    <SearchFilter placeholder="Abgeschlossene Vorgänge durchsuchen..." showSearch={true} />
+
+    <section class="section">
+        <div class="vorgang-list searchable-container">
+            {fertigeVorgaenge.map(vorgang => (
+                <div class="searchable-item">
+                    <VorgangCard vorgang={vorgang} />
+                </div>
+            ))}
+        </div>
+        {fertigeVorgaenge.length === 0 && (
+            <div class="empty-state"><p>Keine abgeschlossenen Vorgänge gefunden.</p></div>
+        )}
+    </section>
+</LtzfLayout>
+
+<style>
+    .page-intro { margin-bottom: var(--spacing-xl); }
+    .page-intro h2 { font-size: 2rem; margin: 0 0 var(--spacing-sm); }
+    .page-intro p { font-size: 1.1rem; color: var(--color-text-light); margin: 0; }
+    .section { margin-top: var(--spacing-lg); }
+    .vorgang-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--spacing-md); }
+    .empty-state { text-align: center; padding: var(--spacing-xl); background: var(--color-bg-alt); border-radius: var(--border-radius); color: var(--color-text-light); }
+    @media (max-width: 768px) { .vorgang-list { grid-template-columns: 1fr; } }
+</style>
+
+<script>
+    import { initSearch } from '@/scripts/search.js';
+    document.addEventListener('DOMContentLoaded', () => {
+        initSearch({
+            inputId: 'search-input',
+            containerSelector: '.searchable-container',
+            itemSelector: '.searchable-item',
+            itemType: 'vorgang',
+            resultCountId: 'result-count'
+        });
+    });
+</script>

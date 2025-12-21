@@ -1,0 +1,371 @@
+---
+/**
+ * Gesetzesvorhaben Detail Page
+ * Shows full details of a legislative proposal including timeline and documents
+ */
+import VorgangLayout from '@layouts/VorgangLayout.astro';
+import StationTimeline from '@components/StationTimeline.astro';
+import DokumentList from '@components/DokumentList.astro';
+import { getAllVorgaenge, getVorgang, getDokument } from '@lib/data-fetcher.js';
+import { BUNDESLAENDER, getStateCodes, getFederalCodes } from '@lib/constants.js';
+import { extractDocumentIds } from '@lib/api/fetchers.js';
+
+export async function getStaticPaths() {
+    const allCodes = [...getStateCodes(), ...getFederalCodes()];
+    const paths = [];
+
+    for (const code of allCodes) {
+        const vorgaenge = await getAllVorgaenge({ parlament: code });
+
+        // Ensure vorgaenge is an array
+        const vorgaengeArray = Array.isArray(vorgaenge) ? vorgaenge : [];
+
+        console.log(`Found ${vorgaengeArray.length} vorgänge for ${code}`);
+
+        for (const vorgang of vorgaengeArray) {
+            paths.push({
+                params: {
+                    bundesland: code,
+                    id: vorgang.api_id
+                }
+            });
+        }
+    }
+
+    console.log(`Generated ${paths.length} total vorgang paths`);
+    return paths;
+}
+
+const { bundesland, id } = Astro.params;
+
+// Fetch full vorgang data
+const vorgang = await getVorgang(id);
+
+if (!vorgang || vorgang.parlament !== bundesland) {
+    return Astro.redirect('/404');
+}
+
+// Fetch all documents for this vorgang
+const documentIds = extractDocumentIds(vorgang);
+console.log(`Fetching ${documentIds.length} documents for vorgang ${id}`);
+
+const dokumente = await Promise.all(
+    documentIds.map(docId => getDokument(docId).catch(err => {
+        console.warn(`Failed to fetch document ${docId}:`, err.message);
+        return null;
+    }))
+);
+
+// Filter out failed fetches and add to vorgang
+vorgang.dokumente = dokumente.filter(doc => doc !== null);
+---
+
+<VorgangLayout vorgang={vorgang}>
+    <!-- Main Content -->
+    <div class="vorgang-details">
+        <!-- Key Metadata Box -->
+        <section class="detail-section metadata-box">
+            <h2>Übersicht</h2>
+            <dl class="metadata-grid">
+                {vorgang.kurztitel && vorgang.titel !== vorgang.kurztitel && (
+                    <>
+                        <dt>Vollständiger Titel</dt>
+                        <dd>{vorgang.titel}</dd>
+                    </>
+                )}
+                <dt>Vorgangstyp</dt>
+                <dd>{vorgang.typ?.label || vorgang.vorgangstyp || 'Vorgang'}</dd>
+
+                <dt>Wahlperiode</dt>
+                <dd>{vorgang.wahlperiode}. Wahlperiode</dd>
+
+                {vorgang.verfassungsaendernd && (
+                    <>
+                        <dt>Status</dt>
+                        <dd>
+                            <span class="badge badge-important">Verfassungsändernd</span>
+                        </dd>
+                    </>
+                )}
+
+                {vorgang.ids && vorgang.ids.length > 0 && (
+                    <>
+                        <dt>Externe IDs</dt>
+                        <dd>
+                            <ul class="id-list">
+                                {vorgang.ids.map(id => (
+                                    <li>
+                                        <strong>{id.typ}:</strong> {id.id}
+                                    </li>
+                                ))}
+                            </ul>
+                        </dd>
+                    </>
+                )}
+
+                {vorgang.initiatoren && vorgang.initiatoren.length > 0 && (
+                    <>
+                        <dt>Initiatoren</dt>
+                        <dd>
+                            <div class="initiators-compact">
+                                {/* Autor model: organisation is required, person is optional */}
+                                {vorgang.initiatoren.map(init => init.person || init.organisation).filter(Boolean).join(', ')}
+                            </div>
+                        </dd>
+                    </>
+                )}
+            </dl>
+        </section>
+
+        <!-- External Links -->
+        {vorgang.links && vorgang.links.length > 0 && (
+            <section class="detail-section">
+                <h2>Externe Links</h2>
+                <ul class="link-list">
+                    {vorgang.links.map(link => (
+                        <li>
+                            <a href={link} target="_blank" rel="noopener noreferrer" class="external-link">
+                                {new URL(link).hostname}
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5 1.5L1.5 10.5M10.5 1.5H4.5M10.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        )}
+
+        <!-- Summary -->
+        {vorgang.zusammenfassung && (
+            <section class="detail-section">
+                <h2>Zusammenfassung</h2>
+                <div class="summary-text">
+                    {vorgang.zusammenfassung}
+                </div>
+            </section>
+        )}
+
+        <!-- Timeline with integrated documents -->
+        {vorgang.stationen && vorgang.stationen.length > 0 && (
+            <section class="detail-section">
+                <StationTimeline
+                    stationen={vorgang.stationen}
+                    dokumente={vorgang.dokumente}
+                />
+            </section>
+        )}
+
+        <!-- Lobby Register -->
+        {vorgang.lobbyregister && vorgang.lobbyregister.length > 0 && (
+            <section class="detail-section">
+                <h2>Lobbyregister-Einträge</h2>
+                <p class="section-intro">{vorgang.lobbyregister.length} Einträge im Transparenzregister</p>
+                <ul class="lobby-list">
+                    {vorgang.lobbyregister.map(entry => (
+                        <li class="lobby-item">
+                            <div class="lobby-content">
+                                {entry.organisation && <strong class="lobby-org">{entry.organisation}</strong>}
+                                {entry.beschreibung && <p class="lobby-desc">{entry.beschreibung}</p>}
+                                {entry.datum && <span class="lobby-date">Eingetragen: {entry.datum}</span>}
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        )}
+    </div>
+</VorgangLayout>
+
+<style>
+    .vorgang-details {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+
+    .detail-section {
+        background: white;
+    }
+
+    .detail-section h2 {
+        font-size: 1.5rem;
+        margin: 0 0 var(--spacing-md);
+        color: var(--color-text);
+        border-bottom: 2px solid var(--color-primary);
+        padding-bottom: var(--spacing-sm);
+    }
+
+    .section-intro {
+        margin: 0 0 var(--spacing-md);
+        color: var(--color-text-light);
+        font-size: 0.95rem;
+    }
+
+    /* Metadata Box */
+    .metadata-box {
+        background: var(--color-bg-alt);
+        border-left: 4px solid var(--color-primary);
+        padding: var(--spacing-lg);
+        border-radius: var(--border-radius);
+    }
+
+    .metadata-grid {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--spacing-sm) var(--spacing-lg);
+        margin: 0;
+    }
+
+    .metadata-grid dt {
+        font-weight: 600;
+        color: var(--color-text);
+    }
+
+    .metadata-grid dd {
+        margin: 0;
+        color: var(--color-text-light);
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: var(--border-radius);
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .badge-important {
+        background: #d32f2f;
+        color: white;
+    }
+
+    .id-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .id-list li {
+        font-size: 0.9rem;
+    }
+
+    .id-list strong {
+        color: var(--color-text);
+        margin-right: var(--spacing-xs);
+    }
+
+    .initiators-compact {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+
+    /* External Links */
+    .link-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .external-link {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-sm) var(--spacing-md);
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: all 0.2s ease;
+        font-size: 0.95rem;
+    }
+
+    .external-link:hover {
+        background: white;
+        border-color: var(--color-primary);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .external-link svg {
+        flex-shrink: 0;
+    }
+
+    /* Summary */
+    .summary-text {
+        line-height: 1.8;
+        color: var(--color-text);
+        font-size: 1.05rem;
+    }
+
+    /* Lobby Register */
+    .lobby-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .lobby-item {
+        padding: var(--spacing-md);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        border-left: 4px solid #ff9800;
+    }
+
+    .lobby-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .lobby-org {
+        font-size: 1.1rem;
+        color: var(--color-text);
+    }
+
+    .lobby-desc {
+        margin: 0;
+        color: var(--color-text-light);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .lobby-date {
+        font-size: 0.85rem;
+        color: var(--color-text-light);
+        font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+        .detail-section h2 {
+            font-size: 1.25rem;
+        }
+
+        .summary-text {
+            font-size: 1rem;
+        }
+
+        .metadata-grid {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xs);
+        }
+
+        .metadata-grid dt {
+            font-weight: 700;
+            margin-top: var(--spacing-sm);
+        }
+
+        .metadata-grid dt:first-child {
+            margin-top: 0;
+        }
+    }
+</style>

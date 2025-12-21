@@ -1,0 +1,37 @@
+{
+  "api_id": "0198aecd-6af2-7182-b13e-8623f0580bb1",
+  "typ": "stellungnahme",
+  "titel": "Offizieller Titel des Dokuments",
+  "volltext": "Zur optimalen Anzeige dieses PDF-Portfolios sollte es in Acrobat oder Adobe Reader ab Version X geöffnet werden. Adobe Reader jetzt herunterladen",
+  "zp_modifiziert": "2024-03-04T09:10:26Z",
+  "zp_referenz": "2023-09-30T22:00:00Z",
+  "zp_erstellt": "2024-03-04T09:10:16Z",
+  "link": "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Gesetzesmaterial/0000001484/0000000009.pdf",
+  "hash": "b9dffe0aebd8402dc352eb0dd850f773208b868346c8aecc761d413dd36d4de5",
+  "meinung": 4,
+  "schlagworte": [
+    "gesetz",
+    "pflichten",
+    "rechte",
+    "regelungen",
+    "schutz",
+    "strafen",
+    "umwelt",
+    "verantwortlichkeiten",
+    "verbraucher",
+    "verfahren"
+  ],
+  "autoren": [
+    {
+      "organisation": "Landes-Eltern-Vereinigung der Gymnasien in Bayern e.V.",
+      "lobbyregister": "https://www.bayern.landtag.de/lobbyregister/lobbyregister-aktiv/?tx_solr%5Bq%5D=DEBYLT01F0"
+    },
+    {
+      "organisation": "Musterinstitution"
+    },
+    {
+      "person": "Max Mustermann",
+      "organisation": "Musterorganisation"
+    }
+  ]
+}

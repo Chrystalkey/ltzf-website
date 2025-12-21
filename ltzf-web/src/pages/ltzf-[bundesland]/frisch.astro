@@ -1,0 +1,135 @@
+---
+/**
+ * Frisch Page
+ * Shows recently added/updated legislative items
+ */
+import LtzfLayout from '@layouts/LtzfLayout.astro';
+import VorgangCard from '@components/VorgangCard.astro';
+import { getAllVorgaenge, getLastStation } from '@lib/data-fetcher.js';
+import { BUNDESLAENDER, getStateCodes, getFederalCodes } from '@lib/constants.js';
+
+export async function getStaticPaths() {
+    const allCodes = [...getStateCodes(), ...getFederalCodes().filter(c => c !== 'BT')];
+
+    return allCodes.map(code => ({
+        params: { bundesland: code }
+    }));
+}
+
+const { bundesland } = Astro.params;
+
+if (!BUNDESLAENDER[bundesland]) {
+    return Astro.redirect('/404');
+}
+
+const land = BUNDESLAENDER[bundesland];
+
+// Fetch vorgänge and filter for recent items based on last station's zp_start (last 14 days)
+const vorgaengeRaw = await getAllVorgaenge({ parlament: bundesland });
+const vorgaenge = Array.isArray(vorgaengeRaw) ? vorgaengeRaw : [];
+
+const fourteenDaysAgo = new Date();
+fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
+
+const recentVorgaenge = vorgaenge
+    .filter(vg => {
+        const lastStation = getLastStation(vg);
+        const lastStationDate = new Date(lastStation?.zp_start || 0);
+        return lastStationDate > fourteenDaysAgo;
+    })
+    .sort((a, b) => {
+        const lastStationA = getLastStation(a);
+        const lastStationB = getLastStation(b);
+        const dateA = new Date(lastStationA?.zp_start || 0);
+        const dateB = new Date(lastStationB?.zp_start || 0);
+        return dateB - dateA;
+    });
+
+console.log(`[${bundesland} Frisch] Found ${recentVorgaenge.length} recent items (last 14 days)`);
+---
+
+<LtzfLayout
+    title={`Frisch - ${land.name}`}
+    description={`Kürzlich aktualisierte Gesetzesvorhaben im ${land.fullName}`}
+    bundeslandCode={bundesland}
+    currentPage="frisch"
+>
+    <div class="page-content">
+        <header class="page-header">
+            <h1>Frisch</h1>
+            <p class="page-description">
+                Gesetzesvorhaben, die in den letzten 14 Tagen aktualisiert wurden
+            </p>
+        </header>
+
+        <section class="section">
+            <h2>Letzte 14 Tage ({recentVorgaenge.length})</h2>
+
+            {recentVorgaenge.length > 0 ? (
+                <div class="vorgang-list">
+                    {recentVorgaenge.map((vorgang) => (
+                        <div class="vorgang-item">
+                            <VorgangCard vorgang={vorgang} />
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div class="empty-state">
+                    <p>Keine kürzlich aktualisierten Vorgänge gefunden.</p>
+                </div>
+            )}
+        </section>
+    </div>
+</LtzfLayout>
+
+<style>
+    .page-header {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin: 0 0 var(--spacing-sm);
+        color: var(--color-primary);
+    }
+
+    .page-description {
+        font-size: 1.1rem;
+        color: var(--color-text-light);
+        margin: 0;
+    }
+
+    .section {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .section h2 {
+        font-size: 1.75rem;
+        margin: 0 0 var(--spacing-lg);
+        color: var(--color-text);
+    }
+
+    .vorgang-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: var(--spacing-xl);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        color: var(--color-text-light);
+    }
+
+    @media (max-width: 768px) {
+        .page-header h1 {
+            font-size: 2rem;
+        }
+
+        .vorgang-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

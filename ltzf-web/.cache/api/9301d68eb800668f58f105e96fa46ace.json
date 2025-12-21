@@ -1,0 +1,187 @@
+{
+  "api_id": "7f3b5fb1-efde-421f-8019-9c27a907a396",
+  "titel": "Gesetzentwurf der Staatsregierung über die Feststellung des Haushaltsplans des Freistaates Bayern für die Haushaltsjahre 2024 und 2025  (Haushaltsgesetz 2024/2025 - HG 2024/2025)",
+  "kurztitel": "Gesetzentwurf der Staatsregierung über die Feststellung des Haushaltsplans des Freistaates Bayern für die Haushaltsjahre 2024 und 2025  (Haushaltsgesetz 2024/2025 - HG 2024/2025)",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/412",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153930",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000000001/0000000426.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aed1-d057-7cb3-a729-acd7b601d206",
+      "zp_start": "2024-02-18T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:40:42.706458Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153930",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aed1-d058-78b1-a62a-1a5eb0fcbe2a"
+      ]
+    },
+    {
+      "api_id": "0198aed1-d068-7e81-af76-a66ec8064a98",
+      "zp_start": "2024-02-26T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:40:42.706458Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153930",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-73e6-70a3-bc50-fb8e6974d068"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_582/meta_vod_46759.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aed1-d06b-75a3-a560-821e09836f6c",
+      "zp_start": "2024-04-07T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:40:42.706458Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Staatshaushalt und Finanzfragen"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153930",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aed1-d074-7df1-8e02-ba484442c5a9",
+        "0198aed1-d09a-7ba3-aa5f-a6b5f0d492b6",
+        "0198aed1-d0a7-7ec2-b31e-48b622aea1a8",
+        "0198aed1-d071-7a23-84e3-dee3c264f974",
+        "0198aed1-d07d-7481-baef-64546782c332",
+        "0198aed1-d06c-7362-88e6-927fc783b694",
+        "0198aed1-d0ad-7643-9880-7461c619bd0d",
+        "0198aed1-d09d-7891-9c5e-5501330266bd",
+        "0198aed1-d077-7653-adab-aed9840e916f",
+        "0198aed1-d083-79f1-b0f7-032156ccbce4",
+        "0198aed1-d092-70f2-b01e-a4224d7fd6ae",
+        "0198aed1-d095-7061-855a-0209c6c5f673",
+        "0198aed1-d0b1-7801-a0e3-9728f33261a0",
+        "0198aed1-d0a3-7d02-90b5-dd2634df2c9b",
+        "0198aed1-d089-7741-ac27-78ac6ae4b735",
+        "0198aed1-d06e-7172-a32b-7b0728396a5e",
+        "0198aed1-d0b4-7240-ba6d-fc83ac235868"
+      ]
+    },
+    {
+      "api_id": "0198aed1-d0b9-77a0-8803-59d852c8486c",
+      "zp_start": "2024-05-15T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:40:42.706458Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153930",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aed1-d0b4-7240-ba6d-fc83ac235868"
+      ]
+    },
+    {
+      "api_id": "0198aed1-d0bd-7793-b06c-a5cd29a3fd1e",
+      "zp_start": "2024-06-03T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:40:42.706458Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153930",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 2,
+      "dokumente": [
+        "0198aed1-d0f6-7b31-b976-6b4be8749d34",
+        "0198aed1-d0fc-77f0-9b95-b0bad8fee1ed",
+        "0198aed1-d153-7d83-99bf-948ce3bff9f9",
+        "0198aed1-d0ff-76c1-8f14-a63b95e0aca5",
+        "0198aed1-d156-7491-b190-c3a42aff9b94",
+        "0198aed1-d178-74b0-b86d-f393540a53db",
+        "0198aed1-d14c-79c2-af05-f1215c060f14",
+        "0198aed1-d14e-7b90-b2e1-514f581f7ec9",
+        "0198aed1-d15b-7940-a352-f4c819cd6129",
+        "0198aed1-d151-7320-8bfb-5de6d091b5ed",
+        "0198aed1-d0f9-7630-b921-bed233077048",
+        "0198aed1-d15d-7690-8baa-46d56bc60eb1",
+        "0198aed1-d17d-7353-ae3d-f05f01c76202",
+        "0198aed1-d102-7c11-b7ee-1ad40bc2db08",
+        "0198aed1-d158-7c73-83ad-490a1c5aac96",
+        "0198aed1-d17a-74c1-8eca-be9fb8a54e9f",
+        "0198aed1-d180-7f71-b62b-5096ac2eac81",
+        "0198aed1-d0c0-7890-b719-c2b52a1a5d2f",
+        "0198aed1-d0c4-7ff0-9ead-0ab544da6ee5",
+        "0198aed1-d0dd-7591-8158-21b7fd1d7931",
+        "0198aed1-d0e6-72a0-8bff-f19bda88de4c",
+        "0198aed1-d0ec-7b81-9d3a-0e58433fd255",
+        "0198aed1-d106-76d0-9460-8654072b36f7",
+        "0198aed1-d10e-7630-83bb-bb597d41f1dc",
+        "0198aed1-d115-7de1-939c-7ce3cb82e467",
+        "0198aed1-d11f-7142-a9f9-a64ecfb3fa81",
+        "0198aed1-d124-7a43-84ce-35a1ec7a8afb",
+        "0198aed1-d133-7011-a895-cb3e7b257834",
+        "0198aed1-d139-7dc1-9fdd-28eb0f20e379",
+        "0198aed1-d147-73b1-a5da-3158b759e033",
+        "0198aed1-d160-7a82-85fe-4055bca9fd6e",
+        "0198aed1-d16d-7a63-ad0c-5c19ae0102c7",
+        "0198aecd-73ff-7512-842a-7fe3d4621129"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_589/meta_vod_47321.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_589/meta_vod_47323.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_589/meta_vod_47324.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_589/meta_vod_47325.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_590/meta_vod_47327.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_590/meta_vod_47328.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_590/meta_vod_47329.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_590/meta_vod_47330.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_590/meta_vod_47331.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_590/meta_vod_47332.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_590/meta_vod_47333.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_590/meta_vod_47334.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_591/meta_vod_47335.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_591/meta_vod_47336.json&startId=1",
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_591/meta_vod_47337.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aed1-d185-7723-a1f1-b5d014c608f2",
+      "zp_start": "2024-06-27T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:40:42.706458Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153930",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecd-4e5e-7bc0-9d5f-a0bc1a30ea05"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "api_id": "f586d1ab-e8d6-4d46-b2b4-a5088065b79a",
+  "titel": "Gesetzentwurf Gesetz über das Beflaggen öffentlicher Gebäude (Bayerisches Beflaggungsgesetz - BayBeFlagG)",
+  "kurztitel": "Gesetzentwurf Gesetz über das Beflaggen öffentlicher Gebäude (Bayerisches Beflaggungsgesetz - BayBeFlagG)",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6689",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160456",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005500/0000005865.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katrin Ebner-Steiner",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Christoph Maier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "(MSc) Martin Böhm",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Richard Graupner",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Johannes Meier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Markus Walbrunn",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ulrich Singer",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ferdinand Mang",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Benjamin Nolte",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Harald Meußgeier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Gerd Mannes",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Dieter Arnold",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Oskar Atzinger",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Jörg Baumann",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Franz Bergmüller",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Rene Dierkes",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Christin Gmelch",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Daniel Halemba",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Martin Huber",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Andreas Jurca",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Florian Köhler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Oskar Lipp",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Stefan Löw",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Roland Magerl",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Johann Müller",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Elena Roon",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Franz Schmid",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ralf Stadler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ramona Storm",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Markus Striedl",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Matthias Vogler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Andreas Winhart",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "organisation": "Alternative für Deutschland (AfD)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aec7-d964-7f51-ab5b-421b01540b81",
+      "zp_start": "2025-05-13T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:49.657854Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160456",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 4,
+      "dokumente": [
+        "0198aec7-d965-7991-bee4-7a68cf1a51de"
+      ]
+    },
+    {
+      "api_id": "0198aec7-d972-7ea2-b6e3-6aa34d5ea52a",
+      "zp_start": "2025-06-04T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:49.657854Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160456",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aec7-d973-7ca1-8f16-beff1ff17e39"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_623/meta_vod_50054.json&startId=1"
+      ]
+    }
+  ]
+}

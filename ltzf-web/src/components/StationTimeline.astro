@@ -1,0 +1,412 @@
+---
+/**
+ * StationTimeline - Visual timeline of legislative stages (Stationen)
+ * Shows the progression of a legislative process through its stages
+ */
+import { getStationstypLabel, formatDate, getDokumenttypLabel } from '@lib/constants.js';
+
+interface Props {
+    stationen: any[]; // Array of Station objects from API
+    dokumente?: any[]; // Array of fetched Dokument objects
+}
+
+const { stationen = [], dokumente = [] } = Astro.props;
+
+// Create a map of document ID to document object for quick lookup
+const dokumentMap = new Map();
+if (dokumente) {
+    dokumente.forEach(doc => {
+        if (doc && doc.api_id) {
+            dokumentMap.set(doc.api_id, doc);
+        }
+    });
+}
+
+// Helper to get document object from ID
+function getDokument(docIdOrObj) {
+    if (typeof docIdOrObj === 'string') {
+        return dokumentMap.get(docIdOrObj);
+    }
+    return docIdOrObj;
+}
+
+// Sort stations by date (oldest first)
+const sortedStationen = [...stationen].sort((a, b) => {
+    if (!a.datum) return -1;
+    if (!b.datum) return 1;
+    return new Date(a.datum).getTime() - new Date(b.datum).getTime();
+});
+---
+
+<div class="station-timeline">
+    <h2 class="timeline-title">Gesetzgebungsverlauf</h2>
+
+    {sortedStationen.length === 0 ? (
+        <p class="no-stations">Keine Stationen verfügbar</p>
+    ) : (
+        <ol class="timeline-list">
+            {sortedStationen.map((station, index) => {
+                const isLast = index === sortedStationen.length - 1;
+                const stationLabel = getStationstypLabel(station.typ);
+
+                return (
+                    <li class={`timeline-item ${isLast ? 'current' : ''}`}>
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                            {!isLast && <div class="marker-line"></div>}
+                        </div>
+
+                        <div class="timeline-content">
+                            <div class="station-header">
+                                <h3 class="station-type">{stationLabel}</h3>
+                                {station.datum && (
+                                    <time datetime={station.datum} class="station-date">
+                                        {formatDate(station.datum)}
+                                    </time>
+                                )}
+                            </div>
+
+                            {station.gremium && (
+                                <p class="station-gremium">
+                                    <strong>Gremium:</strong> {station.gremium.name || station.gremium}
+                                </p>
+                            )}
+
+                            {station.titel && (
+                                <p class="station-title">{station.titel}</p>
+                            )}
+
+                            {station.bemerkung && (
+                                <p class="station-note">{station.bemerkung}</p>
+                            )}
+
+                            {/* Documents */}
+                            {station.dokumente && station.dokumente.length > 0 && (
+                                <div class="station-documents collapsible" data-collapsed="false">
+                                    <button class="collapsible-header" type="button" aria-expanded="true">
+                                        <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h4>Dokumente ({station.dokumente.length})</h4>
+                                    </button>
+                                    <ul class="document-links collapsible-content">
+                                        {station.dokumente.map(docRef => {
+                                            const doc = getDokument(docRef);
+                                            if (!doc) return null;
+
+                                            const docType = getDokumenttypLabel(doc.typ) || getDokumenttypLabel(doc.doktyp) || 'Dokument';
+                                            const docNumber = doc.drucksnr || doc.api_id.slice(0, 8);
+
+                                            return (
+                                                <li>
+                                                    <a href={`/dokument/${doc.api_id}`} class="document-link">
+                                                        {docType}: {docNumber}
+                                                    </a>
+                                                </li>
+                                            );
+                                        })}
+                                    </ul>
+                                </div>
+                            )}
+
+                            {/* Stellungnahmen (Opinions/Statements) */}
+                            {station.stellungnahmen && station.stellungnahmen.length > 0 && (
+                                <div class="station-stellungnahmen collapsible" data-collapsed="false">
+                                    <button class="collapsible-header" type="button" aria-expanded="true">
+                                        <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <h4>Stellungnahmen ({station.stellungnahmen.length})</h4>
+                                    </button>
+                                    <ul class="document-links collapsible-content">
+                                        {station.stellungnahmen.map(stlnRef => {
+                                            const stln = getDokument(stlnRef);
+                                            if (!stln) return null;
+
+                                            const stlnType = getDokumenttypLabel(stln.typ) || getDokumenttypLabel(stln.doktyp) || 'Stellungnahme';
+                                            const stlnNumber = stln.drucksnr || stln.api_id.slice(0, 8);
+
+                                            return (
+                                                <li>
+                                                    <a href={`/dokument/${stln.api_id}`} class="document-link stellungnahme-link">
+                                                        {stlnType}: {stlnNumber}
+                                                    </a>
+                                                </li>
+                                            );
+                                        })}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </li>
+                );
+            })}
+        </ol>
+    )}
+</div>
+
+<style>
+    .station-timeline {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-lg);
+    }
+
+    .timeline-title {
+        margin: 0 0 var(--spacing-lg);
+        font-size: 1.5rem;
+        color: var(--color-text);
+    }
+
+    .no-stations {
+        color: var(--color-text-light);
+        font-style: italic;
+    }
+
+    .timeline-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: var(--spacing-md);
+        position: relative;
+    }
+
+    .timeline-item:not(:last-child) {
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .timeline-marker {
+        flex-shrink: 0;
+        width: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .marker-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--color-border);
+        border: 3px solid white;
+        box-shadow: 0 0 0 2px var(--color-border);
+        position: relative;
+        z-index: 1;
+    }
+
+    .timeline-item.current .marker-dot {
+        background: var(--color-primary);
+        box-shadow: 0 0 0 2px var(--color-primary);
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.7;
+        }
+    }
+
+    .marker-line {
+        width: 2px;
+        flex: 1;
+        background: var(--color-border);
+        margin-top: 4px;
+    }
+
+    .timeline-content {
+        flex: 1;
+        padding-top: 0;
+    }
+
+    .station-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    .station-type {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-text);
+    }
+
+    .station-date {
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .station-gremium {
+        margin: 0 0 var(--spacing-xs);
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+
+    .station-gremium strong {
+        color: var(--color-text);
+    }
+
+    .station-title {
+        margin: var(--spacing-xs) 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: var(--color-text);
+    }
+
+    .station-note {
+        margin: var(--spacing-xs) 0;
+        font-size: 0.9rem;
+        font-style: italic;
+        color: var(--color-text-light);
+        background: var(--color-bg-alt);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--border-radius);
+    }
+
+    .station-documents,
+    .station-stellungnahmen {
+        margin-top: var(--spacing-sm);
+    }
+
+    .collapsible-header {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: all 0.2s ease;
+    }
+
+    .collapsible-header:hover {
+        opacity: 0.7;
+    }
+
+    .collapsible-header h4 {
+        margin: 0;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--color-text);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .chevron {
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+        color: var(--color-text-light);
+    }
+
+    .collapsible[data-collapsed="true"] .chevron {
+        transform: rotate(-90deg);
+    }
+
+    .collapsible-content {
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.2s ease;
+        max-height: 1000px;
+        opacity: 1;
+        margin-top: var(--spacing-xs);
+    }
+
+    .collapsible[data-collapsed="true"] .collapsible-content {
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+    }
+
+    .document-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .document-link {
+        display: inline-block;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        color: var(--color-primary);
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    .document-link:hover {
+        background: white;
+        border-color: var(--color-primary);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .stellungnahme-link {
+        border-left: 3px solid #ff9800;
+    }
+
+    .stellungnahme-link:hover {
+        border-left-color: #f57c00;
+    }
+
+    @media (max-width: 768px) {
+        .station-timeline {
+            padding: var(--spacing-md);
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+        }
+
+        .timeline-marker {
+            width: 20px;
+        }
+
+        .marker-dot {
+            width: 12px;
+            height: 12px;
+        }
+
+        .station-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
+
+<script>
+    // Handle collapsible sections
+    document.addEventListener('DOMContentLoaded', () => {
+        const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+
+        collapsibleHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const container = header.closest('.collapsible');
+                const isCollapsed = container.dataset.collapsed === 'true';
+
+                // Toggle collapsed state
+                container.dataset.collapsed = isCollapsed ? 'false' : 'true';
+                header.setAttribute('aria-expanded', isCollapsed ? 'true' : 'false');
+            });
+        });
+    });
+</script>

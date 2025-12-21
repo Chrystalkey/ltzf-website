@@ -1,0 +1,131 @@
+{
+  "api_id": "10bea35a-fda5-47c0-a8c5-cc649170a060",
+  "titel": "Gesetzentwurf der Staatsregierung zur Erleichterung des Ehrenamts",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Erleichterung des Ehrenamts",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/3022",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156761",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000002000/0000002370.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-4311-76d1-b4a7-5388ac8ce2aa",
+      "zp_start": "2024-07-30T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.397361Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156761",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-4312-7ae3-ad5e-c01c1c044df6"
+      ],
+      "stellungnahmen": [
+        "0198aecd-4317-7d01-ade1-29b738729dcd",
+        "0198aecd-432e-7161-9ff0-ff9ab399679b",
+        "0198aecd-4341-7142-9e92-888517485f2e",
+        "0198aecd-4354-7060-ad54-c3ee3e2cd884",
+        "0198aecd-436a-7e02-be91-ae825b357a8d",
+        "0198aecd-4380-7fe3-b0ec-a0b5f0cd2fa9"
+      ]
+    },
+    {
+      "api_id": "0198aecd-439d-7320-89e0-ea223f11ae7d",
+      "zp_start": "2024-09-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.397361Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156761",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-439e-7373-8243-53be3b4cba62"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_599/meta_vod_47892.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-43a3-7042-8815-4d20134d9122",
+      "zp_start": "2024-11-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.397361Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Kommunale Fragen, Innere Sicherheit und Sport"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156761",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-43a3-7042-8815-4d367bc80a7f"
+      ]
+    },
+    {
+      "api_id": "0198aecd-43a5-7723-8b11-d8fc4f4088c6",
+      "zp_start": "2024-11-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.397361Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156761",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-43a3-7042-8815-4d367bc80a7f"
+      ]
+    },
+    {
+      "api_id": "0198aecd-43a7-7842-80d1-65c7e4a745b8",
+      "zp_start": "2024-12-02T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.397361Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156761",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-43ad-7283-8524-a5cbde26bfb8",
+        "0198aecd-43a8-7e33-9765-e9dd85644b63"
+      ]
+    },
+    {
+      "api_id": "0198aecd-43b1-7591-b2e9-2abf8720a6eb",
+      "zp_start": "2024-12-15T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.397361Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156761",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecd-3403-7471-8d7f-b19f1f140a3f"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "api_id": "ccaee920-c9e6-4f0c-82b7-daa90087a68e",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Kinderbildungs- und -betreuungsgesetzes",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Kinderbildungs- und -betreuungsgesetzes",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/3816",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157573",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000002500/0000002951.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-6707-73a2-b0de-9a820ee09280",
+      "zp_start": "2024-11-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:53.604488Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157573",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-6708-7972-8e86-9e58be802e83"
+      ]
+    },
+    {
+      "api_id": "0198aecd-670d-71a1-a35a-1a7be14cce24",
+      "zp_start": "2024-11-12T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:53.604488Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157573",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-670e-7891-904c-074320a3e890"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_604/meta_vod_48323.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6716-7b41-9004-6c783d707f86",
+      "zp_start": "2025-02-05T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:53.604488Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Arbeit und Soziales, Jugend und Familie"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157573",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-6717-7ab2-9d64-2f50a8a013a9"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6719-7261-b5c1-c30e308d4c6b",
+      "zp_start": "2025-02-05T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:53.604488Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157573",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-6717-7ab2-9d64-2f50a8a013a9"
+      ]
+    },
+    {
+      "api_id": "0198aecd-671b-7530-bd4c-f97957b5af70",
+      "zp_start": "2025-02-18T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:53.604488Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157573",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-6720-72d3-a08c-ac037aaec4d3",
+        "0198aecd-671c-7331-8a01-6402e36645b4"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6725-7d41-a5d5-8a7b113ef92a",
+      "zp_start": "2025-02-27T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:53.604488Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157573",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecd-6726-7983-ace6-3f0f0bd97817"
+      ]
+    }
+  ]
+}

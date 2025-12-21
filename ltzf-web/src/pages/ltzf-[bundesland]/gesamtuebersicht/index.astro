@@ -1,0 +1,188 @@
+---
+/**
+ * Bundesland Gesamtübersicht Page
+ * Complete listing of all Vorgänge for a specific Bundesland with search/filter
+ */
+import LtzfLayout from '@layouts/LtzfLayout.astro';
+import VorgangCard from '@components/VorgangCard.astro';
+import SearchFilter from '@components/SearchFilter.astro';
+import Pagination from '@components/Pagination.astro';
+import { getAllVorgaenge } from '@lib/data-fetcher.js';
+import { BUNDESLAENDER, getStateCodes, getFederalCodes, VORGANGSTYP_LABELS } from '@lib/constants.js';
+
+export async function getStaticPaths() {
+    const allCodes = [...getStateCodes(), ...getFederalCodes().filter(c => c !== 'BT')];
+
+    return allCodes.map(code => ({
+        params: { bundesland: code }
+    }));
+}
+
+const { bundesland } = Astro.params;
+
+if (!BUNDESLAENDER[bundesland]) {
+    return Astro.redirect('/404');
+}
+
+const land = BUNDESLAENDER[bundesland];
+
+// Fetch all vorgänge for this Bundesland
+const vorgaengeRaw = await getAllVorgaenge({ parlament: bundesland });
+const vorgaenge = Array.isArray(vorgaengeRaw) ? vorgaengeRaw : [];
+
+console.log(`[${bundesland} Gesamtübersicht] Found ${vorgaenge.length} vorgänge`);
+
+// Sort by modification date (newest first)
+const sortedVorgaenge = vorgaenge.sort((a, b) => {
+    const dateA = new Date(a.zp_modifiziert || 0);
+    const dateB = new Date(b.zp_modifiziert || 0);
+    return dateB - dateA;
+});
+
+// Count by type for filters
+const typeCount = {};
+for (const vg of vorgaenge) {
+    const typ = vg.vorgangstyp || 'sonstig';
+    typeCount[typ] = (typeCount[typ] || 0) + 1;
+}
+
+// Build filter options
+const filterOptions = [
+    {
+        name: 'vorgangstyp',
+        label: 'Vorgangstyp',
+        options: Object.entries(typeCount)
+            .sort(([, a], [, b]) => b - a)
+            .map(([typ, count]) => ({
+                value: VORGANGSTYP_LABELS[typ] || typ,
+                label: `${VORGANGSTYP_LABELS[typ] || typ} (${count})`
+            }))
+    }
+];
+
+// Breadcrumbs
+const breadcrumbs = [
+    { label: land.name, href: `/ltzf-${bundesland}` },
+    { label: 'Gesamtübersicht' }
+];
+---
+
+<LtzfLayout
+    bundeslandCode={bundesland}
+    currentPage="gesamt"
+    breadcrumbs={breadcrumbs}
+>
+    <!-- Page Header -->
+    <div class="page-intro">
+        <h2>Gesamtübersicht</h2>
+        <p>
+            Alle {vorgaenge.length} erfassten Gesetzesvorhaben für {land.fullName}
+        </p>
+    </div>
+
+    <!-- Search and Filter -->
+    <section class="section">
+        <SearchFilter
+            placeholder="Gesetzesvorhaben durchsuchen..."
+            filters={filterOptions}
+            showSearch={true}
+        />
+    </section>
+
+    <!-- Vorgänge List -->
+    <section class="section">
+        <div class="vorgang-list filterable-container searchable-container">
+            {sortedVorgaenge.map((vorgang) => (
+                <div
+                    class="vorgang-item filterable-item searchable-item"
+                    data-vorgangstyp={VORGANGSTYP_LABELS[vorgang.vorgangstyp] || vorgang.vorgangstyp}
+                    data-wahlperiode={vorgang.wahlperiode}
+                >
+                    <VorgangCard vorgang={vorgang} />
+                </div>
+            ))}
+        </div>
+
+        {sortedVorgaenge.length === 0 && (
+            <div class="empty-state">
+                <p>Keine Gesetzesvorhaben gefunden.</p>
+            </div>
+        )}
+    </section>
+</LtzfLayout>
+
+<style>
+    .page-intro {
+        margin-bottom: var(--spacing-xl);
+        padding-bottom: var(--spacing-lg);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .page-intro h2 {
+        font-size: 2rem;
+        margin: 0 0 var(--spacing-sm);
+        color: var(--color-text);
+    }
+
+    .page-intro p {
+        font-size: 1.1rem;
+        color: var(--color-text-light);
+        margin: 0;
+    }
+
+    .section {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .vorgang-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .vorgang-item {
+        transition: opacity 0.2s ease;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: var(--spacing-xl);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        color: var(--color-text-light);
+    }
+
+    @media (max-width: 768px) {
+        .page-intro h2 {
+            font-size: 1.5rem;
+        }
+
+        .vorgang-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script>
+    // Initialize filtering and search
+    import { initFilter } from '@/scripts/filter.js';
+    import { initSearch } from '@/scripts/search.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initFilter({
+            containerSelector: '.filterable-container',
+            itemSelector: '.filterable-item',
+            filterNames: ['vorgangstyp'],
+            resultCountId: 'result-count',
+            searchInputId: 'search-input'
+        });
+
+        initSearch({
+            inputId: 'search-input',
+            containerSelector: '.searchable-container',
+            itemSelector: '.searchable-item',
+            itemType: 'vorgang',
+            resultCountId: 'result-count'
+        });
+    });
+</script>

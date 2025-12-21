@@ -1,0 +1,401 @@
+{
+  "api_id": "848af4b6-eb1d-4855-b695-1eac013ae237",
+  "titel": "Gesetzentwurf zur Änderung des Kommunalabgabengesetzes",
+  "kurztitel": "Gesetzentwurf zur Änderung des Kommunalabgabengesetzes",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/2598",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156232",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000002000/0000002130.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Norbert Dünkel",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Stefan Meyer",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Michael Hofmann",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Martin Wagle",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Petra Guttenberger",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Konrad Baur",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Barbara Becker",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Dr. Andrea Behr",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Dr. Alexander Dietrich",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Leo Dietz",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Holger Dremel",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Jürgen Eberwein",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Dr. Stefan Ebner",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Kristan Freiherr von Waldenfels",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Thorsten Freudenberger",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Sebastian Friesinger",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Dipl.-Verw.Wirt (FH) Alfred Grob",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Josef Heisl",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Petra Therese Högl",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Thomas Holz",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Dr. Gerhard Hopp",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Björn Jungbauer",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Andreas Kaufmann",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Joachim Konrad",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Harald Kühn",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Thomas Pirner",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Helmut Schnotz",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Sascha Schnürer",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Kerstin Schreyer",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Werner Stieglitz",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Martin Stock",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Josef Zellmeier",
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "organisation": "Christlich Soziale Union (CSU)"
+    },
+    {
+      "person": "Florian Streibl",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Felix Locke",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Alexander Hold",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Tobias Beck",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Martin Behringer",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Dr. Martin Brunnhuber",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Susann Enders",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Stefan Frühbeißer",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Johann Groß",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Dipl.-Verw.Wirt (FH) Wolfgang Hauber",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Bernhard Heinisch",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Marina Jakob",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Michael Koller",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Nikolaus Kraus",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Josef Lausch",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Christian Lindinger",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Rainer Ludwig",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Ulrike Müller",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Prof. Dr. Michael Piazolo",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Bernhard Pohl",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Julian Preidl",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Anton Rittel",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Markus Saller",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Martin Scharf",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Werner Schießl",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Gabi Schmidt",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Roswitha Toso",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Dipl.-Kaufmann Roland Weigert",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Jutta Widmann",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Benno Zierer",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Felix Freiherr von Zobel",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "person": "Thomas Zöller",
+      "organisation": "Freie Wähler (FW)"
+    },
+    {
+      "organisation": "Freie Wähler (FW)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-4b56-7420-bf68-f8d681033ba6",
+      "zp_start": "2024-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:46.488309Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156232",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-4b57-7ab2-ad3d-d313b5127a0c"
+      ]
+    },
+    {
+      "api_id": "0198aecd-4b75-7a02-822f-c4a2dd2a1da5",
+      "zp_start": "2024-07-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:46.488309Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156232",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-4b76-7533-81df-b9ea17052dd5"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_595/meta_vod_47615.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-4b7e-71e3-bbbf-cf7624af1129",
+      "zp_start": "2024-11-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:46.488309Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Kommunale Fragen, Innere Sicherheit und Sport"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156232",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-4b7f-7033-9584-685c05aa95f7"
+      ]
+    },
+    {
+      "api_id": "0198aecd-4b82-7c02-a3ec-7233ec152e75",
+      "zp_start": "2024-11-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:46.488309Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156232",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-4b7f-7033-9584-685c05aa95f7"
+      ]
+    },
+    {
+      "api_id": "0198aecd-4b84-7d21-959a-45fbf000a9f3",
+      "zp_start": "2024-11-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:46.488309Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Staatshaushalt und Finanzfragen"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156232",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-4b7f-7033-9584-685c05aa95f7"
+      ]
+    },
+    {
+      "api_id": "0198aecd-4b86-7d02-b410-e9e1d2ab2f0d",
+      "zp_start": "2024-11-27T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:46.488309Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156232",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-4b92-70a0-9ba6-d1779313bd26",
+        "0198aecd-4b87-7f20-957a-346dfc52a724"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_605/meta_vod_48422.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-4bb7-7323-a51d-13cad03dc74c",
+      "zp_start": "2024-12-15T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:46.488309Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156232",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecd-3403-7471-8d7f-b19f1f140a3f"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "api_id": "85067c8c-2376-48bd-b9a1-703b97453ad2",
+  "titel": "Gesetzentwurf zur Änderung des Bayerischen Katastrophenschutzgesetzes   hier: Helfergleichstellung in Bayern",
+  "kurztitel": "Gesetzentwurf zur Änderung des Bayerischen Katastrophenschutzgesetzes   hier: Helfergleichstellung in Bayern",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/5774",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159519",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005000/0000005302.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katharina Schulze",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Johannes Becher",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dipl.-Betriebswirtin (FH) Claudia Köhler",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Ludwig Hartmann",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Jürgen Mistol",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Verena Osgyan",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Tim Pargent",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Stephanie Schuhknecht",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Benjamin Adjei",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Andreas Birzele",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Cemal Bozoğlu",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Max Deisenhofer",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Gülseren Demirel",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Toni Schuberl",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Florian Siekmann",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecc-9ba4-7f12-93ab-341a70c9b47a",
+      "zp_start": "2025-03-12T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:01.534533Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159519",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecc-9ba5-7d71-bec5-6d4e88b78b1a"
+      ],
+      "stellungnahmen": [
+        "0198aecc-9bab-70d0-a252-e4d1a1a863e9",
+        "0198aecc-9bb4-7882-a02e-f0b0a0aeab12",
+        "0198aecc-9bb9-77b1-8f51-ddf593042f1d",
+        "0198aecc-9bc2-7df0-8e06-5eb69383d732",
+        "0198aecc-9bc5-7223-be39-2f1da507d77f"
+      ]
+    },
+    {
+      "api_id": "0198aecc-9bd1-7bb2-a69b-6b947644f809",
+      "zp_start": "2025-03-26T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:01.534533Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159519",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecc-9bd2-7363-ba5d-65df2967d3a3"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_617/meta_vod_49417.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecc-9bd6-7951-9241-625cbb861bf7",
+      "zp_start": "2025-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:01.534533Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Kommunale Fragen, Innere Sicherheit und Sport"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159519",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-9bd7-7f10-8e9a-925a8f475afb"
+      ]
+    },
+    {
+      "api_id": "0198aecc-9bd8-7b72-b6e5-b4e0721e6e7d",
+      "zp_start": "2025-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:01.534533Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Staatshaushalt und Finanzfragen"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159519",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-9bd7-7f10-8e9a-925a8f475afb"
+      ]
+    },
+    {
+      "api_id": "0198aecc-9bd9-7211-a002-0d668426db12",
+      "zp_start": "2025-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:01.534533Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159519",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-9bd7-7f10-8e9a-925a8f475afb"
+      ]
+    },
+    {
+      "api_id": "0198aecc-9bda-7b22-b51b-6091d92e02a4",
+      "zp_start": "2025-07-01T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:01.534533Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159519",
+      "typ": "parl-ablehnung",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecc-9bdf-7411-a2d3-64c1e8ca6100",
+        "0198aecc-9bdb-7f62-b23f-77b25783af73"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_625/meta_vod_50246.json&startId=1"
+      ]
+    }
+  ]
+}

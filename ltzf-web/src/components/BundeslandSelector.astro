@@ -1,0 +1,127 @@
+---
+/**
+ * BundeslandSelector - Dropdown selector for German states
+ * Allows navigation between different Bundesländer
+ */
+import { BUNDESLAENDER, getStateCodes, getFederalCodes } from '@lib/constants.js';
+
+interface Props {
+    currentBundesland?: string;
+    showFederal?: boolean;
+    className?: string;
+}
+
+const {
+    currentBundesland,
+    showFederal = true,
+    className = ''
+} = Astro.props;
+
+const stateCodes = getStateCodes();
+const federalCodes = getFederalCodes();
+---
+
+<div class={`bundesland-selector ${className}`}>
+    <label for="bundesland-select" class="selector-label">
+        Parlament auswählen:
+    </label>
+    <select
+        id="bundesland-select"
+        class="selector-dropdown"
+        onchange="window.location.href = this.value"
+    >
+        <option value="/ltzf-overview">Alle Länder</option>
+
+        {showFederal && (
+            <optgroup label="Bundesebene">
+                {federalCodes.map(code => {
+                    const land = BUNDESLAENDER[code];
+                    const url = code === 'BT' ? '/btzf' : `/ltzf-${code}`;
+                    return (
+                        <option
+                            value={url}
+                            selected={currentBundesland === code}
+                        >
+                            {land.fullName}
+                        </option>
+                    );
+                })}
+            </optgroup>
+        )}
+
+        <optgroup label="Bundesländer">
+            {stateCodes.map(code => {
+                const land = BUNDESLAENDER[code];
+                const url = `/ltzf-${code}`;
+                return (
+                    <option
+                        value={url}
+                        selected={currentBundesland === code}
+                    >
+                        {land.fullName}
+                    </option>
+                );
+            })}
+        </optgroup>
+    </select>
+</div>
+
+<style>
+    .bundesland-selector {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    .selector-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--color-text);
+    }
+
+    .selector-dropdown {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 1rem;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        background: white;
+        color: var(--color-text);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-width: 250px;
+    }
+
+    .selector-dropdown:hover {
+        border-color: var(--color-primary);
+    }
+
+    .selector-dropdown:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    optgroup {
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    option {
+        padding: var(--spacing-xs);
+        font-weight: normal;
+    }
+
+    @media (max-width: 768px) {
+        .bundesland-selector {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .selector-dropdown {
+            width: 100%;
+            min-width: auto;
+        }
+    }
+</style>

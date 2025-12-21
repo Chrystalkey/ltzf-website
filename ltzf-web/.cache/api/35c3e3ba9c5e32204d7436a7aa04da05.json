@@ -1,0 +1,136 @@
+{
+  "api_id": "27a5bb55-d17a-422e-83a0-9c9f3ae69847",
+  "titel": "Gesetzentwurf der Staatsregierung zur Anpassung der Bezüge 2024/2025",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Anpassung der Bezüge 2024/2025",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/1555",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155234",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000001000/0000001481.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-38a8-7931-9785-81fa8e872a02",
+      "zp_start": "2024-04-08T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:41.734334Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155234",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-38a8-7931-9785-8203d8ab0746"
+      ]
+    },
+    {
+      "api_id": "0198aecd-38ae-7630-95c6-6d72ebc28c80",
+      "zp_start": "2024-04-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:41.734334Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155234",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-38ae-7630-95c6-6d8f7748086c"
+      ]
+    },
+    {
+      "api_id": "0198aecd-38b0-7fb0-889a-c10b549a87f2",
+      "zp_start": "2024-06-19T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:41.734334Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Fragen des öffentlichen Dienstes"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155234",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-38b0-7fb0-889a-c1119734bae3"
+      ]
+    },
+    {
+      "api_id": "0198aecd-38b1-7110-b272-d1c617b58acc",
+      "zp_start": "2024-06-19T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:41.734334Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Staatshaushalt und Finanzfragen"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155234",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-38b0-7fb0-889a-c1119734bae3"
+      ]
+    },
+    {
+      "api_id": "0198aecd-38b2-7563-9bbd-e17a5f351276",
+      "zp_start": "2024-06-19T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:41.734334Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155234",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-38b0-7fb0-889a-c1119734bae3"
+      ]
+    },
+    {
+      "api_id": "0198aecd-38b3-7c52-b1ce-f1b0350ab84b",
+      "zp_start": "2024-07-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:41.734334Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155234",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-38b6-72e1-ab43-fc1040f6fa1e",
+        "0198aecd-38b3-7c52-b1ce-f1c054a74f1b"
+      ]
+    },
+    {
+      "api_id": "0198aecd-38bc-73e1-a68a-15f0f03f3f2e",
+      "zp_start": "2024-07-14T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:41.734334Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155234",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecd-38bd-73c3-842e-d4ea786282cf"
+      ]
+    }
+  ]
+}

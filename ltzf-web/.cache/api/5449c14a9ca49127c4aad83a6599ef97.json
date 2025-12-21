@@ -1,0 +1,59 @@
+{
+  "api_id": "a6957ac1-daa6-4d05-b5bb-32e2bc5315d5",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Maßregelvollzugsgesetzes und weiterer Rechtsvorschriften",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Maßregelvollzugsgesetzes und weiterer Rechtsvorschriften",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/7191",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161078",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000006000/0000006189.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aec7-d503-78f0-b165-8a73414db8c9",
+      "zp_start": "2025-06-24T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:48.544293Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161078",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aec7-d504-76e1-8dec-9cfa7ae1fec6"
+      ]
+    },
+    {
+      "api_id": "0198aec7-d50b-77a1-9526-a9a18a32faeb",
+      "zp_start": "2025-07-01T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:48.544293Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161078",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aec7-d50c-7da1-b204-9f47c9659a97"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_625/meta_vod_50236.json&startId=1"
+      ]
+    }
+  ]
+}

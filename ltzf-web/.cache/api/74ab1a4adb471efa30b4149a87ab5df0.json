@@ -1,0 +1,173 @@
+{
+  "api_id": "41260cf0-e095-4506-9f28-bc7ae5a12ca1",
+  "titel": "Gesetzentwurf der Staatsregierung zur Förderung der Bundeswehr in Bayern",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Förderung der Bundeswehr in Bayern",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/1556",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155232",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000001000/0000001484.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-6aeb-7f81-87a1-acbb9907d2e2",
+      "zp_start": "2024-04-08T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:54.599851Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155232",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 6,
+      "dokumente": [
+        "0198aecd-6aec-7e51-93f6-090cee783877"
+      ],
+      "stellungnahmen": [
+        "0198aecd-6af2-7182-b13e-8623f0580bb1",
+        "0198aecd-6b13-7281-a3a8-009943e137db",
+        "0198aecd-6b21-7e93-800f-2ccafdc53e57",
+        "0198aecd-6b25-7d52-a0b3-8dcc181243a6",
+        "0198aecd-6b29-7ff3-a839-2ffdad2fa9ec",
+        "0198aecd-6b36-7db0-a8b5-b520561a1534",
+        "0198aecd-6b3a-7fb1-b30b-0a28f9a527aa",
+        "0198aecd-6b4a-7be1-8fe1-30384251667c",
+        "0198aecd-6b4e-7d70-95c6-e1e36efd5dbc",
+        "0198aecd-6b6b-7670-8a86-b20d52fce04d"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6bc6-7000-9e34-fc5cef227955",
+      "zp_start": "2024-04-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:54.599851Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155232",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-6bc7-7851-8eb3-a52113244a85"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_586/meta_vod_47063.json&startId=1"
+      ],
+      "stellungnahmen": [
+        "0198aecd-6bcc-7422-93d8-6621e933f13e"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6be8-7a50-bce6-e98fc8783c8f",
+      "zp_start": "2024-07-10T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:54.599851Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Bundes- und Europaangelegenheiten sowie regionale Beziehungen"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155232",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-6be8-7a50-bce6-e99031277319"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6bea-78d2-af1f-2b6a6c3946f1",
+      "zp_start": "2024-07-10T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:54.599851Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Wissenschaft und Kunst"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155232",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-6be8-7a50-bce6-e99031277319"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6bec-74d0-b1b1-8242f76fcc19",
+      "zp_start": "2024-07-10T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:54.599851Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Bildung und Kultus"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155232",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-6be8-7a50-bce6-e99031277319"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6bee-7cb0-975d-1cb11259b58c",
+      "zp_start": "2024-07-10T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:54.599851Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155232",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-6be8-7a50-bce6-e99031277319"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6bf0-7d12-a95f-d26055b92589",
+      "zp_start": "2024-07-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:54.599851Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155232",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 7,
+      "dokumente": [
+        "0198aecd-6bf5-7f42-a30f-74d99e04628a",
+        "0198aecd-6bf1-71a0-ba05-cda13ccfd569"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_597/meta_vod_47738.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6bf8-7cf1-8900-85e87154fda4",
+      "zp_start": "2024-07-29T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:54.599851Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=155232",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecd-1591-74a0-9a9e-0de2eaddea55"
+      ]
+    }
+  ]
+}

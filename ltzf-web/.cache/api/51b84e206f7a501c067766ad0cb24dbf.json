@@ -1,0 +1,37 @@
+{
+  "api_id": "0198aecd-6b13-7281-a3a8-009943e137db",
+  "typ": "stellungnahme",
+  "titel": "Offizieller Titel des Dokuments",
+  "volltext": "Zur optimalen Anzeige dieses PDF-Portfolios sollte es in Acrobat oder Adobe Reader ab Version X geöffnet werden. Adobe Reader jetzt herunterladen",
+  "zp_modifiziert": "2024-03-05T12:22:39Z",
+  "zp_referenz": "2023-09-30T22:00:00Z",
+  "zp_erstellt": "2024-03-05T12:22:34Z",
+  "link": "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Gesetzesmaterial/0000001484/0000000010.pdf",
+  "hash": "bbb39abfd5a58436acaf12bf24598cb7f3fd6e9d680ae8c648922710268d9f97",
+  "meinung": 4,
+  "schlagworte": [
+    "gesetz",
+    "pflichten",
+    "rechte",
+    "regelungen",
+    "schutz",
+    "strafen",
+    "umwelt",
+    "verantwortlichkeiten",
+    "verbraucher",
+    "verfahren"
+  ],
+  "autoren": [
+    {
+      "organisation": "Deutscher Hochschulverband (DHV)",
+      "lobbyregister": "https://www.bayern.landtag.de/lobbyregister/lobbyregister-aktiv/?tx_solr%5Bq%5D=DEBYLT0363"
+    },
+    {
+      "organisation": "Musterinstitution"
+    },
+    {
+      "person": "Max Mustermann",
+      "organisation": "Musterorganisation"
+    }
+  ]
+}

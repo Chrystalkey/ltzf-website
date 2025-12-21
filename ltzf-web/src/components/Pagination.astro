@@ -1,0 +1,209 @@
+---
+/**
+ * Pagination - Navigation component for paginated lists
+ */
+interface Props {
+    currentPage: number;
+    totalPages: number;
+    baseUrl: string;
+    maxVisible?: number;
+}
+
+const {
+    currentPage,
+    totalPages,
+    baseUrl,
+    maxVisible = 7
+} = Astro.props;
+
+// Calculate page range to display
+function getPageRange(current: number, total: number, maxVis: number) {
+    if (total <= maxVis) {
+        return Array.from({ length: total }, (_, i) => i + 1);
+    }
+
+    const half = Math.floor(maxVis / 2);
+    let start = Math.max(1, current - half);
+    let end = Math.min(total, start + maxVis - 1);
+
+    if (end - start < maxVis - 1) {
+        start = Math.max(1, end - maxVis + 1);
+    }
+
+    return Array.from({ length: end - start + 1 }, (_, i) => start + i);
+}
+
+const pages = getPageRange(currentPage, totalPages, maxVisible);
+const showFirst = pages[0] > 1;
+const showLast = pages[pages.length - 1] < totalPages;
+
+function getPageUrl(page: number) {
+    return page === 1 ? baseUrl : `${baseUrl}?page=${page}`;
+}
+---
+
+{totalPages > 1 && (
+    <nav class="pagination" aria-label="Pagination">
+        <ul class="pagination-list">
+            <!-- Previous button -->
+            <li>
+                {currentPage > 1 ? (
+                    <a
+                        href={getPageUrl(currentPage - 1)}
+                        class="pagination-link"
+                        aria-label="Vorherige Seite"
+                    >
+                        ‹ Zurück
+                    </a>
+                ) : (
+                    <span class="pagination-link disabled" aria-hidden="true">
+                        ‹ Zurück
+                    </span>
+                )}
+            </li>
+
+            <!-- First page -->
+            {showFirst && (
+                <>
+                    <li>
+                        <a href={getPageUrl(1)} class="pagination-link">
+                            1
+                        </a>
+                    </li>
+                    {pages[0] > 2 && (
+                        <li>
+                            <span class="pagination-ellipsis">…</span>
+                        </li>
+                    )}
+                </>
+            )}
+
+            <!-- Page numbers -->
+            {pages.map(page => (
+                <li>
+                    {page === currentPage ? (
+                        <span class="pagination-link active" aria-current="page">
+                            {page}
+                        </span>
+                    ) : (
+                        <a href={getPageUrl(page)} class="pagination-link">
+                            {page}
+                        </a>
+                    )}
+                </li>
+            ))}
+
+            <!-- Last page -->
+            {showLast && (
+                <>
+                    {pages[pages.length - 1] < totalPages - 1 && (
+                        <li>
+                            <span class="pagination-ellipsis">…</span>
+                        </li>
+                    )}
+                    <li>
+                        <a href={getPageUrl(totalPages)} class="pagination-link">
+                            {totalPages}
+                        </a>
+                    </li>
+                </>
+            )}
+
+            <!-- Next button -->
+            <li>
+                {currentPage < totalPages ? (
+                    <a
+                        href={getPageUrl(currentPage + 1)}
+                        class="pagination-link"
+                        aria-label="Nächste Seite"
+                    >
+                        Weiter ›
+                    </a>
+                ) : (
+                    <span class="pagination-link disabled" aria-hidden="true">
+                        Weiter ›
+                    </span>
+                )}
+            </li>
+        </ul>
+
+        <p class="pagination-info">
+            Seite {currentPage} von {totalPages}
+        </p>
+    </nav>
+)}
+
+<style>
+    .pagination {
+        margin: var(--spacing-lg) 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .pagination-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: var(--spacing-xs);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pagination-link {
+        display: inline-block;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        min-width: 2.5rem;
+        text-align: center;
+        text-decoration: none;
+        color: var(--color-text);
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        transition: all 0.2s ease;
+        font-size: 0.9rem;
+    }
+
+    .pagination-link:hover:not(.disabled):not(.active) {
+        background: var(--color-bg-alt);
+        color: var(--color-primary);
+        border-color: var(--color-primary);
+    }
+
+    .pagination-link.active {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+        font-weight: 600;
+        cursor: default;
+    }
+
+    .pagination-link.disabled {
+        color: var(--color-text-light);
+        background: var(--color-bg-alt);
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+
+    .pagination-ellipsis {
+        display: inline-block;
+        padding: var(--spacing-xs);
+        color: var(--color-text-light);
+    }
+
+    .pagination-info {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+
+    @media (max-width: 768px) {
+        .pagination-link {
+            padding: var(--spacing-xs);
+            min-width: 2rem;
+            font-size: 0.85rem;
+        }
+    }
+</style>

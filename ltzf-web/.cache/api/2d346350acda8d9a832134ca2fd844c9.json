@@ -1,0 +1,175 @@
+{
+  "api_id": "3cb45af6-e86a-47ec-9213-4d0765911bc7",
+  "titel": "Gesetzentwurf zur Änderung des Bayerischen Wassergesetzes",
+  "kurztitel": "Gesetzentwurf zur Änderung des Bayerischen Wassergesetzes",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6369",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160224",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005500/0000005625.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katharina Schulze",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Johannes Becher",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dipl.-Betriebswirtin (FH) Claudia Köhler",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Ludwig Hartmann",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Jürgen Mistol",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Verena Osgyan",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Tim Pargent",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Stephanie Schuhknecht",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Laura Weber",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Mia Goller",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dr. Markus Büchler",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Patrick Friedl",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Barbara Fuchs",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Christian Hierneis",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Paul Knoblach",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dipl.-Ing. Ursula Sowa",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Martin Stümpfig",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecb-3afc-75c0-9b40-a0ade7279e1c",
+      "zp_start": "2025-04-10T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:31.250327Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160224",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecb-3afe-7e22-bf7f-a68ca4776040"
+      ]
+    },
+    {
+      "api_id": "0198aecb-3b0c-7ab0-8feb-866aada199c9",
+      "zp_start": "2025-06-04T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:31.250327Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160224",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecb-3b0e-7ea1-95b3-a8302bc42872"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_623/meta_vod_50052.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecb-3b15-7bf0-9fd5-4e5c4cfb3412",
+      "zp_start": "2025-07-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:31.250327Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Umwelt und Verbraucherschutz"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160224",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecb-3b16-7cd0-b684-342b87e6f4bc"
+      ]
+    },
+    {
+      "api_id": "0198aecb-3b18-7920-8ab8-ea81769b0eb0",
+      "zp_start": "2025-07-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:31.250327Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160224",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecb-3b16-7cd0-b684-342b87e6f4bc"
+      ]
+    },
+    {
+      "api_id": "0198aecb-3b1a-7fd1-869d-8e160d67596e",
+      "zp_start": "2025-07-22T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:33:31.250327Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160224",
+      "typ": "parl-ablehnung",
+      "trojanergefahr": 4,
+      "dokumente": [
+        "0198aecb-3b1b-7043-b0ba-f0457d95a28f"
+      ]
+    }
+  ]
+}

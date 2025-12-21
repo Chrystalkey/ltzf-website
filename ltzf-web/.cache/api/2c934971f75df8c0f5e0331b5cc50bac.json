@@ -1,0 +1,147 @@
+{
+  "api_id": "fb6f1000-1fc6-4b16-9724-14f7dd24a34b",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Feuerwehrgesetzes und der Bayerischen Bauordnung",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Feuerwehrgesetzes und der Bayerischen Bauordnung",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6139",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159885",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005000/0000005489.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecc-a178-7512-a901-4d6c8dbfc621",
+      "zp_start": "2025-03-31T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.030544Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159885",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecc-a178-7512-a901-4d7bdb6ccf7a"
+      ],
+      "stellungnahmen": [
+        "0198aecc-a17b-7322-b7f4-69280af9f867",
+        "0198aecc-a187-73d3-b5b6-5c51cb3d2970",
+        "0198aecc-a193-7db2-9ab7-fa229bccd4aa"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a1a2-70e2-ad08-f6a28fda3b82",
+      "zp_start": "2025-04-08T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.030544Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159885",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecc-a1a3-7f80-bf88-05f77385fe16"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_619/meta_vod_49595.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a1aa-7510-a74b-58b934c1f6ac",
+      "zp_start": "2025-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.030544Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Kommunale Fragen, Innere Sicherheit und Sport"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159885",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-a1ab-75d1-9e59-be5d56e420cc"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a1ad-7ee0-9be1-e3b5df3e591f",
+      "zp_start": "2025-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.030544Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Wohnen, Bau und Verkehr"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159885",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-a1ab-75d1-9e59-be5d56e420cc"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a1af-7a43-89aa-99e2e433092d",
+      "zp_start": "2025-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.030544Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159885",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-a1ab-75d1-9e59-be5d56e420cc"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a1b0-7cd2-98e0-4450b18a696d",
+      "zp_start": "2025-07-01T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.030544Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159885",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecc-a1bc-7050-906d-69a06ffbd0a7",
+        "0198aecc-a1b1-7f01-b622-175447c6d6cc"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_625/meta_vod_50248.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a1c0-73a2-9b19-2e69ab9ef70a",
+      "zp_start": "2025-07-14T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.030544Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159885",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecc-a1c0-73a2-9b19-2e7c454f2477"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "api_id": "cacfe692-2629-46b0-a4f6-cb5b09c69faa",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Gesetzes über den gesundheitlichen Verbraucherschutz und das Veterinärwesen",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Gesetzes über den gesundheitlichen Verbraucherschutz und das Veterinärwesen",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/3495",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157114",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000002500/0000002729.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-59a8-77a0-bc96-49f677b44708",
+      "zp_start": "2024-09-30T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:50.181465Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157114",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-59a9-7441-8f8b-1d8d16f87e83"
+      ],
+      "stellungnahmen": [
+        "0198aecd-59ae-7511-9dd9-de2ecd778a17",
+        "0198aecd-59d5-7973-889d-a0cda686bad4",
+        "0198aecd-59e0-73a1-8bdd-b315beb3e478"
+      ]
+    },
+    {
+      "api_id": "0198aecd-59f2-7021-8508-3fbeab166b78",
+      "zp_start": "2024-10-15T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:50.181465Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157114",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-59f2-7021-8508-3fcc3b31249b"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_601/meta_vod_48098.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-59fb-75b3-bdb7-0cce2355ce9c",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:50.181465Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Umwelt und Verbraucherschutz"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157114",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-59fb-75b3-bdb7-0cded3a84f81"
+      ]
+    },
+    {
+      "api_id": "0198aecd-59fc-7b11-a49e-c61f15be5d46",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:50.181465Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Wissenschaft und Kunst"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157114",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-59fb-75b3-bdb7-0cded3a84f81"
+      ]
+    },
+    {
+      "api_id": "0198aecd-59fd-71b3-9211-4ffc86d841ce",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:50.181465Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157114",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-59fb-75b3-bdb7-0cded3a84f81"
+      ]
+    },
+    {
+      "api_id": "0198aecd-59fe-7fd1-9503-9459082231c0",
+      "zp_start": "2024-12-10T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:50.181465Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157114",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-5a01-71c0-8203-265ad17b9379",
+        "0198aecd-59ff-7990-9457-405467f9c4cb"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_608/meta_vod_48599.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-5a04-74b0-9f52-f867d83b6c27",
+      "zp_start": "2024-12-29T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:50.181465Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157114",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecc-ac90-7aa2-933b-59ff4fb9c476"
+      ]
+    }
+  ]
+}

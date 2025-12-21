@@ -1,0 +1,207 @@
+{
+  "api_id": "eb07a595-1d58-405c-a5a2-dc5b63261e56",
+  "titel": "Gesetzentwurf zur Änderung des Bayerischen Gesetzes über das Erziehungs- und Unterrichtswesen",
+  "kurztitel": "Gesetzentwurf zur Änderung des Bayerischen Gesetzes über das Erziehungs- und Unterrichtswesen",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6595",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160315",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005500/0000005808.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katrin Ebner-Steiner",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Christoph Maier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "(MSc) Martin Böhm",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Richard Graupner",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Johannes Meier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Markus Walbrunn",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ulrich Singer",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ferdinand Mang",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Harald Meußgeier",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Gerd Mannes",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Dieter Arnold",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Oskar Atzinger",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Franz Bergmüller",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Christin Gmelch",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Daniel Halemba",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Andreas Jurca",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Florian Köhler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Oskar Lipp",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Stefan Löw",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Roland Magerl",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Johann Müller",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Elena Roon",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Ramona Storm",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Matthias Vogler",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "person": "Andreas Winhart",
+      "organisation": "Alternative für Deutschland (AfD)"
+    },
+    {
+      "organisation": "Alternative für Deutschland (AfD)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aec9-6772-7cb3-bc69-145db6fa5a54",
+      "zp_start": "2025-05-07T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:31:31.558243Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160315",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aec9-6773-7530-be4b-9c7f0176f4ac"
+      ]
+    },
+    {
+      "api_id": "0198aec9-6783-78a3-a14d-2fd4d5ae1a4d",
+      "zp_start": "2025-06-04T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:31:31.558243Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160315",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aec9-6785-7a90-82f8-6f81d43ca279"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_623/meta_vod_50053.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aec9-678c-7db0-85eb-e91ac6a95d87",
+      "zp_start": "2025-07-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:31:31.558243Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Bildung und Kultus"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160315",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aec9-678e-7fb0-9dfe-6ab815c2f5e1"
+      ]
+    },
+    {
+      "api_id": "0198aec9-6791-7e91-bc2a-d5159b9fd6af",
+      "zp_start": "2025-07-16T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:31:31.558243Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160315",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aec9-678e-7fb0-9dfe-6ab815c2f5e1"
+      ]
+    },
+    {
+      "api_id": "0198aec9-6793-70e3-a76c-46165ac3e93a",
+      "zp_start": "2025-07-22T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:31:31.558243Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160315",
+      "typ": "parl-ablehnung",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aec9-6794-7302-91e1-75447253ae4e"
+      ]
+    }
+  ]
+}

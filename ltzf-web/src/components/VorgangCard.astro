@@ -1,0 +1,225 @@
+---
+/**
+ * VorgangCard - Displays a summary of a legislative process
+ * Used in list views and overviews
+ */
+import { getVorgangstypLabel, formatDate, getBundesland } from '@lib/constants.js';
+
+interface Props {
+    vorgang: any; // Type from API model
+    showParlament?: boolean;
+    compact?: boolean;
+}
+
+const {
+    vorgang,
+    showParlament = false,
+    compact = false
+} = Astro.props;
+
+const bundesland = getBundesland(vorgang.parlament);
+const vorgangUrl = `/gesetzesvorhaben/${vorgang.api_id}`;
+
+// Get latest station for status
+const latestStation = vorgang.stationen?.[vorgang.stationen.length - 1];
+
+// Extract unique organizations from initiators
+const uniqueOrganisations = vorgang.initiatoren
+    ? [...new Set(vorgang.initiatoren.map(init => init.organisation).filter(Boolean))]
+    : [];
+---
+
+<article class={`vorgang-card ${compact ? 'compact' : ''}`}>
+    <a href={vorgangUrl} class="vorgang-card-link">
+        <header class="card-header">
+            <div class="card-meta">
+                <span class="vorgang-type">{getVorgangstypLabel(vorgang.vorgangstyp)}</span>
+                {showParlament && bundesland && (
+                    <span class="parlament-badge">{bundesland.name}</span>
+                )}
+                {vorgang.wahlperiode && (
+                    <span class="wahlperiode">{vorgang.wahlperiode}. WP</span>
+                )}
+            </div>
+            <h3 class="card-title">{vorgang.titel}</h3>
+        </header>
+
+        <div class="card-body">
+            {!compact && vorgang.zusammenfassung && (
+                <p class="summary">{vorgang.zusammenfassung.slice(0, 200)}{vorgang.zusammenfassung.length > 200 ? '...' : ''}</p>
+            )}
+
+            {latestStation && (
+                <div class="latest-status">
+                    <span class="status-label">Status:</span>
+                    <span class="status-value">{latestStation.typ || 'In Bearbeitung'}</span>
+                </div>
+            )}
+
+            {uniqueOrganisations.length > 0 && (
+                <div class="initiators">
+                    <span class="initiators-label">Initiator(en):</span>
+                    <span class="initiators-list">
+                        {uniqueOrganisations.slice(0, 3).map((org, idx) => (
+                            <span>
+                                {org}
+                                {idx < Math.min(uniqueOrganisations.length, 3) - 1 ? ', ' : ''}
+                            </span>
+                        ))}
+                        {uniqueOrganisations.length > 3 && ` +${uniqueOrganisations.length - 3} weitere`}
+                    </span>
+                </div>
+            )}
+        </div>
+
+        <footer class="card-footer">
+            <time datetime={vorgang.zp_modifiziert}>
+                Aktualisiert: {formatDate(vorgang.zp_modifiziert, 'short')}
+            </time>
+            {vorgang.dokumente && (
+                <span class="document-count">
+                    {vorgang.dokumente.length} Dokument{vorgang.dokumente.length !== 1 ? 'e' : ''}
+                </span>
+            )}
+        </footer>
+    </a>
+</article>
+
+<style>
+    .vorgang-card {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: all 0.2s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vorgang-card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transform: translateY(-2px);
+    }
+
+    .vorgang-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .card-header {
+        padding: var(--spacing-md);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .card-meta {
+        display: flex;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-sm);
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .vorgang-type {
+        background: var(--color-primary);
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .parlament-badge {
+        background: var(--color-bg-alt);
+        color: var(--color-text);
+        padding: 0.2rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .wahlperiode {
+        color: var(--color-text-light);
+        font-size: 0.85rem;
+    }
+
+    .card-title {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        color: var(--color-text);
+        font-weight: 600;
+    }
+
+    .card-body {
+        padding: var(--spacing-md);
+        flex: 1;
+    }
+
+    .summary {
+        margin: 0 0 var(--spacing-sm);
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .latest-status,
+    .initiators {
+        margin-top: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+
+    .status-label,
+    .initiators-label {
+        font-weight: 600;
+        color: var(--color-text);
+    }
+
+    .status-value {
+        color: var(--color-text-light);
+    }
+
+    .initiators-list {
+        color: var(--color-text-light);
+    }
+
+    .card-footer {
+        padding: var(--spacing-sm) var(--spacing-md);
+        background: var(--color-bg-alt);
+        font-size: 0.85rem;
+        color: var(--color-text-light);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+
+    .document-count {
+        font-weight: 600;
+    }
+
+    /* Compact variant */
+    .vorgang-card.compact .card-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .vorgang-card.compact .card-title {
+        font-size: 1rem;
+    }
+
+    .vorgang-card.compact .card-body {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    @media (max-width: 768px) {
+        .card-footer {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>

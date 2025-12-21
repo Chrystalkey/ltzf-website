@@ -1,0 +1,127 @@
+{
+  "api_id": "d9e2d4a1-e536-4b62-8c8b-6b4313f6567c",
+  "titel": "Gesetzentwurf Bayerisches Gesetz über die Beteiligung von Gemeinden und Bevölkerung an Windenergie- und Photovoltaikanlagen (BayWindPVBetG)",
+  "kurztitel": "Gesetzentwurf Bayerisches Gesetz über die Beteiligung von Gemeinden und Bevölkerung an Windenergie- und Photovoltaikanlagen (BayWindPVBetG)",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6905",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160888",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000006000/0000006010.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katharina Schulze",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Johannes Becher",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dipl.-Betriebswirtin (FH) Claudia Köhler",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Ludwig Hartmann",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Jürgen Mistol",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Verena Osgyan",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Tim Pargent",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Stephanie Schuhknecht",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Laura Weber",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Mia Goller",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dr. Markus Büchler",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Patrick Friedl",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Barbara Fuchs",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Christian Hierneis",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Paul Knoblach",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dipl.-Ing. Ursula Sowa",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Martin Stümpfig",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aec7-7fea-7632-bac4-e350a470b35f",
+      "zp_start": "2025-06-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:26.753991Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160888",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aec7-7feb-7ca3-a42f-203f74bec26d"
+      ]
+    },
+    {
+      "api_id": "0198aec7-7ff9-7be3-9a39-776b57d43695",
+      "zp_start": "2025-07-01T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:26.753991Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160888",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aec7-7ffa-7692-aacb-7edf37d0e12d"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_625/meta_vod_50235.json&startId=1"
+      ]
+    }
+  ]
+}

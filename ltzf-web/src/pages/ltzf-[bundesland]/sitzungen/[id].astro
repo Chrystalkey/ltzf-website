@@ -1,0 +1,263 @@
+---
+/**
+ * Sitzung Detail Page
+ * Shows full details of a parliamentary session
+ */
+import SitzungLayout from '@layouts/SitzungLayout.astro';
+import DokumentList from '@components/DokumentList.astro';
+import { getAllSitzungen, getSitzung } from '@lib/data-fetcher.js';
+import { BUNDESLAENDER, getStateCodes, getFederalCodes } from '@lib/constants.js';
+
+export async function getStaticPaths() {
+    const allCodes = [...getStateCodes(), ...getFederalCodes()];
+    const paths = [];
+
+    for (const code of allCodes) {
+        const sitzungen = await getAllSitzungen({ parlament: code });
+
+        // Ensure sitzungen is an array
+        const sitzungenArray = Array.isArray(sitzungen) ? sitzungen : [];
+
+        console.log(`Found ${sitzungenArray.length} sitzungen for ${code}`);
+
+        for (const sitzung of sitzungenArray) {
+            paths.push({
+                params: {
+                    bundesland: code,
+                    id: sitzung.api_id
+                }
+            });
+        }
+    }
+
+    console.log(`Generated ${paths.length} total sitzung paths`);
+    return paths;
+}
+
+const { bundesland, id } = Astro.params;
+
+// Fetch full sitzung data
+const sitzung = await getSitzung(id);
+
+if (!sitzung || sitzung.parlament !== bundesland) {
+    return Astro.redirect('/404');
+}
+---
+
+<SitzungLayout sitzung={sitzung}>
+    <div class="sitzung-details">
+        <!-- Agenda Items -->
+        {sitzung.tagesordnungspunkte && sitzung.tagesordnungspunkte.length > 0 && (
+            <section class="detail-section">
+                <h2>Tagesordnung</h2>
+                <ol class="agenda-list">
+                    {sitzung.tagesordnungspunkte.map(top => (
+                        <li class="agenda-item">
+                            <div class="top-header">
+                                {top.nummer && <span class="top-nummer">TOP {top.nummer}</span>}
+                                <h3 class="top-titel">{top.titel || 'Ohne Titel'}</h3>
+                            </div>
+                            {top.beschreibung && (
+                                <p class="top-beschreibung">{top.beschreibung}</p>
+                            )}
+                            {top.vorgaenge && top.vorgaenge.length > 0 && (
+                                <div class="related-vorgaenge">
+                                    <strong>Zugehörige Vorgänge:</strong>
+                                    <ul>
+                                        {top.vorgaenge.map(vg => (
+                                            <li>
+                                                <a href={`/ltzf-${bundesland}/gesetzesvorhaben/${vg.api_id}`}>
+                                                    {vg.titel || vg.api_id}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </li>
+                    ))}
+                </ol>
+            </section>
+        )}
+
+        <!-- Expert Witnesses -->
+        {sitzung.experten && sitzung.experten.length > 0 && (
+            <section class="detail-section">
+                <h2>Sachverständige</h2>
+                <div class="experts-grid">
+                    {/* Autor model: organisation is required, person/fachgebiet are optional */}
+                    {sitzung.experten.map(expert => (
+                        <div class="expert-card">
+                            <strong>{expert.person || expert.organisation}</strong>
+                            {expert.organisation && expert.person && (
+                                <p class="expert-org">{expert.organisation}</p>
+                            )}
+                            {expert.fachgebiet && (
+                                <p class="expert-role">{expert.fachgebiet}</p>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </section>
+        )}
+
+        <!-- Documents -->
+        {sitzung.dokumente && sitzung.dokumente.length > 0 && (
+            <section class="detail-section">
+                <DokumentList
+                    dokumente={sitzung.dokumente}
+                    title="Sitzungsdokumente"
+                    showAuthor={false}
+                />
+            </section>
+        )}
+
+        <!-- Additional Info -->
+        {sitzung.bemerkung && (
+            <section class="detail-section">
+                <h2>Bemerkungen</h2>
+                <div class="bemerkung-box">
+                    {sitzung.bemerkung}
+                </div>
+            </section>
+        )}
+    </div>
+</SitzungLayout>
+
+<style>
+    .sitzung-details {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+
+    .detail-section {
+        background: white;
+    }
+
+    .detail-section h2 {
+        font-size: 1.5rem;
+        margin: 0 0 var(--spacing-md);
+        color: var(--color-text);
+        border-bottom: 2px solid var(--color-primary);
+        padding-bottom: var(--spacing-sm);
+    }
+
+    .agenda-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        counter-reset: agenda-counter;
+    }
+
+    .agenda-item {
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-md);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        border-left: 4px solid var(--color-primary);
+    }
+
+    .top-header {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .top-nummer {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        background: var(--color-primary);
+        color: white;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .top-titel {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--color-text);
+        flex: 1;
+    }
+
+    .top-beschreibung {
+        margin: var(--spacing-sm) 0;
+        color: var(--color-text-light);
+        line-height: 1.6;
+    }
+
+    .related-vorgaenge {
+        margin-top: var(--spacing-sm);
+        padding-top: var(--spacing-sm);
+        border-top: 1px solid var(--color-border);
+        font-size: 0.9rem;
+    }
+
+    .related-vorgaenge ul {
+        margin: var(--spacing-xs) 0 0;
+        padding-left: var(--spacing-md);
+    }
+
+    .related-vorgaenge a {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    .related-vorgaenge a:hover {
+        text-decoration: underline;
+    }
+
+    .experts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .expert-card {
+        padding: var(--spacing-md);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        border-left: 4px solid #4caf50;
+    }
+
+    .expert-card strong {
+        display: block;
+        margin-bottom: var(--spacing-xs);
+        font-size: 1.05rem;
+        color: var(--color-text);
+    }
+
+    .expert-org,
+    .expert-role {
+        margin: var(--spacing-xs) 0 0;
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+
+    .bemerkung-box {
+        padding: var(--spacing-md);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        border-left: 4px solid #ff9800;
+        line-height: 1.6;
+        color: var(--color-text);
+    }
+
+    @media (max-width: 768px) {
+        .detail-section h2 {
+            font-size: 1.25rem;
+        }
+
+        .top-header {
+            flex-direction: column;
+        }
+
+        .experts-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

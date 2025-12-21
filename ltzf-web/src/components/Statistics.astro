@@ -1,0 +1,157 @@
+---
+/**
+ * Statistics - Displays statistical information about legislative processes
+ * Shows counts, trends, and rankings
+ */
+interface Props {
+    title?: string;
+    stats: Array<{
+        label: string;
+        value: string | number;
+        description?: string;
+        trend?: 'up' | 'down' | 'neutral';
+    }>;
+    layout?: 'grid' | 'list';
+}
+
+const {
+    title = 'Statistiken',
+    stats = [],
+    layout = 'grid'
+} = Astro.props;
+---
+
+<div class={`statistics ${layout}`}>
+    {title && <h2 class="stats-title">{title}</h2>}
+
+    {stats.length === 0 ? (
+        <p class="no-stats">Keine Statistiken verfügbar</p>
+    ) : (
+        <div class={`stats-container ${layout}`}>
+            {stats.map(stat => (
+                <div class="stat-item">
+                    <div class="stat-content">
+                        <div class="stat-value">
+                            {stat.value}
+                            {stat.trend && (
+                                <span class={`trend-indicator trend-${stat.trend}`}>
+                                    {stat.trend === 'up' ? '↑' : stat.trend === 'down' ? '↓' : '→'}
+                                </span>
+                            )}
+                        </div>
+                        <div class="stat-label">{stat.label}</div>
+                        {stat.description && (
+                            <p class="stat-description">{stat.description}</p>
+                        )}
+                    </div>
+                </div>
+            ))}
+        </div>
+    )}
+</div>
+
+<style>
+    .statistics {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-lg);
+    }
+
+    .stats-title {
+        margin: 0 0 var(--spacing-lg);
+        font-size: 1.5rem;
+        color: var(--color-text);
+    }
+
+    .no-stats {
+        color: var(--color-text-light);
+        font-style: italic;
+        margin: 0;
+    }
+
+    .stats-container {
+        display: grid;
+        gap: var(--spacing-md);
+    }
+
+    .stats-container.grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .stats-container.list {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-item {
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-md);
+        transition: all 0.2s ease;
+    }
+
+    .stat-item:hover {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .stat-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--color-primary);
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    .trend-indicator {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .trend-indicator.trend-up {
+        color: #2e7d32;
+    }
+
+    .trend-indicator.trend-down {
+        color: #c62828;
+    }
+
+    .trend-indicator.trend-neutral {
+        color: var(--color-text-light);
+    }
+
+    .stat-label {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-text);
+    }
+
+    .stat-description {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--color-text-light);
+        line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+        .statistics {
+            padding: var(--spacing-md);
+        }
+
+        .stats-container.grid {
+            grid-template-columns: 1fr;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+        }
+    }
+</style>

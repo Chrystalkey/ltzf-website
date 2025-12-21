@@ -1,0 +1,336 @@
+---
+/**
+ * Länder Overview Page
+ * Shows statistics and comparisons across all state parliaments
+ */
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Statistics from '@components/Statistics.astro';
+import VorgangCard from '@components/VorgangCard.astro';
+import { getAllVorgaenge, calculateStatistics } from '@lib/data-fetcher.js';
+import { BUNDESLAENDER, getStateCodes } from '@lib/constants.js';
+
+// Fetch all vorgänge
+const allVorgaengeRaw = await getAllVorgaenge();
+const allVorgaenge = Array.isArray(allVorgaengeRaw) ? allVorgaengeRaw : [];
+
+console.log(`[LTZF-Overview] Found ${allVorgaenge.length} total vorgänge`);
+
+// Filter only state parliaments (exclude BT, BR, BV, EK)
+const stateCodes = getStateCodes();
+const stateVorgaenge = allVorgaenge.filter(vg => stateCodes.includes(vg.parlament));
+
+// Calculate statistics per state
+const statsByParlament = {};
+for (const code of stateCodes) {
+    const parlamentVorgaenge = stateVorgaenge.filter(vg => vg.parlament === code);
+    statsByParlament[code] = {
+        code,
+        name: BUNDESLAENDER[code].name,
+        fullName: BUNDESLAENDER[code].fullName,
+        count: parlamentVorgaenge.length,
+        vorgaenge: parlamentVorgaenge
+    };
+}
+
+// Sort states by activity (most active first)
+const sortedStates = Object.values(statsByParlament)
+    .sort((a, b) => b.count - a.count);
+
+// Get most and least active states
+const mostActive = sortedStates[0];
+const leastActive = sortedStates[sortedStates.length - 1];
+
+// Calculate overall stats
+const totalStateVorgaenge = stateVorgaenge.length;
+const averagePerState = Math.round(totalStateVorgaenge / stateCodes.length);
+
+// Get recent vorgänge across all states
+const recentStateVorgaenge = stateVorgaenge
+    .sort((a, b) => {
+        const dateA = new Date(a.zp_modifiziert || 0);
+        const dateB = new Date(b.zp_modifiziert || 0);
+        return dateB - dateA;
+    })
+    .slice(0, 12);
+
+// Build display stats
+const displayStats = [
+    {
+        label: 'Vorgänge gesamt',
+        value: totalStateVorgaenge,
+        description: 'Alle Landtage zusammen'
+    },
+    {
+        label: 'Durchschnitt',
+        value: averagePerState,
+        description: 'Pro Landtag'
+    },
+    {
+        label: 'Aktivster Landtag',
+        value: mostActive.name,
+        description: `${mostActive.count} Vorgänge`
+    },
+    {
+        label: 'Bundesländer',
+        value: stateCodes.length,
+        description: 'Mit erfassten Daten'
+    }
+];
+---
+
+<BaseLayout
+    title="Landtage Übersicht - Parlamentszusammenfasser"
+    description="Gesetzgebung in allen deutschen Landtagen. Statistiken, Vergleiche und aktuelle Vorgänge aus den 16 Bundesländern."
+>
+    <div class="container">
+        <!-- Header -->
+        <header class="page-header">
+            <div class="breadcrumbs">
+                <a href="/">Start</a>
+                <span>›</span>
+                <span>Länder-Übersicht</span>
+            </div>
+            <h1>Landtage im Überblick</h1>
+            <p class="page-description">
+                Gesetzgebung in allen 16 deutschen Bundesländern im Vergleich
+            </p>
+        </header>
+
+        <!-- Overall Statistics -->
+        <section class="section">
+            <Statistics title="Gesamtstatistik" stats={displayStats} layout="grid" />
+        </section>
+
+        <!-- State Comparison -->
+        <section class="section">
+            <h2>Vergleich nach Bundesland</h2>
+            <div class="state-comparison">
+                {sortedStates.map((state, index) => (
+                    <a href={`/ltzf-${state.code}`} class="state-card">
+                        <div class="state-rank">#{index + 1}</div>
+                        <div class="state-info">
+                            <h3>{state.name}</h3>
+                            <p class="state-full-name">{state.fullName}</p>
+                        </div>
+                        <div class="state-count">
+                            {state.count}
+                            <span>Vorgänge</span>
+                        </div>
+                    </a>
+                ))}
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="section">
+            <h2>Neueste Aktivitäten</h2>
+            <p class="section-subtitle">
+                Die zuletzt aktualisierten Gesetzesvorhaben aus allen Landtagen
+            </p>
+            <div class="vorgang-grid">
+                {recentStateVorgaenge.map(vorgang => (
+                    <VorgangCard vorgang={vorgang} showParlament={true} />
+                ))}
+            </div>
+        </section>
+
+        <!-- State Links Grid -->
+        <section class="section">
+            <h2>Direktzugriff auf Landtage</h2>
+            <div class="state-grid">
+                {stateCodes.map(code => {
+                    const land = BUNDESLAENDER[code];
+                    const count = statsByParlament[code]?.count || 0;
+                    return (
+                        <a href={`/ltzf-${code}`} class="state-link">
+                            <div class="state-link-name">{land.name}</div>
+                            <div class="state-link-count">{count} Vorgänge</div>
+                        </a>
+                    );
+                })}
+            </div>
+        </section>
+    </div>
+</BaseLayout>
+
+<style>
+    .page-header {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .breadcrumbs {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text-light);
+    }
+
+    .breadcrumbs a {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    .breadcrumbs span {
+        margin: 0 var(--spacing-xs);
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin: 0 0 var(--spacing-sm);
+        color: var(--color-primary);
+    }
+
+    .page-description {
+        font-size: 1.1rem;
+        color: var(--color-text-light);
+        margin: 0;
+    }
+
+    .section {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .section h2 {
+        font-size: 1.75rem;
+        margin: 0 0 var(--spacing-md);
+        color: var(--color-text);
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+        color: var(--color-text-light);
+        margin: 0 0 var(--spacing-lg);
+    }
+
+    .state-comparison {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .state-card {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s ease;
+    }
+
+    .state-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-color: var(--color-primary);
+    }
+
+    .state-rank {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-primary);
+        min-width: 50px;
+        text-align: center;
+    }
+
+    .state-info {
+        flex: 1;
+    }
+
+    .state-info h3 {
+        margin: 0 0 var(--spacing-xs);
+        font-size: 1.1rem;
+        color: var(--color-text);
+    }
+
+    .state-full-name {
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--color-text-light);
+    }
+
+    .state-count {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-text);
+    }
+
+    .state-count span {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: normal;
+        color: var(--color-text-light);
+        margin-top: var(--spacing-xs);
+    }
+
+    .vorgang-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .state-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: var(--spacing-sm);
+    }
+
+    .state-link {
+        display: block;
+        padding: var(--spacing-md);
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s ease;
+    }
+
+    .state-link:hover {
+        background: var(--color-primary);
+        color: white;
+        border-color: var(--color-primary);
+    }
+
+    .state-link:hover .state-link-count {
+        color: white;
+    }
+
+    .state-link-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .state-link-count {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+
+    @media (max-width: 768px) {
+        .page-header h1 {
+            font-size: 2rem;
+        }
+
+        .state-comparison,
+        .vorgang-grid,
+        .state-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .state-card {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .state-rank {
+            min-width: auto;
+        }
+    }
+</style>

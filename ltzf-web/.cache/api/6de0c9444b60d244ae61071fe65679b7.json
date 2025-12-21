@@ -1,0 +1,139 @@
+{
+  "api_id": "55ccc08c-df42-406e-9d31-79ac37940acb",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Integrierte Leitstellen-Gesetzes und des Bayerischen Rettungsdienstgesetzes",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Integrierte Leitstellen-Gesetzes und des Bayerischen Rettungsdienstgesetzes",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/3690",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157414",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000002500/0000002883.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecc-ac57-7c20-8f17-83add0f7ae2b",
+      "zp_start": "2024-10-21T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:05.811957Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157414",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecc-ac58-7710-b00b-2cb9cb0b19b7"
+      ]
+    },
+    {
+      "api_id": "0198aecc-ac6a-7463-95b7-27e9e9ac7946",
+      "zp_start": "2024-11-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:05.811957Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157414",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecc-ac6c-79d1-9793-a0c75f712fc7"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_603/meta_vod_48220.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecc-ac7a-7821-94cf-1159ee0b9860",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:05.811957Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Kommunale Fragen, Innere Sicherheit und Sport"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157414",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-ac7b-7b30-9697-b23b1975e606"
+      ]
+    },
+    {
+      "api_id": "0198aecc-ac7d-7b33-b6bb-6b64a8be989c",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:05.811957Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Gesundheit, Pflege und Prävention"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157414",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-ac7b-7b30-9697-b23b1975e606"
+      ]
+    },
+    {
+      "api_id": "0198aecc-ac80-7051-b61e-00ffb14fdd05",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:05.811957Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157414",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-ac7b-7b30-9697-b23b1975e606"
+      ]
+    },
+    {
+      "api_id": "0198aecc-ac82-7472-997c-4bc60cff2430",
+      "zp_start": "2024-12-10T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:05.811957Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157414",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecc-ac8a-7621-9a4b-aefdee017554",
+        "0198aecc-ac83-7501-b512-bfc4493baa15"
+      ]
+    },
+    {
+      "api_id": "0198aecc-ac8f-70f0-8376-8f483bd3cbdd",
+      "zp_start": "2024-12-29T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:05.811957Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157414",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecc-ac90-7aa2-933b-59ff4fb9c476"
+      ]
+    }
+  ]
+}

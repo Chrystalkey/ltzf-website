@@ -1,0 +1,226 @@
+---
+/**
+ * SitzungCard - Displays a summary of a parliamentary session
+ * Used in session lists and calendars
+ */
+import { formatDate, getBundesland } from '@lib/constants.js';
+
+interface Props {
+    sitzung: any; // Type from API model
+    showParlament?: boolean;
+    compact?: boolean;
+}
+
+const {
+    sitzung,
+    showParlament = false,
+    compact = false
+} = Astro.props;
+
+const bundesland = getBundesland(sitzung.parlament);
+const sitzungUrl = `/ltzf-${sitzung.parlament}/sitzungen/${sitzung.api_id}`;
+const gremiumName = sitzung.gremium?.name || 'Plenum';
+---
+
+<article class={`sitzung-card ${compact ? 'compact' : ''}`}>
+    <a href={sitzungUrl} class="sitzung-card-link">
+        <header class="card-header">
+            <div class="card-meta">
+                {showParlament && bundesland && (
+                    <span class="parlament-badge">{bundesland.name}</span>
+                )}
+                {sitzung.wahlperiode && (
+                    <span class="wahlperiode">{sitzung.wahlperiode}. WP</span>
+                )}
+                {sitzung.oeffentlich !== undefined && (
+                    <span class={`visibility-badge ${sitzung.oeffentlich ? 'public' : 'private'}`}>
+                        {sitzung.oeffentlich ? 'Öffentlich' : 'Nicht-öffentlich'}
+                    </span>
+                )}
+            </div>
+            <h3 class="card-title">{gremiumName}</h3>
+        </header>
+
+        <div class="card-body">
+            <div class="sitzung-date">
+                <time datetime={sitzung.datum}>
+                    {formatDate(sitzung.datum)}
+                </time>
+                {sitzung.uhrzeit && (
+                    <span class="sitzung-time">{sitzung.uhrzeit} Uhr</span>
+                )}
+            </div>
+
+            {!compact && sitzung.tagesordnungspunkte && sitzung.tagesordnungspunkte.length > 0 && (
+                <div class="agenda-info">
+                    <span class="agenda-count">
+                        {sitzung.tagesordnungspunkte.length} Tagesordnungspunkt{sitzung.tagesordnungspunkte.length !== 1 ? 'e' : ''}
+                    </span>
+                </div>
+            )}
+
+            {!compact && sitzung.gutachter && sitzung.gutachter.length > 0 && (
+                <div class="experts-info">
+                    <span class="experts-label">Sachverständige:</span>
+                    <span class="experts-count">{sitzung.gutachter.length}</span>
+                </div>
+            )}
+        </div>
+
+        <footer class="card-footer">
+            {sitzung.dokumente && sitzung.dokumente.length > 0 && (
+                <span class="document-count">
+                    {sitzung.dokumente.length} Dokument{sitzung.dokumente.length !== 1 ? 'e' : ''}
+                </span>
+            )}
+        </footer>
+    </a>
+</article>
+
+<style>
+    .sitzung-card {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: all 0.2s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sitzung-card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transform: translateY(-2px);
+    }
+
+    .sitzung-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .card-header {
+        padding: var(--spacing-md);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .card-meta {
+        display: flex;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-sm);
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .parlament-badge {
+        background: var(--color-bg-alt);
+        color: var(--color-text);
+        padding: 0.2rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .wahlperiode {
+        color: var(--color-text-light);
+        font-size: 0.85rem;
+    }
+
+    .visibility-badge {
+        padding: 0.2rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+
+    .visibility-badge.public {
+        background: #e8f5e9;
+        color: #2e7d32;
+    }
+
+    .visibility-badge.private {
+        background: #fff3e0;
+        color: #e65100;
+    }
+
+    .card-title {
+        margin: 0;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        color: var(--color-text);
+        font-weight: 600;
+    }
+
+    .card-body {
+        padding: var(--spacing-md);
+        flex: 1;
+    }
+
+    .sitzung-date {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+        font-size: 1rem;
+        color: var(--color-text);
+    }
+
+    .sitzung-time {
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+    }
+
+    .agenda-info,
+    .experts-info {
+        margin-top: var(--spacing-sm);
+        font-size: 0.9rem;
+    }
+
+    .agenda-count {
+        color: var(--color-primary);
+        font-weight: 600;
+    }
+
+    .experts-label {
+        color: var(--color-text);
+        font-weight: 600;
+    }
+
+    .experts-count {
+        color: var(--color-text-light);
+    }
+
+    .card-footer {
+        padding: var(--spacing-sm) var(--spacing-md);
+        background: var(--color-bg-alt);
+        font-size: 0.85rem;
+        color: var(--color-text-light);
+    }
+
+    .document-count {
+        font-weight: 600;
+    }
+
+    /* Compact variant */
+    .sitzung-card.compact .card-header {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .sitzung-card.compact .card-title {
+        font-size: 1rem;
+    }
+
+    .sitzung-card.compact .card-body {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    @media (max-width: 768px) {
+        .sitzung-date {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>

@@ -1,0 +1,281 @@
+---
+/**
+ * Bundesland Main Page
+ * Dynamic route for state-specific parliament pages
+ */
+import LtzfLayout from '@layouts/LtzfLayout.astro';
+import VorgangCard from '@components/VorgangCard.astro';
+import SitzungCard from '@components/SitzungCard.astro';
+import Statistics from '@components/Statistics.astro';
+import { getAllVorgaenge, getAllSitzungen } from '@lib/data-fetcher.js';
+import { BUNDESLAENDER, getStateCodes, getFederalCodes } from '@lib/constants.js';
+
+// Generate static paths for all Bundesländer
+export async function getStaticPaths() {
+    const allCodes = [...getStateCodes(), ...getFederalCodes().filter(c => c !== 'BT')];
+
+    return allCodes.map(code => ({
+        params: { bundesland: code }
+    }));
+}
+
+const { bundesland } = Astro.params;
+
+// Validate Bundesland
+if (!BUNDESLAENDER[bundesland]) {
+    return Astro.redirect('/404');
+}
+
+const land = BUNDESLAENDER[bundesland];
+
+// Fetch data for this Bundesland
+const vorgaengeRaw = await getAllVorgaenge({ parlament: bundesland });
+const sitzungenRaw = await getAllSitzungen({ parlament: bundesland });
+
+const vorgaenge = Array.isArray(vorgaengeRaw) ? vorgaengeRaw : [];
+const sitzungen = Array.isArray(sitzungenRaw) ? sitzungenRaw : [];
+
+console.log(`[${bundesland}] Found ${vorgaenge.length} vorgänge, ${sitzungen.length} sitzungen`);
+
+// Sort by date
+const sortedVorgaenge = vorgaenge
+    .sort((a, b) => {
+        const dateA = new Date(a.zp_modifiziert || 0);
+        const dateB = new Date(b.zp_modifiziert || 0);
+        return dateB - dateA;
+    })
+    .slice(0, 12);
+
+const sortedSitzungen = sitzungen
+    .sort((a, b) => {
+        const dateA = new Date(a.datum || 0);
+        const dateB = new Date(b.datum || 0);
+        return dateB - dateA;
+    })
+    .slice(0, 6);
+
+// Calculate recent activity (last 30 days)
+const thirtyDaysAgo = new Date();
+thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+const recentVorgaengeCount = vorgaenge.filter(vg => {
+    const modDate = new Date(vg.zp_modifiziert || 0);
+    return modDate > thirtyDaysAgo;
+}).length;
+
+const recentSitzungenCount = sitzungen.filter(s => {
+    const sitzDate = new Date(s.datum || 0);
+    return sitzDate > thirtyDaysAgo;
+}).length;
+
+// Build statistics
+const displayStats = [
+    {
+        label: 'Gesetzesvorhaben',
+        value: vorgaenge.length,
+        description: 'Insgesamt erfasst'
+    },
+    {
+        label: 'Aktive Vorgänge',
+        value: recentVorgaengeCount,
+        description: 'Letzte 30 Tage',
+        trend: recentVorgaengeCount > 0 ? 'up' : 'neutral'
+    },
+    {
+        label: 'Sitzungen',
+        value: sitzungen.length,
+        description: 'Insgesamt erfasst'
+    },
+    {
+        label: 'Aktuelle Sitzungen',
+        value: recentSitzungenCount,
+        description: 'Letzte 30 Tage'
+    }
+];
+
+// Breadcrumbs
+const breadcrumbs = [
+    { label: land.name, href: `/ltzf-${bundesland}` }
+];
+---
+
+<LtzfLayout
+    bundeslandCode={bundesland}
+    currentPage="overview"
+    breadcrumbs={breadcrumbs}
+>
+    <!-- Statistics Overview -->
+    <section class="section">
+        <Statistics title="Übersicht" stats={displayStats} layout="grid" />
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="section">
+        <h2>Schnellzugriff</h2>
+        <div class="quick-links">
+            <a href={`/ltzf-${bundesland}/aktuelle-entwuerfe`} class="quick-link">
+                <h3>Aktuelle Entwürfe</h3>
+                <p>Neue Gesetzesinitiativen</p>
+            </a>
+            <a href={`/ltzf-${bundesland}/in-beratung`} class="quick-link">
+                <h3>In Beratung</h3>
+                <p>Vorgänge in den Ausschüssen</p>
+            </a>
+            <a href={`/ltzf-${bundesland}/fertig`} class="quick-link">
+                <h3>Abgeschlossen</h3>
+                <p>Verabschiedete oder abgelehnte Vorlagen</p>
+            </a>
+            <a href={`/ltzf-${bundesland}/gesamtuebersicht`} class="quick-link">
+                <h3>Gesamtübersicht</h3>
+                <p>Alle Vorgänge durchsuchen</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Recent Vorgänge -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Neueste Gesetzesvorhaben</h2>
+            <a href={`/ltzf-${bundesland}/gesamtuebersicht`} class="see-all">
+                Alle anzeigen →
+            </a>
+        </div>
+        {sortedVorgaenge.length > 0 ? (
+            <div class="vorgang-grid">
+                {sortedVorgaenge.map(vorgang => (
+                    <VorgangCard vorgang={vorgang} compact={true} />
+                ))}
+            </div>
+        ) : (
+            <div class="empty-state">
+                <p>Keine Gesetzesvorhaben verfügbar.</p>
+            </div>
+        )}
+    </section>
+
+    <!-- Recent Sitzungen -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Aktuelle Sitzungen</h2>
+            <a href={`/ltzf-${bundesland}/sitzungen`} class="see-all">
+                Alle anzeigen →
+            </a>
+        </div>
+        {sortedSitzungen.length > 0 ? (
+            <div class="sitzung-grid">
+                {sortedSitzungen.map(sitzung => (
+                    <SitzungCard sitzung={sitzung} compact={true} />
+                ))}
+            </div>
+        ) : (
+            <div class="empty-state">
+                <p>Keine Sitzungen verfügbar.</p>
+            </div>
+        )}
+    </section>
+</LtzfLayout>
+
+<style>
+    .section {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .section h2 {
+        font-size: 1.75rem;
+        margin: 0 0 var(--spacing-lg);
+        color: var(--color-text);
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .section-header h2 {
+        margin: 0;
+    }
+
+    .see-all {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .see-all:hover {
+        text-decoration: underline;
+    }
+
+    .quick-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .quick-link {
+        display: block;
+        padding: var(--spacing-lg);
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        color: inherit;
+        transition: all 0.2s ease;
+    }
+
+    .quick-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-color: var(--color-primary);
+    }
+
+    .quick-link h3 {
+        margin: 0 0 var(--spacing-xs);
+        color: var(--color-primary);
+        font-size: 1.25rem;
+    }
+
+    .quick-link p {
+        margin: 0;
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+    }
+
+    .vorgang-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .sitzung-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: var(--spacing-xl);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        color: var(--color-text-light);
+    }
+
+    @media (max-width: 768px) {
+        .section-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+        }
+
+        .vorgang-grid,
+        .sitzung-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .quick-links {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

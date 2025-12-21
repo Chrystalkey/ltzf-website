@@ -1,0 +1,126 @@
+{
+  "api_id": "8c1e429e-0fc6-4b80-96d9-4ee7009cba67",
+  "titel": "Antrag der Staatsregierung auf Zustimmung zum Sechsten Staatsvertrag zur Änderung medienrechtlicher Staatsverträge (Sechster Medienänderungsstaatsvertrag)",
+  "kurztitel": "Antrag der Staatsregierung auf Zustimmung zum Sechsten Staatsvertrag zur Änderung medienrechtlicher Staatsverträge (Sechster Medienänderungsstaatsvertrag)",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6194",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159993",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005000/0000005480.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecc-a45b-7b90-9c8a-c45c41604241",
+      "zp_start": "2025-04-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.768296Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159993",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecc-a45c-79c0-87e3-30901498cf07"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a464-7730-827e-910a1d5d7e96",
+      "zp_start": "2025-05-05T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.768296Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159993",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecc-a465-7fb0-9e9e-35885c07cd00"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_620/meta_vod_49770.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a46b-70f1-aa29-948414f11012",
+      "zp_start": "2025-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.768296Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Wissenschaft und Kunst"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159993",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-a46d-7c31-8e09-c4973a8d9a15"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a470-7841-a30b-041c2ceafd5d",
+      "zp_start": "2025-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.768296Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159993",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-a46d-7c31-8e09-c4973a8d9a15"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a472-76f0-aeaa-1eba2cb5d6ca",
+      "zp_start": "2025-07-01T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.768296Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159993",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecc-a47d-7f43-9bbf-1d62ed1017a5",
+        "0198aecc-a473-7951-a577-5cb0f231fa3e"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_625/meta_vod_50250.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a480-76e3-8a06-ef7b18bdd7d1",
+      "zp_start": "2025-08-13T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:03.768296Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159993",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecc-a481-7870-a856-ce97b210b3a3"
+      ]
+    }
+  ]
+}

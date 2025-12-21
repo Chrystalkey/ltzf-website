@@ -1,0 +1,36 @@
+{
+  "api_id": "0198aecd-6b36-7db0-a8b5-b520561a1534",
+  "typ": "stellungnahme",
+  "titel": "Offizieller Titel des Dokuments",
+  "volltext": "Zur optimalen Anzeige dieses PDF-Portfolios sollte es in Acrobat oder Adobe Reader ab Version X geöffnet werden. Adobe Reader jetzt herunterladen",
+  "zp_modifiziert": "2024-03-13T09:55:28Z",
+  "zp_referenz": "2023-09-30T22:00:00Z",
+  "zp_erstellt": "2024-03-13T09:55:27Z",
+  "link": "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Gesetzesmaterial/0000001484/0000000014.pdf",
+  "hash": "f14705d76abf20b905a7b0223f1b12725ad2e4d27dc33e3b27f3787eec89b163",
+  "meinung": 4,
+  "schlagworte": [
+    "gesetz",
+    "pflichten",
+    "rechte",
+    "regelungen",
+    "schutz",
+    "strafen",
+    "umwelt",
+    "verantwortlichkeiten",
+    "verbraucher",
+    "verfahren"
+  ],
+  "autoren": [
+    {
+      "organisation": "Bayerisches Rotes Kreuz"
+    },
+    {
+      "organisation": "Musterinstitution"
+    },
+    {
+      "person": "Max Mustermann",
+      "organisation": "Musterorganisation"
+    }
+  ]
+}

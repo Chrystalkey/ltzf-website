@@ -1,0 +1,281 @@
+---
+/**
+ * SearchFilter - Client-side search and filter UI
+ * Provides search box and filter controls
+ */
+interface Props {
+    placeholder?: string;
+    filters?: Array<{
+        name: string;
+        label: string;
+        options: Array<{ value: string; label: string }>;
+    }>;
+    showSearch?: boolean;
+}
+
+const {
+    placeholder = 'Suche...',
+    filters = [],
+    showSearch = true
+} = Astro.props;
+---
+
+<div class="search-filter">
+    {showSearch && (
+        <div class="search-box">
+            <input
+                type="text"
+                id="search-input"
+                class="search-input"
+                placeholder={placeholder}
+                aria-label="Suche"
+            />
+            <button
+                type="button"
+                class="search-clear"
+                id="search-clear"
+                aria-label="Suche löschen"
+                style="display: none;"
+            >
+                ×
+            </button>
+        </div>
+    )}
+
+    {filters.length > 0 && (
+        <div class="filters">
+            {filters.map(filter => (
+                <div class="filter-group">
+                    <label for={`filter-${filter.name}`} class="filter-label">
+                        {filter.label}:
+                    </label>
+                    <select
+                        id={`filter-${filter.name}`}
+                        class="filter-select"
+                        data-filter-name={filter.name}
+                    >
+                        <option value="">Alle</option>
+                        {filter.options.map(option => (
+                            <option value={option.value}>
+                                {option.label}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            ))}
+        </div>
+    )}
+
+    <div class="filter-actions">
+        <button type="button" class="btn-reset" id="filter-reset">
+            Filter zurücksetzen
+        </button>
+        <span class="result-count" id="result-count"></span>
+    </div>
+</div>
+
+<style>
+    .search-filter {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .search-box {
+        position: relative;
+        width: 100%;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: var(--spacing-sm) var(--spacing-md);
+        padding-right: 3rem;
+        font-size: 1rem;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        background: white;
+        transition: all 0.2s ease;
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    .search-clear {
+        position: absolute;
+        right: var(--spacing-sm);
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--color-text-light);
+        cursor: pointer;
+        padding: 0;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--border-radius);
+        transition: all 0.2s ease;
+    }
+
+    .search-clear:hover {
+        background: var(--color-bg-alt);
+        color: var(--color-text);
+    }
+
+    .filters {
+        display: flex;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+    }
+
+    .filter-group {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .filter-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--color-text);
+        white-space: nowrap;
+    }
+
+    .filter-select {
+        flex: 1;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 0.9rem;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        background: white;
+        color: var(--color-text);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .filter-select:hover {
+        border-color: var(--color-primary);
+    }
+
+    .filter-select:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+    }
+
+    .filter-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+    }
+
+    .btn-reset {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--color-text-light);
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .btn-reset:hover {
+        color: var(--color-text);
+        background: white;
+        border-color: var(--color-primary);
+    }
+
+    .result-count {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        .search-filter {
+            padding: var(--spacing-sm);
+        }
+
+        .filters {
+            flex-direction: column;
+        }
+
+        .filter-group {
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .filter-select {
+            width: 100%;
+        }
+
+        .filter-actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .btn-reset {
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+    // Client-side search and filter logic
+    // This will be enhanced by the filter.js script
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('search-input') as HTMLInputElement;
+        const searchClear = document.getElementById('search-clear') as HTMLButtonElement;
+        const filterReset = document.getElementById('filter-reset') as HTMLButtonElement;
+        const resultCount = document.getElementById('result-count') as HTMLElement;
+
+        if (searchInput && searchClear) {
+            searchInput.addEventListener('input', () => {
+                searchClear.style.display = searchInput.value ? 'flex' : 'none';
+            });
+
+            searchClear.addEventListener('click', () => {
+                searchInput.value = '';
+                searchClear.style.display = 'none';
+                searchInput.dispatchEvent(new Event('input'));
+            });
+        }
+
+        if (filterReset) {
+            filterReset.addEventListener('click', () => {
+                // Reset all filters
+                if (searchInput) {
+                    searchInput.value = '';
+                    searchClear.style.display = 'none';
+                }
+
+                document.querySelectorAll('.filter-select').forEach(select => {
+                    (select as HTMLSelectElement).value = '';
+                });
+
+                // Trigger filter update
+                if (searchInput) {
+                    searchInput.dispatchEvent(new Event('input'));
+                }
+            });
+        }
+    });
+</script>

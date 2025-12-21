@@ -1,0 +1,310 @@
+---
+/**
+ * DokumentList - Displays a list of documents
+ * Supports lazy loading of full document data via client-side script
+ */
+import { getDokumenttypLabel, formatDate } from '@lib/constants.js';
+
+interface Props {
+    dokumente: any[]; // Array of Dokument objects or UUIDs
+    lazyLoad?: boolean; // If true, only UUIDs are provided and will be loaded client-side
+    title?: string;
+    showAuthor?: boolean;
+}
+
+const {
+    dokumente = [],
+    lazyLoad = false,
+    title = 'Dokumente',
+    showAuthor = true
+} = Astro.props;
+---
+
+<div class="dokument-list">
+    {title && <h2 class="list-title">{title}</h2>}
+
+    {dokumente.length === 0 ? (
+        <p class="no-documents">Keine Dokumente verfügbar</p>
+    ) : (
+        <ul class="documents">
+            {dokumente.map((dok) => {
+                // Handle both full document objects and UUID strings
+                const isUuid = typeof dok === 'string';
+                const dokumentId = isUuid ? dok : dok.api_id;
+                const dokumentUrl = `/dokument/${dokumentId}`;
+
+                if (isUuid || lazyLoad) {
+                    // Lazy load placeholder
+                    return (
+                        <li class="document-item lazy" data-document-id={dokumentId}>
+                            <div class="loading-placeholder">
+                                <div class="skeleton skeleton-title"></div>
+                                <div class="skeleton skeleton-meta"></div>
+                            </div>
+                        </li>
+                    );
+                } else {
+                    // Full document data available
+                    return (
+                        <li class="document-item">
+                            <a href={dokumentUrl} class="document-link">
+                                <div class="document-header">
+                                    <div class="document-meta-left">
+                                        <span class="document-type">
+                                            {getDokumenttypLabel(dok.typ) || getDokumenttypLabel(dok.doktyp) || 'Dokument'}
+                                        </span>
+                                        {dok.drucksnr && (
+                                            <span class="document-number">Nr. {dok.drucksnr}</span>
+                                        )}
+                                    </div>
+                                    {(dok.datum || dok.zp_referenz) && (
+                                        <time datetime={dok.datum || dok.zp_referenz} class="document-date">
+                                            {formatDate(dok.datum || dok.zp_referenz, 'short')}
+                                        </time>
+                                    )}
+                                </div>
+
+                                <h3 class="document-title">{dok.kurztitel || dok.titel || 'Ohne Titel'}</h3>
+
+                                {showAuthor && dok.autoren && dok.autoren.length > 0 && (
+                                    <p class="document-authors">
+                                        {/* Autor model: organisation is required, person is optional */}
+                                        {dok.autoren.slice(0, 3).map((autor, idx) => (
+                                            <span>
+                                                {autor.person || autor.organisation}
+                                                {idx < Math.min(dok.autoren.length, 3) - 1 ? ', ' : ''}
+                                            </span>
+                                        ))}
+                                        {dok.autoren.length > 3 && ` +${dok.autoren.length - 3} weitere`}
+                                    </p>
+                                )}
+
+                                {dok.schlagworte && dok.schlagworte.length > 0 && (
+                                    <div class="document-tags">
+                                        {dok.schlagworte.slice(0, 3).map((tag) => (
+                                            <span class="tag">{tag}</span>
+                                        ))}
+                                        {dok.schlagworte.length > 3 && (
+                                            <span class="tag-more">+{dok.schlagworte.length - 3}</span>
+                                        )}
+                                    </div>
+                                )}
+
+                                {/* External link indicator */}
+                                {dok.link && (
+                                    <div class="document-footer">
+                                        <span class="external-link-indicator">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M10.5 1.5L1.5 10.5M10.5 1.5H4.5M10.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            Originalquelle verfügbar
+                                        </span>
+                                    </div>
+                                )}
+                            </a>
+                        </li>
+                    );
+                }
+            })}
+        </ul>
+    )}
+</div>
+
+<style>
+    .dokument-list {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-lg);
+    }
+
+    .list-title {
+        margin: 0 0 var(--spacing-md);
+        font-size: 1.5rem;
+        color: var(--color-text);
+    }
+
+    .no-documents {
+        color: var(--color-text-light);
+        font-style: italic;
+        margin: 0;
+    }
+
+    .documents {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .document-item {
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        transition: all 0.2s ease;
+    }
+
+    .document-item:hover {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .document-link {
+        display: block;
+        padding: var(--spacing-md);
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .document-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+
+    .document-meta-left {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        flex-wrap: wrap;
+    }
+
+    .document-type {
+        background: var(--color-primary);
+        color: white;
+        padding: 0.2rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .document-number {
+        background: var(--color-bg-alt);
+        color: var(--color-text);
+        padding: 0.2rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 0.75rem;
+        font-weight: 600;
+        border: 1px solid var(--color-border);
+    }
+
+    .document-date {
+        color: var(--color-text-light);
+        font-size: 0.85rem;
+    }
+
+    .document-title {
+        margin: 0 0 var(--spacing-sm);
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-text);
+        line-height: 1.4;
+    }
+
+    .document-authors {
+        margin: 0 0 var(--spacing-sm);
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+
+    .document-tags {
+        display: flex;
+        gap: var(--spacing-xs);
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        display: inline-block;
+        background: white;
+        color: var(--color-text-light);
+        padding: 0.2rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 0.75rem;
+        border: 1px solid var(--color-border);
+    }
+
+    .tag-more {
+        display: inline-block;
+        color: var(--color-text-light);
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .document-footer {
+        margin-top: var(--spacing-sm);
+        padding-top: var(--spacing-sm);
+        border-top: 1px solid var(--color-border);
+    }
+
+    .external-link-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        font-size: 0.8rem;
+        color: var(--color-primary);
+        font-weight: 500;
+    }
+
+    .external-link-indicator svg {
+        flex-shrink: 0;
+    }
+
+    /* Lazy loading styles */
+    .document-item.lazy {
+        padding: var(--spacing-md);
+    }
+
+    .loading-placeholder {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .skeleton {
+        background: linear-gradient(
+            90deg,
+            var(--color-border) 25%,
+            var(--color-bg-alt) 50%,
+            var(--color-border) 75%
+        );
+        background-size: 200% 100%;
+        animation: loading 1.5s ease-in-out infinite;
+        border-radius: var(--border-radius);
+    }
+
+    @keyframes loading {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
+        }
+    }
+
+    .skeleton-title {
+        height: 20px;
+        width: 70%;
+    }
+
+    .skeleton-meta {
+        height: 16px;
+        width: 40%;
+    }
+
+    @media (max-width: 768px) {
+        .dokument-list {
+            padding: var(--spacing-md);
+        }
+
+        .document-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>

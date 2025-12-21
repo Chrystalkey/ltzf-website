@@ -1,0 +1,419 @@
+---
+/**
+ * Document Detail Page
+ * Shows full details of a parliamentary document
+ */
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getAllVorgaenge, getAllDocumentIds, getDokument } from '@lib/data-fetcher.js';
+import { getBundesland, getDokumenttypLabel, formatDate } from '@lib/constants.js';
+
+export async function getStaticPaths() {
+    // Get all vorgänge to extract document IDs
+    const allVorgaenge = await getAllVorgaenge();
+    const documentIds = await getAllDocumentIds(allVorgaenge);
+
+    console.log(`Building ${documentIds.length} document detail pages`);
+
+    // Generate paths for all unique documents
+    return documentIds.map(id => ({
+        params: { id }
+    }));
+}
+
+const { id } = Astro.params;
+
+// Fetch document data
+const dokument = await getDokument(id);
+
+if (!dokument) {
+    return Astro.redirect('/404');
+}
+
+const bundesland = getBundesland(dokument.parlament);
+const title = `${dokument.titel || 'Dokument'} - ${bundesland?.name || dokument.parlament}`;
+const description = dokument.zusammenfassung?.slice(0, 160) || dokument.titel;
+---
+
+<BaseLayout title={title} description={description}>
+    <div class="container">
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="/">Start</a>
+            <span>›</span>
+            {bundesland && <a href={`/ltzf-${dokument.parlament}`}>{bundesland.name}</a>}
+            {bundesland && <span>›</span>}
+            <span>Dokument</span>
+        </nav>
+
+        <!-- Document -->
+        <article class="document-article">
+            <header class="document-header">
+                <div class="document-meta">
+                    <span class="document-type">{getDokumenttypLabel(dokument.typ) || getDokumenttypLabel(dokument.doktyp) || 'Dokument'}</span>
+                    {dokument.drucksnr && (
+                        <span class="document-number">Nr. {dokument.drucksnr}</span>
+                    )}
+                    {bundesland && (
+                        <span class="parlament-badge">{bundesland.name}</span>
+                    )}
+                    {(dokument.datum || dokument.zp_referenz) && (
+                        <time datetime={dokument.datum || dokument.zp_referenz}>
+                            {formatDate(dokument.datum || dokument.zp_referenz)}
+                        </time>
+                    )}
+                </div>
+                <h1>{dokument.kurztitel || dokument.titel || 'Ohne Titel'}</h1>
+                {dokument.kurztitel && dokument.titel !== dokument.kurztitel && (
+                    <p class="full-title">{dokument.titel}</p>
+                )}
+            </header>
+
+            <div class="document-content">
+                <!-- External Link -->
+                {dokument.link && (
+                    <section class="doc-section external-link-section">
+                        <a href={dokument.link} target="_blank" rel="noopener noreferrer" class="external-link-button">
+                            <svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.5 1.5L1.5 10.5M10.5 1.5H4.5M10.5 1.5V7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Originalquelle öffnen
+                        </a>
+                    </section>
+                )}
+
+                <!-- Metadata Grid -->
+                <section class="doc-section metadata-section">
+                    <h2>Details</h2>
+                    <dl class="metadata-grid">
+                        {dokument.api_id && (
+                            <>
+                                <dt>Dokument-ID</dt>
+                                <dd><code>{dokument.api_id}</code></dd>
+                            </>
+                        )}
+                        {dokument.hash && (
+                            <>
+                                <dt>Hash</dt>
+                                <dd><code class="hash-short">{dokument.hash.slice(0, 12)}...</code></dd>
+                            </>
+                        )}
+                        {dokument.zp_erstellt && (
+                            <>
+                                <dt>Erstellt</dt>
+                                <dd>{formatDate(dokument.zp_erstellt)}</dd>
+                            </>
+                        )}
+                        {dokument.zp_modifiziert && (
+                            <>
+                                <dt>Zuletzt geändert</dt>
+                                <dd>{formatDate(dokument.zp_modifiziert)}</dd>
+                            </>
+                        )}
+                    </dl>
+                </section>
+                <!-- Authors -->
+                {dokument.autoren && dokument.autoren.length > 0 && (
+                    <section class="doc-section">
+                        <h2>Autoren</h2>
+                        <div class="authors-list">
+                            {/* Autor model: organisation is required, person is optional */}
+                            {dokument.autoren.map(autor => (
+                                <div class="author-item">
+                                    <strong>{autor.person || autor.organisation}</strong>
+                                    {autor.fachgebiet && <span class="fraktion">({autor.fachgebiet})</span>}
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )}
+
+                <!-- Preface/Preamble -->
+                {dokument.vorwort && (
+                    <section class="doc-section">
+                        <h2>Vorwort / Präambel</h2>
+                        <div class="vorwort-text">{dokument.vorwort}</div>
+                    </section>
+                )}
+
+                <!-- Summary -->
+                {dokument.zusammenfassung && (
+                    <section class="doc-section">
+                        <h2>Zusammenfassung</h2>
+                        <div class="summary-text">{dokument.zusammenfassung}</div>
+                    </section>
+                )}
+
+                <!-- Opinion Rating -->
+                {dokument.meinung !== undefined && dokument.meinung !== null && (
+                    <section class="doc-section">
+                        <h2>Meinungsbild</h2>
+                        <div class="opinion-rating">
+                            <div class="rating-bar">
+                                {[1, 2, 3, 4, 5].map(level => (
+                                    <div
+                                        class={`rating-segment ${dokument.meinung >= level ? 'active' : ''}`}
+                                        title={level === 1 ? 'Ablehnung' : level === 5 ? 'Zustimmung' : 'Neutral'}
+                                    ></div>
+                                ))}
+                            </div>
+                            <p class="rating-label">
+                                {dokument.meinung === 1 && 'Ablehnung empfohlen'}
+                                {dokument.meinung === 2 && 'Teilweise kritisch'}
+                                {dokument.meinung === 3 && 'Neutral / Gemischt'}
+                                {dokument.meinung === 4 && 'Überwiegend positiv'}
+                                {dokument.meinung === 5 && 'Zustimmung empfohlen'}
+                            </p>
+                        </div>
+                    </section>
+                )}
+
+                <!-- Full Text -->
+                {dokument.volltext && (
+                    <section class="doc-section">
+                        <h2>Volltext</h2>
+                        <div class="volltext">{dokument.volltext}</div>
+                    </section>
+                )}
+
+                <!-- Keywords -->
+                {dokument.schlagworte && dokument.schlagworte.length > 0 && (
+                    <section class="doc-section">
+                        <h2>Schlagworte</h2>
+                        <div class="keywords">
+                            {dokument.schlagworte.map(tag => (
+                                <span class="keyword">{tag}</span>
+                            ))}
+                        </div>
+                    </section>
+                )}
+            </div>
+        </article>
+    </div>
+</BaseLayout>
+
+<style>
+    .breadcrumbs {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-md);
+        color: var(--color-text-light);
+    }
+    .breadcrumbs a {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+    .breadcrumbs span {
+        margin: 0 var(--spacing-xs);
+    }
+    .document-article {
+        background: white;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        margin-bottom: var(--spacing-xl);
+    }
+    .document-header {
+        padding: var(--spacing-lg);
+        background: var(--color-bg-alt);
+        border-bottom: 1px solid var(--color-border);
+    }
+    .document-meta {
+        display: flex;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-md);
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .document-type {
+        background: var(--color-primary);
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+    .document-number {
+        background: white;
+        color: var(--color-text);
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: 1px solid var(--color-border);
+    }
+    .parlament-badge {
+        background: var(--color-bg);
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--border-radius);
+        font-size: 0.85rem;
+    }
+    .document-header h1 {
+        margin: 0;
+        font-size: 1.75rem;
+        color: var(--color-text);
+    }
+    .full-title {
+        margin: var(--spacing-sm) 0 0;
+        font-size: 1rem;
+        color: var(--color-text-light);
+        font-style: italic;
+    }
+    .document-content {
+        padding: var(--spacing-lg);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xl);
+    }
+    .doc-section h2 {
+        font-size: 1.25rem;
+        margin: 0 0 var(--spacing-md);
+        color: var(--color-primary);
+    }
+    .authors-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    .author-item {
+        padding: var(--spacing-sm);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+    }
+    .fraktion {
+        color: var(--color-text-light);
+        margin-left: var(--spacing-xs);
+    }
+    .summary-text, .volltext {
+        line-height: 1.8;
+        color: var(--color-text);
+    }
+    .volltext {
+        white-space: pre-wrap;
+        font-family: Georgia, serif;
+    }
+    .keywords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-xs);
+    }
+    .keyword {
+        padding: 0.25rem 0.75rem;
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        font-size: 0.9rem;
+    }
+    .external-link-section {
+        background: var(--color-bg-alt);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+        border: 1px solid var(--color-border);
+    }
+    .external-link-button {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
+        background: var(--color-primary);
+        color: white;
+        text-decoration: none;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+    .external-link-button:hover {
+        background: var(--color-primary-dark, #0056b3);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .external-link-button svg {
+        flex-shrink: 0;
+    }
+    .metadata-section {
+        background: var(--color-bg-alt);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+    }
+    .metadata-grid {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: var(--spacing-sm) var(--spacing-lg);
+        margin: 0;
+    }
+    .metadata-grid dt {
+        font-weight: 600;
+        color: var(--color-text);
+    }
+    .metadata-grid dd {
+        margin: 0;
+        color: var(--color-text-light);
+    }
+    .metadata-grid code {
+        background: white;
+        padding: 0.2rem 0.4rem;
+        border-radius: var(--border-radius);
+        font-size: 0.85rem;
+        border: 1px solid var(--color-border);
+    }
+    .hash-short {
+        font-family: monospace;
+    }
+    .vorwort-text {
+        line-height: 1.8;
+        color: var(--color-text);
+        padding: var(--spacing-md);
+        background: var(--color-bg-alt);
+        border-left: 4px solid var(--color-primary);
+        border-radius: var(--border-radius);
+        font-style: italic;
+    }
+    .opinion-rating {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    .rating-bar {
+        display: flex;
+        gap: 4px;
+        height: 40px;
+    }
+    .rating-segment {
+        flex: 1;
+        background: var(--color-border);
+        border-radius: var(--border-radius);
+        transition: all 0.3s ease;
+    }
+    .rating-segment.active {
+        background: linear-gradient(135deg, #d32f2f 0%, #4caf50 100%);
+    }
+    .rating-segment:nth-child(1).active {
+        background: #d32f2f;
+    }
+    .rating-segment:nth-child(2).active {
+        background: #ff9800;
+    }
+    .rating-segment:nth-child(3).active {
+        background: #ffc107;
+    }
+    .rating-segment:nth-child(4).active {
+        background: #8bc34a;
+    }
+    .rating-segment:nth-child(5).active {
+        background: #4caf50;
+    }
+    .rating-label {
+        margin: 0;
+        font-weight: 600;
+        color: var(--color-text);
+        text-align: center;
+    }
+    @media (max-width: 768px) {
+        .document-header h1 {
+            font-size: 1.5rem;
+        }
+        .document-content {
+            padding: var(--spacing-md);
+        }
+    }
+</style>

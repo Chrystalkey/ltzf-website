@@ -1,0 +1,48 @@
+{
+  "api_id": "82ee765f-0322-406e-a2eb-e854149a95e0",
+  "titel": "Gesetzentwurf der Staatsregierung zur Einführung eines Bayerischen Kinderstartgeldes",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Einführung eines Bayerischen Kinderstartgeldes",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/7432",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161376",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000006000/0000006345.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198ae47-e0de-7632-9d3b-7a62523b29b8",
+      "zp_start": "2025-07-08T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T15:10:02.971650Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161376",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198ae47-e0df-73d3-acdf-bfeaa188d121"
+      ],
+      "stellungnahmen": [
+        "0198ae47-e0e6-7361-a5f2-4bf61b84ebbc",
+        "0198ae47-e0ef-70b3-926e-4b891a9b1870",
+        "0198ae47-e0f5-78d0-8bee-fc91f40b8292",
+        "0198ae47-e0f8-7101-bf49-d5ca483bd324",
+        "0198ae47-e0fc-7e83-90f8-0b61743d6320"
+      ]
+    }
+  ]
+}

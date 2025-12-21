@@ -1,0 +1,136 @@
+{
+  "api_id": "c61d8f79-6b80-4ea3-9030-71b66e66c2e6",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Mediengesetzes und des Ausführungsgesetzes Medienstaatsverträge",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Mediengesetzes und des Ausführungsgesetzes Medienstaatsverträge",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/2590",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156228",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000002000/0000002124.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-44ce-74f0-a9b5-d2669fedbae4",
+      "zp_start": "2024-06-24T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.842755Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156228",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-44cf-7af1-b0a5-838908b8eba2"
+      ],
+      "stellungnahmen": [
+        "0198aecd-44d5-7040-8bdd-b168e033b6ed",
+        "0198aecd-44f4-7490-8065-d13c11a96b66",
+        "0198aecd-4501-7e70-8eb7-1781c5c3262f",
+        "0198aecd-451b-7e43-b029-6d12e5ee1739",
+        "0198aecd-4523-7cf0-8732-6b64fcb287d4",
+        "0198aecd-4531-77a3-82cf-8cd91e7ed744",
+        "0198aecd-453b-7fa3-a66b-e3701a481ce6",
+        "0198aecd-4556-7a60-84b9-db30d8b0c52b"
+      ]
+    },
+    {
+      "api_id": "0198aecd-4571-7811-88d8-14f6ba1b447c",
+      "zp_start": "2024-07-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.842755Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156228",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-4572-7b81-bf71-4714180a5c5a"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_595/meta_vod_47613.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-4575-7eb2-b23c-6f429f5a118f",
+      "zp_start": "2024-11-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.842755Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Wirtschaft, Landesentwicklung, Energie, Medien und Digitalisierung"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156228",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-4575-7eb2-b23c-6f5dfe2c47b6"
+      ]
+    },
+    {
+      "api_id": "0198aecd-4576-7f60-b562-9adee8c90c8f",
+      "zp_start": "2024-11-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.842755Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156228",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-4575-7eb2-b23c-6f5dfe2c47b6"
+      ]
+    },
+    {
+      "api_id": "0198aecd-4577-79d0-8d8c-d2671124facf",
+      "zp_start": "2024-12-02T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.842755Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156228",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-457a-7d80-86dc-a2f8c0824020",
+        "0198aecd-4577-79d0-8d8c-d27e7059c875"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_606/meta_vod_48473.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-457c-7b21-b0f1-9f9c310ed7a8",
+      "zp_start": "2024-12-15T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:44.842755Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=156228",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecd-3403-7471-8d7f-b19f1f140a3f"
+      ]
+    }
+  ]
+}

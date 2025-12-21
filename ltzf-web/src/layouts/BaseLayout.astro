@@ -1,0 +1,214 @@
+---
+/**
+ * BaseLayout - Main layout with header, footer, and navigation
+ * Used as the base for all pages
+ */
+interface Props {
+    title?: string;
+    description?: string;
+    showHeader?: boolean;
+    showFooter?: boolean;
+    className?: string;
+}
+
+const {
+    title = "Der Parlamentszusammenfasser",
+    description = "Deutsche Gesetzgebung ist hier zusammengefasst",
+    showHeader = true,
+    showFooter = true,
+    className = "",
+} = Astro.props;
+
+const siteUrl = Astro.site || "https://pazufa.de";
+const currentUrl = new URL(Astro.url.pathname, siteUrl);
+---
+
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content={description} />
+        <meta name="generator" content={Astro.generator} />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:url" content={currentUrl} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+
+        <title>{title}</title>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="canonical" href={currentUrl} />
+    </head>
+    <body>
+        {showHeader && (
+            <header class="site-header">
+                <div class="container">
+                    <div class="header-content">
+                        <a href="/" class="logo">
+                            <h1>Parlamentszusammenfasser</h1>
+                        </a>
+                        <nav class="main-nav">
+                            <ul>
+                                <li><a href="/">Start</a></li>
+                                <li><a href="/btzf">Bundestag</a></li>
+                                <li><a href="/ltzf-overview">Länder-Übersicht</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        )}
+
+        <main class={`main-content ${className}`}>
+            <slot />
+        </main>
+
+        {showFooter && (
+            <footer class="site-footer">
+                <div class="container">
+                    <p>
+                        &copy; {new Date().getFullYear()} Parlamentszusammenfasser.
+                        Daten aus öffentlichen Parlamentsdatenbanken.
+                    </p>
+                </div>
+            </footer>
+        )}
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --color-primary: #0066cc;
+        --color-secondary: #004d99;
+        --color-text: #333;
+        --color-text-light: #666;
+        --color-border: #ddd;
+        --color-bg: #fff;
+        --color-bg-alt: #f5f5f5;
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+        --max-width: 1200px;
+        --border-radius: 4px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        color: var(--color-text);
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background: var(--color-bg);
+    }
+
+    .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 var(--spacing-md);
+        width: 100%;
+    }
+
+    .site-header {
+        background: var(--color-primary);
+        color: white;
+        padding: var(--spacing-md) 0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+    }
+
+    .logo {
+        text-decoration: none;
+        color: white;
+    }
+
+    .logo h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .main-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: var(--spacing-md);
+    }
+
+    .main-nav a {
+        color: white;
+        text-decoration: none;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--border-radius);
+        transition: background-color 0.2s;
+    }
+
+    .main-nav a:hover {
+        background: var(--color-secondary);
+    }
+
+    .main-content {
+        flex: 1;
+        padding: var(--spacing-lg) 0;
+    }
+
+    .site-footer {
+        background: var(--color-bg-alt);
+        border-top: 1px solid var(--color-border);
+        padding: var(--spacing-lg) 0;
+        margin-top: var(--spacing-xl);
+        text-align: center;
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+    }
+
+    /* Utility classes */
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+    .mt-sm { margin-top: var(--spacing-sm); }
+    .mt-md { margin-top: var(--spacing-md); }
+    .mt-lg { margin-top: var(--spacing-lg); }
+    .mb-sm { margin-bottom: var(--spacing-sm); }
+    .mb-md { margin-bottom: var(--spacing-md); }
+    .mb-lg { margin-bottom: var(--spacing-lg); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .header-content {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .main-nav ul {
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+    }
+</style>

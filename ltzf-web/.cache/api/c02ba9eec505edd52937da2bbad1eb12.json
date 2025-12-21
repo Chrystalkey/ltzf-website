@@ -1,0 +1,179 @@
+{
+  "api_id": "c53a9cb7-9775-4a5b-9789-aa15c3ff3058",
+  "titel": "Gesetzentwurf zur Änderung des Bayerischen Feuerwehrgesetzes",
+  "kurztitel": "Gesetzentwurf zur Änderung des Bayerischen Feuerwehrgesetzes",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/3563",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157159",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000002500/0000002773.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Holger Grießhammer",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Dr. Simone Strohmayr",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Volkmar Halbleib",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Anna Rasehorn",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Doris Rauscher",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Markus Rinderspacher",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Arif Taşdelen",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Horst Arnold",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Nicole Bäumler",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Florian von Brunn",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Martina Fehlner",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Christiane Feichtmeier",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Sabine Gross",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Ruth Müller",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Harry Scheuenstuhl",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Ruth Waldmann",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "person": "Katja Weitzel",
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    },
+    {
+      "organisation": "Sozialdemokratische Partei Deutschland (SPD)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-0f72-7cb2-804c-c0af70eb3eee",
+      "zp_start": "2024-10-08T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:31.176610Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157159",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-0f73-7af0-87de-04b465ce5b0e"
+      ]
+    },
+    {
+      "api_id": "0198aecd-0f7d-7d60-bdcc-6dce712fa64c",
+      "zp_start": "2024-10-23T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:31.176610Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157159",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-0f7e-7ae2-87f6-845a31eb44f9"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_602/meta_vod_48188.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-0f8f-7a50-b1cf-ef52b3959043",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:31.176610Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Kommunale Fragen, Innere Sicherheit und Sport"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157159",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-0f90-7da1-a4d5-8174f530493d"
+      ]
+    },
+    {
+      "api_id": "0198aecd-0f93-7e31-8ceb-944107ba85d1",
+      "zp_start": "2024-12-04T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:31.176610Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157159",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-0f90-7da1-a4d5-8174f530493d"
+      ]
+    },
+    {
+      "api_id": "0198aecd-0f95-7713-bfb9-eb59ca6dca93",
+      "zp_start": "2024-12-10T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:31.176610Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157159",
+      "typ": "parl-ablehnung",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-0f9c-7e91-9afc-4028d9c573ca",
+        "0198aecd-0f96-7461-9895-14009dd6cd73"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_608/meta_vod_48600.json&startId=1"
+      ]
+    }
+  ]
+}

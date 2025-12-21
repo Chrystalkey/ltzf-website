@@ -1,0 +1,127 @@
+{
+  "api_id": "52b0480f-24b5-48d1-8273-a9bcd029a457",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Gesetzes zur Ausführung der Verwaltungsgerichtsordnung",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Gesetzes zur Ausführung der Verwaltungsgerichtsordnung",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6138",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159895",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005000/0000005490.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-1749-7b61-a1cd-e06b96e7c229",
+      "zp_start": "2025-03-31T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:33.191464Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159895",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 2,
+      "dokumente": [
+        "0198aecd-1749-7b61-a1cd-e07e998768cb"
+      ],
+      "stellungnahmen": [
+        "0198aecd-174c-7b22-91f9-5b55e3f2de68",
+        "0198aecd-1755-7121-ae79-f4819a4ccdbd"
+      ]
+    },
+    {
+      "api_id": "0198aecd-1761-7fd3-9cf0-9e8e0b3b6331",
+      "zp_start": "2025-04-08T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:33.191464Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159895",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-1762-7ec0-96c8-6683a82a3805"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_619/meta_vod_49594.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-1766-7b72-908c-5e243cfc9071",
+      "zp_start": "2025-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:33.191464Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159895",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-1766-7b72-908c-5e30bff05aa5"
+      ]
+    },
+    {
+      "api_id": "0198aecd-1768-7c13-9540-b88aa532f269",
+      "zp_start": "2025-06-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:33.191464Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Staatshaushalt und Finanzfragen"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159895",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-1766-7b72-908c-5e30bff05aa5"
+      ]
+    },
+    {
+      "api_id": "0198aecd-176a-72e2-96bb-ca2c8f805eaa",
+      "zp_start": "2025-07-01T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:33.191464Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159895",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 2,
+      "dokumente": [
+        "0198aecd-176c-73f1-96d7-747ec72fa12a",
+        "0198aecd-176a-72e2-96bb-ca308fa76937"
+      ]
+    },
+    {
+      "api_id": "0198aecd-176f-71c1-99e3-de5108d1e09b",
+      "zp_start": "2025-07-14T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:33.191464Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=159895",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecc-a1c0-73a2-9b19-2e7c454f2477"
+      ]
+    }
+  ]
+}

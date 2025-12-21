@@ -1,0 +1,161 @@
+{
+  "api_id": "f86c431d-20ff-4fd2-b867-71d0043dc156",
+  "titel": "Gesetzentwurf der Staatsregierung zur Einführung und Durchsetzung verbindlicher Sprachstandserhebungen und Sprachfördermaßnahmen vor der Einschulung",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Einführung und Durchsetzung verbindlicher Sprachstandserhebungen und Sprachfördermaßnahmen vor der Einschulung",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/3248",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157003",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000002500/0000002588.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-63f1-77d2-b9d5-a888f6f673b0",
+      "zp_start": "2024-09-15T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:52.813476Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157003",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 4,
+      "dokumente": [
+        "0198aecd-63f2-7d31-971e-64cecf462e95"
+      ],
+      "stellungnahmen": [
+        "0198aecd-63fa-7b30-aa46-0f6c6f98bd07",
+        "0198aecd-63fe-70a3-90bf-161081401801",
+        "0198aecd-6408-7930-aece-784db222ce7e",
+        "0198aecd-6416-7230-9073-3612dbc16904",
+        "0198aecd-642d-7810-8e92-cbc023734eb5",
+        "0198aecd-643c-73b2-b55f-64c9d83da117",
+        "0198aecd-6449-74c0-acca-2b0c48bde193",
+        "0198aecd-646b-7191-975c-f5e193a47ba6",
+        "0198aecd-64cf-7f12-b22b-2900b865ec51",
+        "0198aecd-64df-7c62-b1b4-8a7a4bcb0205",
+        "0198aecd-64ed-7053-b562-db6bac2bb551",
+        "0198aecd-6500-7023-a9a5-c0f7f99b82e6",
+        "0198aecd-6503-76f1-8cb9-e42fe1ae87a3",
+        "0198aecd-6507-79b1-8a76-ccc87b8652c5",
+        "0198aecd-6509-78f0-bc64-7fbac2fd1b45",
+        "0198aecd-6517-7480-84a9-e7de4db657ab",
+        "0198aecd-651f-79c2-bfc6-f7bf2ff17fae"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6528-7c10-93a6-cbfdcb68800c",
+      "zp_start": "2024-09-25T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:52.813476Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157003",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-6529-7493-a02e-01e2d87fbaf8"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_599/meta_vod_47895.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-652d-7221-8f42-f7f85307ce5b",
+      "zp_start": "2024-11-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:52.813476Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Bildung und Kultus"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157003",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-652e-7ee3-a5f6-4477b491df4a"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6530-7840-9734-93d3c0d8a41e",
+      "zp_start": "2024-11-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:52.813476Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Arbeit und Soziales, Jugend und Familie"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157003",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-652e-7ee3-a5f6-4477b491df4a"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6532-7373-aca0-e82efec08a83",
+      "zp_start": "2024-11-13T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:52.813476Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157003",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-652e-7ee3-a5f6-4477b491df4a"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6534-7e72-90c8-e0bac3724413",
+      "zp_start": "2024-11-27T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:52.813476Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157003",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-6538-7740-9c4f-715eabd3f52b",
+        "0198aecd-6535-7f00-860d-a7ecb183f1f2"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_605/meta_vod_48425.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-653b-7680-b654-89fe2eda901a",
+      "zp_start": "2024-12-15T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:52.813476Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157003",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecd-3403-7471-8d7f-b19f1f140a3f"
+      ]
+    }
+  ]
+}

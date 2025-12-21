@@ -1,0 +1,142 @@
+{
+  "api_id": "4756e415-d373-4a16-975f-bca08e24e1d7",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Finanzausgleichsgesetzes und der Bayerischen Durchführungsverordnung Finanzausgleichsgesetz  (Finanzausgleichsänderungsgesetz 2025)",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Finanzausgleichsgesetzes und der Bayerischen Durchführungsverordnung Finanzausgleichsgesetz  (Finanzausgleichsänderungsgesetz 2025)",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/4007",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157913",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000003000/0000003093.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecd-6fd3-7713-b6e2-78935e435748",
+      "zp_start": "2024-12-01T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:55.856365Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157913",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-6fd4-79b1-88c1-53b2b8978928"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6fdc-7180-8863-59e0bb018b70",
+      "zp_start": "2024-12-10T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:55.856365Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157913",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecd-6fdd-70c3-a687-8fa0f193b4a9"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_608/meta_vod_48594.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6ff5-7441-89c0-c782cf49c807",
+      "zp_start": "2025-04-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:55.856365Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Staatshaushalt und Finanzfragen"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157913",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-6ff6-7c83-b14a-8987b23ad00a"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6ff8-7f43-a237-e213127c95c1",
+      "zp_start": "2025-04-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:55.856365Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Kommunale Fragen, Innere Sicherheit und Sport"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157913",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-6ff6-7c83-b14a-8987b23ad00a"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6ffa-7321-a67d-39343479c71b",
+      "zp_start": "2025-04-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:55.856365Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157913",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecd-6ff6-7c83-b14a-8987b23ad00a"
+      ]
+    },
+    {
+      "api_id": "0198aecd-6ffc-7422-a435-763701c1047b",
+      "zp_start": "2025-04-08T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:55.856365Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157913",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecd-7076-7450-bfd7-ff746d1c0cf7",
+        "0198aecd-6ffe-71f0-9b76-ee4fa5f94c62"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_619/meta_vod_49599.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecd-707a-7e40-af39-fe31476c7737",
+      "zp_start": "2025-04-29T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:55.856365Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=157913",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecd-546f-7981-b015-0aa53a8b1b33"
+      ]
+    }
+  ]
+}

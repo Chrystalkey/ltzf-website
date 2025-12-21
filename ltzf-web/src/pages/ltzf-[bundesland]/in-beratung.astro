@@ -1,0 +1,121 @@
+---
+/**
+ * In Beratung Page
+ * Shows legislative items currently under discussion
+ */
+import LtzfLayout from '@layouts/LtzfLayout.astro';
+import VorgangCard from '@components/VorgangCard.astro';
+import { getAllVorgaenge, categorizeVorgang } from '@lib/data-fetcher.js';
+import { BUNDESLAENDER, getStateCodes, getFederalCodes } from '@lib/constants.js';
+
+export async function getStaticPaths() {
+    const allCodes = [...getStateCodes(), ...getFederalCodes().filter(c => c !== 'BT')];
+
+    return allCodes.map(code => ({
+        params: { bundesland: code }
+    }));
+}
+
+const { bundesland } = Astro.params;
+
+if (!BUNDESLAENDER[bundesland]) {
+    return Astro.redirect('/404');
+}
+
+const land = BUNDESLAENDER[bundesland];
+
+// Fetch vorgänge and filter for items in active discussion based on last station type
+const vorgaengeRaw = await getAllVorgaenge({ parlament: bundesland });
+const vorgaenge = Array.isArray(vorgaengeRaw) ? vorgaengeRaw : [];
+
+// Filter for items in active parliamentary discussion
+const inBeratung = vorgaenge.filter(vg => categorizeVorgang(vg) === 'beratung');
+
+console.log(`[${bundesland} In Beratung] Found ${inBeratung.length} items`);
+---
+
+<LtzfLayout
+    title={`In Beratung - ${land.name}`}
+    description={`Gesetzesvorhaben in aktiver Beratung im ${land.fullName}`}
+    bundeslandCode={bundesland}
+    currentPage="beratung"
+>
+    <div class="page-content">
+        <header class="page-header">
+            <h1>In Beratung</h1>
+            <p class="page-description">
+                Gesetzesvorhaben, die aktuell im {land.fullName} in Beratung sind
+            </p>
+        </header>
+
+        <section class="section">
+            <h2>In Beratung ({inBeratung.length})</h2>
+
+            {inBeratung.length > 0 ? (
+                <div class="vorgang-list">
+                    {inBeratung.map((vorgang) => (
+                        <div class="vorgang-item">
+                            <VorgangCard vorgang={vorgang} />
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div class="empty-state">
+                    <p>Keine Vorgänge in Beratung gefunden.</p>
+                </div>
+            )}
+        </section>
+    </div>
+</LtzfLayout>
+
+<style>
+    .page-header {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin: 0 0 var(--spacing-sm);
+        color: var(--color-primary);
+    }
+
+    .page-description {
+        font-size: 1.1rem;
+        color: var(--color-text-light);
+        margin: 0;
+    }
+
+    .section {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .section h2 {
+        font-size: 1.75rem;
+        margin: 0 0 var(--spacing-lg);
+        color: var(--color-text);
+    }
+
+    .vorgang-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: var(--spacing-xl);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        color: var(--color-text-light);
+    }
+
+    @media (max-width: 768px) {
+        .page-header h1 {
+            font-size: 2rem;
+        }
+
+        .vorgang-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

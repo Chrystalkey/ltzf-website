@@ -1,0 +1,41 @@
+{
+  "api_id": "5a112d2e-e976-4f57-b1a7-d1c410baca77",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Gesetzes über den Bayerischen Maximiliansorden für Wissenschaft und Kunst",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Gesetzes über den Bayerischen Maximiliansorden für Wissenschaft und Kunst",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/7768",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161555",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000006000/0000006487.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198ae47-8f78-70b0-8e62-ac1e7b7b1254",
+      "zp_start": "2025-07-22T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T15:09:42.134479Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161555",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198ae47-8f79-70c0-8348-2b05887949e3"
+      ]
+    }
+  ]
+}

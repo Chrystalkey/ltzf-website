@@ -1,0 +1,123 @@
+{
+  "api_id": "96b82a3e-f63e-4f02-bdb4-689cf70e5017",
+  "titel": "Antrag der Staatsregierung auf Zustimmung zum Zweiten Staatsvertrag zur Änderung des IT-Staatsvertrags",
+  "kurztitel": "Antrag der Staatsregierung auf Zustimmung zum Zweiten Staatsvertrag zur Änderung des IT-Staatsvertrags",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/229",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153441",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000000001/0000000169.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecc-a7f5-7bd1-b4d3-01ea21d2f8d1",
+      "zp_start": "2024-01-15T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:04.689818Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153441",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecc-a7f6-7ed0-8fdf-15fa8bd7b017"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a802-7e60-a3b4-e27dab8659ef",
+      "zp_start": "2024-01-23T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:04.689818Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153441",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecc-a803-7763-bcb7-831c6a7df6de"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_578/meta_vod_46462.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a80e-7072-b467-9036832ea106",
+      "zp_start": "2024-02-28T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:04.689818Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Wirtschaft, Landesentwicklung, Energie, Medien und Digitalisierung"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153441",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-a80f-7f41-b4ba-a9d2662136e8"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a811-7dd0-91f7-ffbd7c278616",
+      "zp_start": "2024-02-28T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:04.689818Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153441",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecc-a80f-7f41-b4ba-a9d2662136e8"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a813-7a90-ac4f-bb6e12e617e9",
+      "zp_start": "2024-03-12T23:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:04.689818Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153441",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecc-a817-7e33-bee1-0cd5a2ce52ed",
+        "0198aecc-a814-7ce0-993d-b81f4c4f52c0"
+      ]
+    },
+    {
+      "api_id": "0198aecc-a81b-79d2-8e7a-75288be56fae",
+      "zp_start": "2024-04-29T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:35:04.689818Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=153441",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aecc-a81c-7343-acaf-9e05de4e6230"
+      ]
+    }
+  ]
+}

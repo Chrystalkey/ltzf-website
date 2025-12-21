@@ -1,0 +1,239 @@
+---
+/**
+ * Bundestag Overview Page
+ * Shows federal legislative activity
+ */
+import BaseLayout from '@layouts/BaseLayout.astro';
+import VorgangCard from '@components/VorgangCard.astro';
+import Statistics from '@components/Statistics.astro';
+import SearchFilter from '@components/SearchFilter.astro';
+import { getAllVorgaenge } from '@lib/data-fetcher.js';
+import { VORGANGSTYP_LABELS } from '@lib/constants.js';
+
+// Fetch Bundestag vorgänge
+const vorgaengeRaw = await getAllVorgaenge({ parlament: 'BT' });
+const vorgaenge = Array.isArray(vorgaengeRaw) ? vorgaengeRaw : [];
+
+console.log(`[BTZF] Found ${vorgaenge.length} Bundestag vorgänge`);
+
+// Sort by modification date (newest first)
+const sortedVorgaenge = vorgaenge.sort((a, b) => {
+    const dateA = new Date(a.zp_modifiziert || 0);
+    const dateB = new Date(b.zp_modifiziert || 0);
+    return dateB - dateA;
+});
+
+// Calculate statistics
+const stats = {
+    total: vorgaenge.length,
+    byType: {},
+    recentCount: 0
+};
+
+// Count by type
+for (const vg of vorgaenge) {
+    const typ = vg.vorgangstyp || 'sonstig';
+    stats.byType[typ] = (stats.byType[typ] || 0) + 1;
+}
+
+// Count recent (last 30 days)
+const thirtyDaysAgo = new Date();
+thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+stats.recentCount = vorgaenge.filter(vg => {
+    const modDate = new Date(vg.zp_modifiziert || 0);
+    return modDate > thirtyDaysAgo;
+}).length;
+
+// Build display stats
+const displayStats = [
+    {
+        label: 'Gesetzesvorhaben gesamt',
+        value: stats.total,
+        description: 'Alle erfassten Vorgänge'
+    },
+    {
+        label: 'Letzte 30 Tage',
+        value: stats.recentCount,
+        description: 'Kürzlich aktualisiert',
+        trend: 'neutral'
+    },
+    ...Object.entries(stats.byType)
+        .sort(([, a], [, b]) => b - a)
+        .slice(0, 3)
+        .map(([typ, count]) => ({
+            label: VORGANGSTYP_LABELS[typ] || typ,
+            value: count,
+            description: `Vorgänge vom Typ ${VORGANGSTYP_LABELS[typ] || typ}`
+        }))
+];
+
+// Filter options
+const filterOptions = [
+    {
+        name: 'vorgangstyp',
+        label: 'Vorgangstyp',
+        options: Object.entries(stats.byType)
+            .sort(([, a], [, b]) => b - a)
+            .map(([typ, count]) => ({
+                value: VORGANGSTYP_LABELS[typ] || typ,
+                label: `${VORGANGSTYP_LABELS[typ] || typ} (${count})`
+            }))
+    }
+];
+---
+
+<BaseLayout
+    title="Bundestag - Parlamentszusammenfasser"
+    description="Gesetzgebung im Deutschen Bundestag. Aktuelle Entwürfe, Beschlüsse und parlamentarische Vorgänge."
+>
+    <div class="container">
+        <!-- Header -->
+        <header class="page-header">
+            <div class="breadcrumbs">
+                <a href="/">Start</a>
+                <span>›</span>
+                <span>Bundestag</span>
+            </div>
+            <h1>Deutscher Bundestag</h1>
+            <p class="page-description">
+                Bundesgesetzgebung und parlamentarische Vorgänge auf Bundesebene
+            </p>
+        </header>
+
+        <!-- Statistics -->
+        <section class="section">
+            <Statistics title="Übersicht" stats={displayStats} layout="grid" />
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="section">
+            <SearchFilter
+                placeholder="Gesetzesvorhaben durchsuchen..."
+                filters={filterOptions}
+                showSearch={true}
+            />
+        </section>
+
+        <!-- Vorgänge List -->
+        <section class="section">
+            <h2>Alle Gesetzesvorhaben ({sortedVorgaenge.length})</h2>
+
+            <div class="vorgang-list filterable-container">
+                {sortedVorgaenge.map((vorgang) => (
+                    <div
+                        class="vorgang-item filterable-item searchable-item"
+                        data-vorgangstyp={VORGANGSTYP_LABELS[vorgang.vorgangstyp] || vorgang.vorgangstyp}
+                    >
+                        <VorgangCard vorgang={vorgang} />
+                    </div>
+                ))}
+            </div>
+
+            {sortedVorgaenge.length === 0 && (
+                <div class="empty-state">
+                    <p>Keine Gesetzesvorhaben gefunden.</p>
+                </div>
+            )}
+        </section>
+    </div>
+</BaseLayout>
+
+<style>
+    .page-header {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .breadcrumbs {
+        font-size: 0.9rem;
+        margin-bottom: var(--spacing-sm);
+        color: var(--color-text-light);
+    }
+
+    .breadcrumbs a {
+        color: var(--color-primary);
+        text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+        text-decoration: underline;
+    }
+
+    .breadcrumbs span {
+        margin: 0 var(--spacing-xs);
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin: 0 0 var(--spacing-sm);
+        color: var(--color-primary);
+    }
+
+    .page-description {
+        font-size: 1.1rem;
+        color: var(--color-text-light);
+        margin: 0;
+    }
+
+    .section {
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .section h2 {
+        font-size: 1.75rem;
+        margin: 0 0 var(--spacing-lg);
+        color: var(--color-text);
+    }
+
+    .vorgang-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--spacing-md);
+    }
+
+    .vorgang-item {
+        transition: opacity 0.2s ease;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: var(--spacing-xl);
+        background: var(--color-bg-alt);
+        border-radius: var(--border-radius);
+        color: var(--color-text-light);
+    }
+
+    @media (max-width: 768px) {
+        .page-header h1 {
+            font-size: 2rem;
+        }
+
+        .vorgang-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script>
+    // Initialize filtering
+    import { initFilter } from '@/scripts/filter.js';
+    import { initSearch } from '@/scripts/search.js';
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+        initFilter({
+            containerSelector: '.filterable-container',
+            itemSelector: '.filterable-item',
+            filterNames: ['vorgangstyp'],
+            resultCountId: 'result-count',
+            searchInputId: 'search-input'
+        });
+
+        initSearch({
+            inputId: 'search-input',
+            containerSelector: '.searchable-container',
+            itemSelector: '.searchable-item',
+            itemType: 'vorgang',
+            resultCountId: 'result-count'
+        });
+    });
+</script>

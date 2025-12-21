@@ -1,0 +1,145 @@
+{
+  "api_id": "3554ee29-4b1f-444f-b276-792449cdd213",
+  "titel": "Gesetzentwurf zur Änderung der Verfassung des Freistaates Bayern  hier: Streichung der Altersgrenze für das Amt der Ministerpräsidentin bzw. des Ministerpräsidenten",
+  "kurztitel": "Gesetzentwurf zur Änderung der Verfassung des Freistaates Bayern  hier: Streichung der Altersgrenze für das Amt der Ministerpräsidentin bzw. des Ministerpräsidenten",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/7243",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161206",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000006000/0000006237.pdf"
+  ],
+  "initiatoren": [
+    {
+      "person": "Katharina Schulze",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Johannes Becher",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dipl.-Betriebswirtin (FH) Claudia Köhler",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Ludwig Hartmann",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Jürgen Mistol",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Verena Osgyan",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Tim Pargent",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Stephanie Schuhknecht",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Toni Schuberl",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Gabriele Triebel",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Kerstin Celina",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Andreas Hanna-Krahl",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Sanne Kurz",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Eva Lettenbauer",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Julia Post",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Dr. Sabine Weigand",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    },
+    {
+      "person": "Christian Zwanziger",
+      "organisation": "Bündnis 90/Die Grünen (Grüne)"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aec7-21ca-7e90-8238-bfd5e143c40d",
+      "zp_start": "2025-06-29T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:02.661489Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161206",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aec7-21cb-7723-abb2-b55ebddc5da9"
+      ]
+    },
+    {
+      "api_id": "0198aec7-21d1-7121-b606-c58ec476a28a",
+      "zp_start": "2025-07-09T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:02.661489Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161206",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aec7-21d3-7c21-bd6e-acc2813aff21"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_626/meta_vod_50392.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aec7-21dc-7292-842f-02e8f564eb90",
+      "zp_start": "2025-07-09T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:29:02.661489Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=161206",
+      "typ": "parl-ablehnung",
+      "dokumente": [
+        "0198aec7-21d3-7c21-bd6e-acc2813aff21"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_626/meta_vod_50392.json&startId=1"
+      ]
+    }
+  ]
+}

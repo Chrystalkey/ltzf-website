@@ -1,0 +1,133 @@
+{
+  "api_id": "db60c41c-06d5-4ab3-8dfe-2fa70d753457",
+  "titel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Gesetzes über das Erziehungs- und Unterrichtswesen",
+  "kurztitel": "Gesetzentwurf der Staatsregierung zur Änderung des Bayerischen Gesetzes über das Erziehungs- und Unterrichtswesen",
+  "wahlperiode": 19,
+  "verfassungsaendernd": false,
+  "typ": "gg-land-parl",
+  "ids": [
+    {
+      "id": "19/6902",
+      "typ": "initdrucks"
+    }
+  ],
+  "links": [
+    "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160855",
+    "https://www.bayern.landtag.de/www/ElanTextAblage_WP19/Drucksachen/Basisdrucksachen/0000005500/0000005998.pdf"
+  ],
+  "initiatoren": [
+    {
+      "organisation": "Staatsregierung Bayern"
+    }
+  ],
+  "stationen": [
+    {
+      "api_id": "0198aecb-b313-7c50-9f29-a448e1f99d30",
+      "zp_start": "2025-06-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:02.001615Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160855",
+      "typ": "parl-initiativ",
+      "trojanergefahr": 3,
+      "dokumente": [
+        "0198aecb-b314-7321-ae08-bc1e743c46c7"
+      ],
+      "stellungnahmen": [
+        "0198aecb-b316-7d63-b640-2feea0c069e8",
+        "0198aecb-b31d-7d92-969b-8e75dc52a7ab",
+        "0198aecb-b325-79b2-9e4d-8a00baa1c04c",
+        "0198aecb-b333-7e40-a368-a31bb73930c1",
+        "0198aecb-b33b-7f10-95ab-de94d2ce02af",
+        "0198aecb-b343-7b61-bb58-8cb229691b8e",
+        "0198aecb-b34e-7992-986e-0c09b7d65db1",
+        "0198aecb-b356-7961-8a5b-1973cb36ce61"
+      ]
+    },
+    {
+      "api_id": "0198aecb-b361-7c23-b28d-df7c94c6f6fc",
+      "zp_start": "2025-06-23T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:02.001615Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160855",
+      "typ": "parl-vollvlsgn",
+      "dokumente": [
+        "0198aecb-b362-76c0-a10f-285cae116344"
+      ],
+      "additional_links": [
+        "https://www1.bayern.landtag.de/player/index.html?playlist=https://www1.bayern.landtag.de/lisp/res/metafiles/wp19/19_624/meta_vod_50147.json&startId=1"
+      ]
+    },
+    {
+      "api_id": "0198aecb-b367-7f21-89e7-a8e977ceab7a",
+      "zp_start": "2025-07-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:02.001615Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Bildung und Kultus"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160855",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecb-b368-70d0-b762-88523ef12dba"
+      ]
+    },
+    {
+      "api_id": "0198aecb-b36a-7112-b940-15eb1f52ead9",
+      "zp_start": "2025-07-02T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:02.001615Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "Ausschuss für Verfassung, Recht, Parlamentsfragen und Integration"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160855",
+      "typ": "parl-ausschber",
+      "trojanergefahr": 1,
+      "dokumente": [
+        "0198aecb-b368-70d0-b762-88523ef12dba"
+      ]
+    },
+    {
+      "api_id": "0198aecb-b36b-7873-9472-1719757da990",
+      "zp_start": "2025-07-09T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:02.001615Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "plenum"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160855",
+      "typ": "parl-akzeptanz",
+      "trojanergefahr": 2,
+      "dokumente": [
+        "0198aecb-b372-7800-8889-43dc81ba605b",
+        "0198aecb-b36c-7720-8b65-c2037603d58e"
+      ]
+    },
+    {
+      "api_id": "0198aecb-b376-7ff0-85a0-141e6a7fd62d",
+      "zp_start": "2025-07-29T22:00:00Z",
+      "zp_modifiziert": "2025-08-15T17:34:02.001615Z",
+      "gremium": {
+        "parlament": "BY",
+        "wahlperiode": 19,
+        "name": "gesetzesblatt"
+      },
+      "link": "https://www.bayern.landtag.de/webangebot3/views/vorgangsanzeige/vorgangsanzeige.xhtml?gegenstandid=160855",
+      "typ": "postparl-gsblt",
+      "dokumente": [
+        "0198aeca-ce3c-7180-b155-285b7d971758"
+      ]
+    }
+  ]
+}
