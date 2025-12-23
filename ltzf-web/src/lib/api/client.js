@@ -76,9 +76,16 @@ export async function apiRequest(requestFn, options = {}) {
 
     return withRetry(async () => {
         try {
-            // Execute the request function to get a new superagent request each time
-            // Superagent requests are thenable, so we can await them directly
-            const response = await requestFn();
+            // Wrap the callback-based API in a promise to avoid calling .end() twice
+            const response = await new Promise((resolve, reject) => {
+                requestFn((error, data, response) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        resolve(response);
+                    }
+                });
+            });
 
             // Handle HTTP 204 No Content - return empty array for list endpoints
             if (response.status === 204 || !response.body) {

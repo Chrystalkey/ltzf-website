@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.5"
+    "astro": "^5.16.5",
+    "superagent": "^10.2.3"
   },
   "devDependencies": {
     "formidable": "^3.5.4"

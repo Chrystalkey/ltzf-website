@@ -41,19 +41,19 @@ export async function fetchVorgaenge(filters = {}, options = {}) {
         return fetchAllPages(
             ({ page, per_page }) =>
                 apiRequest(
-                    () =>
+                    (callback) =>
                         unauthorizedApi.vorgangGet({
                             ...params,
                             page,
                             perPage: per_page,
-                        }),
+                        }, callback),
                     { includeHeaders: true }
                 ),
             options
         );
     }
 
-    return apiRequest(() => unauthorizedApi.vorgangGet(params));
+    return apiRequest((callback) => unauthorizedApi.vorgangGet(params, callback));
 }
 
 /**
@@ -63,10 +63,10 @@ export async function fetchVorgang(id, options = {}) {
     const { ifModifiedSince } = options;
 
     try {
-        return await apiRequest(() =>
+        return await apiRequest((callback) =>
             unauthorizedApi.vorgangGetById(id, {
                 ifModifiedSince,
-            })
+            }, callback)
         );
     } catch (error) {
         if (error instanceof NotModifiedError) {
@@ -103,19 +103,19 @@ export async function fetchSitzungen(filters = {}, options = {}) {
         return fetchAllPages(
             ({ page, per_page }) =>
                 apiRequest(
-                    () =>
+                    (callback) =>
                         unauthorizedApi.sGet({
                             ...params,
                             page,
                             perPage: per_page,
-                        }),
+                        }, callback),
                     { includeHeaders: true }
                 ),
             options
         );
     }
 
-    return apiRequest(() => unauthorizedApi.sGet(params));
+    return apiRequest((callback) => unauthorizedApi.sGet(params, callback));
 }
 
 /**
@@ -125,10 +125,10 @@ export async function fetchSitzung(id, options = {}) {
     const { ifModifiedSince } = options;
 
     try {
-        return await apiRequest(() =>
+        return await apiRequest((callback) =>
             unauthorizedApi.sGetById(id, {
                 ifModifiedSince,
-            })
+            }, callback)
         );
     } catch (error) {
         if (error instanceof NotModifiedError) {
@@ -142,7 +142,7 @@ export async function fetchSitzung(id, options = {}) {
  * Fetch a single Dokument by ID
  */
 export async function fetchDokument(id) {
-    return apiRequest(() => unauthorizedApi.dokumentGetById(id));
+    return apiRequest((callback) => unauthorizedApi.dokumentGetById(id, callback));
 }
 
 /**
@@ -161,19 +161,19 @@ export async function fetchGremien(filters = {}, options = {}) {
         return fetchAllPages(
             ({ page, per_page }) =>
                 apiRequest(
-                    () =>
+                    (callback) =>
                         unauthorizedApi.gremienGet({
                             ...params,
                             page,
                             perPage: per_page,
-                        }),
+                        }, callback),
                     { includeHeaders: true }
                 ),
             options
         );
     }
 
-    return apiRequest(() => unauthorizedApi.gremienGet(params));
+    return apiRequest((callback) => unauthorizedApi.gremienGet(params, callback));
 }
 
 /**
@@ -192,26 +192,26 @@ export async function fetchAutoren(filters = {}, options = {}) {
         return fetchAllPages(
             ({ page, per_page }) =>
                 apiRequest(
-                    () =>
+                    (callback) =>
                         unauthorizedApi.autorenGet({
                             ...params,
                             page,
                             perPage: per_page,
-                        }),
+                        }, callback),
                     { includeHeaders: true }
                 ),
             options
         );
     }
 
-    return apiRequest(() => unauthorizedApi.autorenGet(params));
+    return apiRequest((callback) => unauthorizedApi.autorenGet(params, callback));
 }
 
 /**
  * Fetch calendar entries for a specific parliament and date
  */
 export async function fetchKalender(parlament, datum, options = {}) {
-    return apiRequest(() => unauthorizedApi.kalDateGet(parlament, datum, options));
+    return apiRequest((callback) => unauthorizedApi.kalDateGet(parlament, datum, options, callback));
 }
 
 /**
@@ -245,19 +245,19 @@ export async function fetchKalenderList(filters = {}, options = {}) {
         return fetchAllPages(
             ({ page, per_page }) =>
                 apiRequest(
-                    () =>
+                    (callback) =>
                         unauthorizedApi.kalGet({
                             ...params,
                             page,
                             perPage: per_page,
-                        }),
+                        }, callback),
                     { includeHeaders: true }
                 ),
             options
         );
     }
 
-    return apiRequest(() => unauthorizedApi.kalGet(params));
+    return apiRequest((callback) => unauthorizedApi.kalGet(params, callback));
 }
 
 /**
@@ -270,7 +270,7 @@ export async function fetchEnumeration(name, filters = {}) {
         contains,
     });
 
-    return apiRequest(() => unauthorizedApi.enumGet(name, params));
+    return apiRequest((callback) => unauthorizedApi.enumGet(name, params, callback));
 }
 
 /**

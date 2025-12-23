@@ -14,7 +14,13 @@ uuid placeholders. The page then contains a little javascript snipped
 that loads them if necessary.
 
 ## Requirements
-rustc >= 1.89
+npm
+maven
+jre
+
+run `npm install superagent` in this directory before starting.
+the generated oapicode requires it, but does not generate the
+requirement for it.
 
 ## Page Structure
 /index.html
