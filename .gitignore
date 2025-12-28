@@ -9,6 +9,7 @@ __pycache__/
 .pytest_cache/
 
 **/**/.env
+**/**/.cache/*
 oapi-generator/
 oapicode/
 www/
